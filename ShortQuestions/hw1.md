@@ -2,18 +2,18 @@
 
 ## 2. practice git using the platform. list the git commands you learned
    
-   `git status`: Show the status of your local repository and any uncommitted changes.
-   `git init`: Initialize a new Git repository in the current directory.
-   `git clone`: Clone a repository from a remote server to your local machine.
-   `git add`: Stage changes in your local repository for the next commit.
-   `git commit`: Create a new commit with the changes you have staged.
-   `git push`: Push your local commits to a remote repository.
-   `git pull`: Fetch and merge changes from a remote repository to your local repository.
-   `git branch`: List, create, or delete branches in your local repository.
-   `git checkout`: Switch to a different branch or version of your code.
-   `git merge`: Merge changes from one branch into another.
-   `git remote`: List or manage remote repositories.
-   `git fetch`: Fetch changes from a remote repository without merging them.
+   1. `git status`: Show the status of your local repository and any uncommitted changes.
+   2. `git init`: Initialize a new Git repository in the current directory.
+   3. `git clone`: Clone a repository from a remote server to your local machine.
+   4. `git add`: Stage changes in your local repository for the next commit.
+   5. `git commit`: Create a new commit with the changes you have staged.
+   6. `git push`: Push your local commits to a remote repository.
+   7. `git pull`: Fetch and merge changes from a remote repository to your local repository.
+   8. `git branch`: List, create, or delete branches in your local repository.
+   9. `git checkout`: Switch to a different branch or version of your code.
+   10. `git merge`: Merge changes from one branch into another.
+   11. `git remote`: List or manage remote repositories.
+   12. `git fetch`: Fetch changes from a remote repository without merging them.
 
 ## 3. What is the basic steps to init a git repo in you local?
    
@@ -38,22 +38,21 @@
 
 ## 6. How to merge the branch_test to master branch in command ? show me the commands
    
-   `git branch master` (switch to the master branch)
-   `git pull origin master` (pull the latest changes from the master branch)
-   `git merge branch_test` (Merge the branch_test branch into the master branch)
-   And resolve any conflicts that arise during the merge process
-   `git commit -m "merge branch_test to master"` (commit the changes)
-   `git push origin master` (push the changes to the remote master branch)
+   1. `git branch master` (switch to the master branch)
+   2. `git pull origin master` (pull the latest changes from the master branch)
+   3. `git merge branch_test` (Merge the branch_test branch into the master branch)
+   4. And resolve any conflicts that arise during the merge process
+   5. `git commit -m "merge branch_test to master"` (commit the changes)
+   6. `git push origin master` (push the changes to the remote master branch)
 
-## 7. How to stash your new code before leaving branch branch_learn_stash and pop your stash when you 
-## checkout back to **branch_learn_stash ? try commands way and intellij way.
+## 7. How to stash your new code before leaving branch branch_learn_stash and pop your stash when you checkout back to **branch_learn_stash ? try commands way and intellij way.
 
    Commands Way:
-   `git stash` (stash your changes)
-   `git checkout XXX` (checkout to a different branch)
-   do some work in the other branch
-   `git checkout branch_learn_stash` (checkout back to branch_learn_stash)
-   `git stash pop` (pop the stash to apply the changes you stashed earlier)
+   1. `git stash` (stash your changes)
+   2. `git checkout XXX` (checkout to a different branch)
+   3. do some work in the other branch
+   4. `git checkout branch_learn_stash` (checkout back to branch_learn_stash)
+   5. `git stash pop` (pop the stash to apply the changes you stashed earlier)
 
    Intellij way:
    You can also use the "Git Stash" action in the "Git" menu to stash and pop changes.
@@ -68,37 +67,37 @@
    Maven is a build automation tool primarily used for Java projects. Its main role is to manage the build process of a project, including compilation, testing, packaging, and deployment. It provides a declarative way to describe the project structure, dependencies, and build process, which makes it easier to maintain and reproduce the build process across different environments.
 
    Maven can be used to do the following things:
-   Dependency management: Maven can automatically download and manage dependencies required by a project from repositories such as Maven Central.
-   Build automation: Maven can automate the build process of a project, including compiling the source code, running tests, generating documentation, and packaging the project into a distributable format such as a JAR or WAR file.
-   Project structure: Maven provides a standard project structure that can be easily maintained and understood by developers and build tools.
-   Plugins: Maven supports a wide range of plugins that can be used to perform additional tasks such as code quality checks, static analysis, and code coverage.
-   Profiles: Maven allows you to define different build profiles that can be used to customize the build process for different environments or configurations.
+   1. Dependency management: Maven can automatically download and manage dependencies required by a project from repositories such as Maven Central.
+   2. Build automation: Maven can automate the build process of a project, including compiling the source code, running tests, generating documentation, and packaging the project into a distributable format such as a JAR or WAR file.
+   3. Project structure: Maven provides a standard project structure that can be easily maintained and understood by developers and build tools.
+   4. Plugins: Maven supports a wide range of plugins that can be used to perform additional tasks such as code quality checks, static analysis, and code coverage.
+   5. Profiles: Maven allows you to define different build profiles that can be used to customize the build process for different environments or configurations.
 
 ## 10. What is the lifecycle of maven? could you tell me the details ?
    The Maven build process consists of a series of well-defined phases that are organized into a build lifecycle. There are three built-in lifecycles in Maven: `default`, `clean`, and `site`.
 
    The `default` lifecycle is the most important and commonly used lifecycle in Maven. It includes the following phases:
 
-   `validate`: Validates the project is correct and all necessary information is available.
-   `compile`: Compiles the source code of the project.
-   `test`: Runs unit tests for the compiled code.
-   `package`: Packages the compiled code into a distributable format, such as a JAR or WAR file.
-   `verify`: Runs any checks to verify the package is valid and meets quality criteria.
-   `install`: Installs the package into the local repository, so it can be used as a dependency in other projects.
-   `deploy`: Copies the final package to the remote repository for sharing with other developers and projects.
+   1. `validate`: Validates the project is correct and all necessary information is available.
+   2. `compile`: Compiles the source code of the project.
+   3. `test`: Runs unit tests for the compiled code.
+   4. `package`: Packages the compiled code into a distributable format, such as a JAR or WAR file.
+   5. `verify`: Runs any checks to verify the package is valid and meets quality criteria.
+   6. `install`: Installs the package into the local repository, so it can be used as a dependency in other projects.
+   7. `deploy`: Copies the final package to the remote repository for sharing with other developers and projects.
    
    The `clean` lifecycle is used to clean the project of any generated files and artifacts from previous builds. It includes the following phases:
 
-   `pre-clean`: Executes tasks before the cleaning process begins.
-   `clean`: Removes all files generated by the previous build.
-   `post-clean`: Executes tasks after the cleaning process is complete.
+   1. `pre-clean`: Executes tasks before the cleaning process begins.
+   2. `clean`: Removes all files generated by the previous build.
+   3. `post-clean`: Executes tasks after the cleaning process is complete.
    
    The `site` lifecycle is used to generate project documentation and reports. It includes the following phases:
    
-   `pre-site`: Executes tasks before generating the documentation and reports.
-   `site`: Generates the project documentation and reports.
-   `post-site`: Executes tasks after the documentation and reports have been generated.
-   `site-deploy`: Deploys the generated documentation and reports to a remote server.
+   1. `pre-site`: Executes tasks before generating the documentation and reports.
+   2. `site`: Generates the project documentation and reports.
+   3. `post-site`: Executes tasks after the documentation and reports have been generated.
+   4. `site-deploy`: Deploys the generated documentation and reports to a remote server.
    
 
 ## 11. What is the difference between package and install in maven lifecycle ?
@@ -115,13 +114,13 @@
    In Maven, plugins are a key feature that enables the build process to be customized with additional functionality beyond what is provided by the built-in build phases. Plugins can be used to perform a wide range of tasks, such as compiling source code, running tests, packaging the project, deploying to a server, generating reports, and many more.
 
    Plugins:
-   `maven-compiler-plugin`: Compiles Java source code into bytecode.
-   `maven-surefire-plugin`: Runs JUnit or TestNG tests during the test phase.
-   `maven-jar-plugin`: Packages the compiled code into a JAR file.
-   `maven-war-plugin`: Packages the compiled code into a WAR file for deployment to a web server.
-   `maven-install-plugin`: Installs the project artifacts into the local repository.
-   `maven-deploy-plugin`: Deploys the project artifacts to a remote repository or server.
-   `maven-release-plugin`: Automates the process of releasing a new version of the project.
+   1. `maven-compiler-plugin`: Compiles Java source code into bytecode.
+   2. `maven-surefire-plugin`: Runs JUnit or TestNG tests during the test phase.
+   3. `maven-jar-plugin`: Packages the compiled code into a JAR file.
+   4. `maven-war-plugin`: Packages the compiled code into a WAR file for deployment to a web server.
+   5. `maven-install-plugin`: Installs the project artifacts into the local repository.
+   6. `maven-deploy-plugin`: Deploys the project artifacts to a remote repository or server.
+   7. `maven-release-plugin`: Automates the process of releasing a new version of the project.
    
 
 
