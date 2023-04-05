@@ -103,7 +103,7 @@ Maven is a popular tool for java developers to manage the dependencies and build
 1.  groupID: com.chuwa.learn
 2.  artifactID: java-core
 ### Ans:
-
+please check MavenProject dir
 
 ## 14 Do Code Review: Go over at least 3 PRs in your repo, tried to leave some useful or useful comments in other students' PR, please don't merge it
 ### Ans:
