@@ -1,3 +1,5 @@
+# 1.  Learn MarkDown and show all of basic usage in the ShortQuestions/README.md
+See ShortQuestions/README.md.
 # 2. practice git using the platform. list the git commands you learned
 - `git init` Init repo.
 - `git add` Add files to the staging area.
@@ -69,9 +71,10 @@ maven-shade-plugin
 maven-source-plugin
 maven-assembly-plugin
 ```
-
-
-
+# 13. See MavenProject/hw1Maven.
+# 14. Do Code Review: Go over at least 3 PRs in your repo, tried to leave some useful or useful comments inother students' PR, please don't merge it
+I have commented Zilu Huang, Min He, and Jianqiao Liu.
+ 
 
 
 
