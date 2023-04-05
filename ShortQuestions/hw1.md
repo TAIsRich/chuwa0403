@@ -65,9 +65,14 @@ Maven is used for Java-based projects. It is used to build project, help manage 
 
 A build lifecycle is well-definde sequence of phase, which define the order in which the goals are to be executed.
 
-There are three built-in build lifecycles: default, clean and site. 
-
-The default lifecycle handles your project deployment, the clean lifecycle handles project cleaning, while the site lifecycle handles the creation of your project's web site.
+For maven, the build lifecycle is made up of seven phases:
+- validate: validate the project is correct and all necessary infomation is avaliable
+- compile: compile the source code of the project
+- test: test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed
+- package: take the compiled code an package it in its distributable format, such as a JAR
+- verify: run any checks on results of integration tests to ensure qualityy criteria are met
+- install: instal the package into the local repository, for use as a dependency in other projects locally
+- deploy: done in the build environment, copies the final package to the remote repository for sharing with other developers and projects
 
 ## 11
 Difference between package and install in maven lifecycle:
