@@ -39,8 +39,7 @@ git commit -m "commit_message"
 git checkout main
 git merge branch_test
 ```
-# 7. How to stash your new code before leaving branch branch_learn_stash and pop your stash when you
-checkout back to **branch_learn_stash ? try commands way and intellij way.
+# 7. How to stash your new code before leaving branch branch_learn_stash and pop your stash when youcheckout back to **branch_learn_stash ? try commands way and intellij way.
 ```
 git stash
 git stash pop
