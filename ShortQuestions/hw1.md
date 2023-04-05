@@ -63,9 +63,9 @@ Maven is used for Java-based projects. It is used to build project, help manage 
 ## 10
 [Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#:~:text=There%20are%20three%20built%2Din,of%20your%20project's%20web%20site.)
 
-A build lifecycle is well-definde sequence of phase, which define the order in which the goals are to be executed.
+A build lifecycle is well-definde sequence of phase, which define the order in which the goals are to be executed. Maven defines 3 lifecycles: default, clean and site. The default lifecycle handles your project deployment, the clean lifecycle handles project cleaning, while the site lifecycle handles the creation of your project's web site.
 
-For maven, the build lifecycle is made up of seven phases:
+For maven, the default build lifecycle is made up of seven phases:
 - validate: validate the project is correct and all necessary infomation is avaliable
 - compile: compile the source code of the project
 - test: test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed
