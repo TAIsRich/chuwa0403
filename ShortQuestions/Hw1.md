@@ -66,13 +66,15 @@ Maven is a project management tool based on POM. Its goal is to allow a develope
 It is used for projects build, dependency and documentation. 
 
 ## 10. What is the lifecycle of maven? could you tell me the details ? 
-+ validate - validate the project is correct and all necessary information is available
-+ compile - compile the source code of the project
-+ test - test the compiled source code using a suitable unit testing framework
-+ package - take the compiled code and package it in its distribute formate, e.g. .JAR
-+ verify - run checks on results of integration tests to ensure quality criteria
-+ install - install the package into local repository for use as a dependency for other projects
-+ deploy - done in the build environment, copies the final package to the remote repository for sharing with other developers and projects.
++ validate - validate the project is correct and all necessary information is available;
++ compile - compile the source code of the project;
++ test - test the compiled source code using a suitable unit testing framework;
++ package - take the compiled code and package it in its distribute formate, e.g. .JAR;
++ verify - run checks on results of integration tests to ensure quality criteria;
++ install - install the package into local repository for use as a dependency for other projects;
++ deploy - done in the build environment, copies the final package to the remote repository for sharing with other developers and projects;
++ clean - project cleaning;
++ site - handles the creation of your project's web site.
 
 ## 11. what is the difference between package and install in maven lifecycle ?
 'Package' takes the compiled code and package it in its distribute formate, e.g. .JAR, while 'install'  install the package into local repository for use as a dependency for other projects.
