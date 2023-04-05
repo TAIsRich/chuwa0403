@@ -88,7 +88,7 @@ Maven is a popular tool for java developers to manage the dependencies and build
 ### Ans:
 1. `mvn package` – take the compiled code and package it in its distributable format, such as a JAR
 2. `mvn install` – install the package into the local repository, for use as a dependency in other projects locally
-3. The main difference between the `mvn package` and `mvn instal`l commands is that `mvn package` command will compile the source and will package it in its distributable formats, such as a JAR or WAR. The `mvn install` command, however, additionally to compiling the source code and packaging it into a JAR or a WAR, it will also install the package into the local repository, for use as a dependency in other projects locally.
+3. The main difference between the `mvn package` and `mvn install` commands is that `mvn package` command will compile the source and will package it in its distributable formats, such as a JAR or WAR. The `mvn install` command, however, additionally to compiling the source code and packaging it into a JAR or a WAR, it will also install the package into the local repository, for use as a dependency in other projects locally.
 
 ## 12 What is plugins in maven, list some plugin
 ### Ans:
