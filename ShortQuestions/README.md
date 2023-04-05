@@ -5,10 +5,15 @@
 
 # Styling text
 **This is bold text**
+
 *This text is italicized*
+
 **This text is _extremely_ important**
+
 ***All this text is important***
+
 <sub>This is a subscript text</sub>
+
 <sup>This is a superscript text</sup>
 
 # Quoting text
@@ -16,6 +21,8 @@ Text that is not a quote
 > Text that is a quote
 
 # Quoting code
+Use `git status` to list all new or modified files that haven't yet been committed.
+
 Some basic Git commands are:
 ```
 git status
@@ -87,7 +94,7 @@ A footnote can also have multiple lines[^2].
   This is a second line.
 
 # Hiding content with comments
-<!-- This content will not appear in the rendered Markdown -->
+Use `<!-- This content will not appear in the rendered Markdown -->`
 
 # Ignoring Markdown formatting
 Let's rename \*our-new-project\* to \*our-old-project\*.
