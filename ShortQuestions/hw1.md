@@ -2,7 +2,7 @@
 
 Please see the README.md
 
-### 2. practice git using the platform. list the git commands you learned
+### 2. Practice git using the platform. list the git commands you learned
 
 git commit: save changes 
 
@@ -32,9 +32,13 @@ git push : upload the changes made in a local repository to a remote repository
 ### 3. What is the basic steps to init a git repo in you local ?
 
 git init
+
 git status
+
 git add .
+
 git commit -m "message"
+
 git push orgin fecture-branch
 
 ### 4. How to clone a repo from Github ?
@@ -89,7 +93,8 @@ Pull Request is used in Git-based version control systems to propose merging cha
 
 ### 9. What is maven role ? what it be used to do ?
 
-The essence of Maven is a project management tool that abstracts the project development and management process into a project object model (POM).
+The essence of Maven is a project management tool that abstracts the project development and management process into a project object model (POM). It is easy to download add and remove the dependencies/libraries.
+It is be used to automate the building, testing, packaging, and management of Java-based projects.
 
 
 ### 10. What is the lifecycle of maven? could you tell me the details ?
@@ -122,7 +127,7 @@ The `install` phase installs the package into the local Maven repository, making
 
 Plugins are used to extend or modify the build process. They provide additional functionality and allow developers to customize the build process as per their needs.
 
-For eamples:
+For examples:
 
 Compiler Plugin: used to compile Java source code.
 
@@ -141,7 +146,7 @@ Maven-Release-Plugin: used to automate the release process of an application.
 1. groupID: com.chuwa.learn
 2. artifactID: java-core
 
-see chuwa0403/MavenProject/MavenModule
+See chuwa0403/MavenProject/MavenModule
 
 ### 14. Do Code Review: Go over at least 3 PRs in your repo, tried to leave some useful or useful comments in other students' PR, please don't merge it.
 
