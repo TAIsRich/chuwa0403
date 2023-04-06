@@ -17,6 +17,6 @@ public class Main {
         System.out.println("Circle3 compared to circle2: " + circle3.compareTo(circle2));
         System.out.println("Circle1 and circle2 equal or not: " + circle1.equalArea(circle1, circle2));
 
-
+        String s = new String("123");
     }
 }
