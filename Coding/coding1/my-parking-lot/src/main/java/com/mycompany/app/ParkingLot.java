@@ -19,7 +19,7 @@ public class ParkingLot
         if (parkingSpots.containsKey(spotNumber)) {
             return false;
         }
-        if (Cats.containsKey(car)) {
+        if (Cars.containsKey(car)) {
             return false;
         }
         Cars.put(car,spotNumber);
