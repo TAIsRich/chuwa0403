@@ -1,3 +1,3 @@
 # Hw2
 ## 1.
-See [Example.java](./../Coding/hw2/Example.java)
+See [Example.Java](./../Coding/hw2/Example.Java)
