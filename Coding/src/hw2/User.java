@@ -34,6 +34,5 @@ public class User {
     public void register(String userName,String userPassword){
 
     }
-
 }
 
