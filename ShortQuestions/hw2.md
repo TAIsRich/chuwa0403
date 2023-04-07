@@ -155,3 +155,34 @@ Write up Example code to demonstrate the three foundmental concepts of OOP. (ref
   ```
 
   In this example, Dog extend Mammal, Mammal extends Animal. This is multilayer inheritence.
+
+2. wrapper class
+
+What is **wrapper class** in Java and Why we need wrapper class?
+
+A class that provides a way to use primitive data types as objects. Byte Short Integer Long Float Double Boolean Character.
+
+Wrapper class can converting between primitive data types and objects and can store primitive data types in collections. Wrapper classes provide utility methods for working with primitive data types like `parseInt()`. In addition it provides a way to handle null values.
+
+### 3.difference between **HashMap** and **HashTable**
+
+What is the difference between **HashMap** and **HashTable**?
+
+- Hashtable is synchronized, which means that multiple threads cannot access a Hashtable object at the same time. HashMap is not synchronized. Because Hashtable is synchronized, its performance can be slower than HashMap especially in multiple-thread situations
+- Hashtable does not allow null keys or null values, while HashMap allows one null key and multiple null values.
+- Hashtable use fail-safe enumerator. It does not throw an exception if the map is modified during iteration. Instead, it makes a copy of the map and iterates over the copy. For hashMap, the iterator is fail-fast, which means that it will throw a ConcurrentModificationException if the map is modified during iteration
+
+### 4.String pool
+
+What is **String pool** in Java and why we need String pool?
+
+String pool is a special area of the heap memory where string literals are stored. Only string literals and strings that are explicitly added to the pool using `intern()` method are stored in the string pool. String objects created using `new` or the String constructor are not added to the string pool.
+
+The string pool can optimize memory usage and performance, as it avoids creating multiple instances of the same string literal. And strings that have the same value can be compared using reference rather than specific object value.
+
+### 5.garbage collection
+
+What is Java **garbage collection**?
+
+Java's automatic memory management system, which automatically identifies and removes objects that are no longer being used by the application
+
