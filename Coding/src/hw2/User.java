@@ -1,6 +1,6 @@
 package hw2;
 
-public class Guest {
+public class User {
     private String userName;
     private String userPassword;
     private String userRole;
@@ -27,6 +27,12 @@ public class Guest {
 
     public void setUserRole(String userRole) {
         this.userRole = userRole;
+    }
+    public void login(String userName,String userPassword){
+
+    }
+    public void register(String userName,String userPassword){
+
     }
 
 }
