@@ -64,4 +64,6 @@ Use a non-static nested class (or inner class) if you require access to an enclo
 | access modifier child >= father | No requirement |
 
 ## 10. 
-super is the father objects and this is current objects
+this keyword mainly represents the current instance of a class. On other hand super keyword represents the current instance of a parent class. this keyword used to call default constructor of the same class or get access to fields.
+
+## 11. 
