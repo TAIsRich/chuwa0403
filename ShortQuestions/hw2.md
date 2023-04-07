@@ -1,3 +1,89 @@
+# 1.  Write up Example code to demonstrate the three foundmental concepts of OOP.
+- Encapsulation
+```
+public class Person {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+```
+- Polymorphism
+```
+public class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound.");
+    }
+}
+
+public class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The dog barks.");
+    }
+}
+
+public class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The cat meows.");
+    }
+}
+```
+- Inheritance
+```
+public class Animal {
+    private String name;
+    private int age;
+    
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public void eat() {
+        System.out.println(name + " is eating.");
+    }
+    
+    public void sleep() {
+        System.out.println(name + " is sleeping.");
+    }
+}
+
+public class Dog extends Animal {
+    public Dog(String name, int age) {
+        super(name, age);
+    }
+    
+    public void bark() {
+        System.out.println("Woof!");
+    }
+}
+
+public class Cat extends Animal {
+    public Cat(String name, int age) {
+        super(name, age);
+    }
+    
+    public void meow() {
+        System.out.println("Meow!");
+    }
+}
+```
 # 2. What is wrapper class in Java and Why we need wrapper class?
 In Java, a wrapper class is a class that encapsulates primitive data types (int, byte, double, float, long, short, char, boolean). It provides a way to work with primitive types as objects, and provide additional functionality for working with these types. Wrapper classes are used to represent primitive types as objects. This is useful because objects can be manipulated and passed around like any other object, while primitive types cannot. In wrapper classe, it can provide some methods such as convering int to string, or parsing string to int. And wrapper classes can also be used in collections such as lists and maps.
 # 3. What is the difference between HashMap and HashTable?
@@ -62,6 +148,8 @@ Differences:
 - A class can implement multiple interfaces, but can only extend one abstract class.
 - In an interface, all methods are abstract and have no implementation. In an abstract class, some methods may be abstract and some may have a concrete implementation.
 - All methods in an interface are public by default, whereas an abstract class can have methods with any access modifier.
+# 15. (OOD) Design a parking lot.
+See Coding/coding1.
 # 16. What are Queue interface implementations and what are the differences and when to use what?
 Quene interface implementations contain:
 - LinkedList.
