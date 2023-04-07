@@ -1,4 +1,89 @@
-Q1:
+Q1:  
+**Encapsulation**
+```
+public class Person {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+```
+
+**Polymorphism**
+```
+//overloading
+public class Calculator {
+    public int add(int x, int y) {
+        return x + y;
+    }
+
+    public double add(double x, double y) {
+        return x + y;
+    }
+}
+```
+```
+//overriding
+public class Animal {
+    public void speak() {
+        System.out.println("Animal is speaking");
+    }
+}
+
+public class Dog extends Animal {
+    public void speak() {
+        System.out.println("Dog is barking");
+    }
+}
+```
+
+**Inheritance**
+```
+public class Animal {
+    protected String name;
+    
+    public Animal(String name) {
+        this.name = name;
+    }
+    
+    public void eat() {
+        System.out.println("The animal is eating.");
+    }
+}
+
+public class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+    
+    public void bark() {
+        System.out.println("The dog is barking.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog("Rufus");
+        myDog.eat();
+        myDog.bark();
+        System.out.println(myDog.name);
+    }
+}
+```
 
 
 Q2:  
