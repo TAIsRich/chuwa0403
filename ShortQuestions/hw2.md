@@ -1,3 +1,6 @@
+# 1. Write up Example code to demonstrate the three fundamental concepts ofOOP.
+All code are in coding1. 
+
 # 2. What is wrapper class in Java and Why we need wrapper class?
 A wrapper class is a class can provide an object-oriented representation of the primitive data types (such as int, float, double, etc.).
 The wrapper classes provide a way to convert primitive data types into objects.
@@ -130,6 +133,7 @@ Here are some of the key differences:
 - Fields: An interface can only have static final fields, while an abstract class can have any type of fields.
 
 # 15. Design a parking lot (put the code to codingQuestions/coding1 folder)? 
+All the code files are in coding1/ParkingLot
 
 # 16. What are Queue interface implementations and what are the differences and when to use what?
 - LinkedList: The LinkedList class is a doubly linked list implementation of the Queue interface. It provides fast insertion and deletion of elements from both ends of the list, making it a good choice for implementing a FIFO queue.
@@ -150,7 +154,7 @@ When to use them?
 
 - If you need a thread-safe queue, use ConcurrentLinkedQueue.
 
-If you need a LIFO stack, use ArrayDeque.
+- If you need a LIFO stack, use ArrayDeque.
 
 
 
