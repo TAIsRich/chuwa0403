@@ -205,12 +205,22 @@ check folder Coding/coding1
 
 The Queue interface represents a collection that orders its elements in a specific way for processing. There are several implementations of the Queue interface in Java, each with its own characteristics and suitable use cases:
 
-1. `LinkedList`: This implementation provides a doubly-linked list implementation of the Queue interface. It is efficient for add and remove operations at both ends of the list, but accessing elements in the middle of the list can be slower. Use LinkedList if you need a basic implementation of the Queue interface that can efficiently add and remove elements from both ends of the list.
+1. `LinkedList`: This implementation provides a doubly-linked list implementation of the Queue interface. It is efficient for add and remove operations at both ends of the list, but accessing elements in the middle of the list can be slower. 
 
-2. `ArrayDeque`: This implementation provides a resizable-array implementation of the Queue interface. It is efficient for add and remove operations at both ends of the queue and provides constant-time performance for these operations. Use ArrayDeque if you need a Queue implementation that can handle a large number of elements and can efficiently add and remove elements from both ends of the queue.
+Use LinkedList if you need a basic implementation of the Queue interface that can efficiently add and remove elements from both ends of the list.
 
-3. `PriorityQueue`: This implementation provides a priority queue implementation of the Queue interface. Elements are ordered based on their natural order or a custom comparator. Use PriorityQueue if you need a Queue implementation that orders its elements based on priority.
+2. `ArrayDeque`: This implementation provides a resizable-array implementation of the Queue interface. It is efficient for add and remove operations at both ends of the queue and provides constant-time performance for these operations. 
 
-4. `ConcurrentLinkedQueue`: This implementation provides a thread-safe implementation of the Queue interface. It is optimized for multi-threaded access and provides high throughput and low latency. Use ConcurrentLinkedQueue if you need a Queue implementation that can be safely accessed from multiple threads.
+Use ArrayDeque if you need a Queue implementation that can handle a large number of elements and can efficiently add and remove elements from both ends of the queue.
 
-5. `LinkedBlockingQueue`: This implementation provides a bounded implementation of the Queue interface, meaning that it has a fixed capacity. It is thread-safe and optimized for multi-threaded access. Use LinkedBlockingQueue if you need a Queue implementation that has a fixed capacity and can be safely accessed from multiple threads.
+3. `PriorityQueue`: This implementation provides a priority queue implementation of the Queue interface. Elements are ordered based on their natural order or a custom comparator. 
+
+Use PriorityQueue if you need a Queue implementation that orders its elements based on priority.
+
+4. `ConcurrentLinkedQueue`: This implementation provides a thread-safe implementation of the Queue interface. It is optimized for multi-threaded access and provides high throughput and low latency. 
+
+Use ConcurrentLinkedQueue if you need a Queue implementation that can be safely accessed from multiple threads.
+
+5. `LinkedBlockingQueue`: This implementation provides a bounded implementation of the Queue interface, meaning that it has a fixed capacity. It is thread-safe and optimized for multi-threaded access. 
+
+Use LinkedBlockingQueue if you need a Queue implementation that has a fixed capacity and can be safely accessed from multiple threads.
