@@ -1,7 +1,8 @@
 ## 1. Write up Example code to demonstrate the three foundmental concepts of OOP.
-   see Coding/coding1/EncapsulationExample.java
-       Coding/coding1/PolymorphismExample.java
-       Coding/coding1/InheritanceExample.java
+   See 
+   1. Coding/coding1/EncapsulationExample.java
+   2. Coding/coding1/PolymorphismExample.java
+   3. Coding/coding1/InheritanceExample.java
 
 ## 2. What is wrapper class in Java and Why we need wrapper class?
    A wrapper class in Java is a class that wraps (encapsulates) a primitive data type into an object. The primitive data types include byte, short, int, long, float, double, boolean, and char. The wrapper classes for these data types are Byte, Short, Integer, Long, Float, Double, Boolean, and Character, respectively.
