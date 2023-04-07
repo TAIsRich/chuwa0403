@@ -67,3 +67,56 @@ Use a non-static nested class (or inner class) if you require access to an enclo
 this keyword mainly represents the current instance of a class. On other hand super keyword represents the current instance of a parent class. this keyword used to call default constructor of the same class or get access to fields.
 
 ## 11. 
+Loaders:
+
++ The BootStrap class loader is on the top of the class loader hierarchy. It loads the standard JDK classes in the JRE’s lib directory.
+
++ The Extension class loader is in the middle of the class loader hierarchy and is the immediate child of the bootstrap class loader and loads the classes in the JRE’s lib\ext directory.
+
++ The Application class loader is at the bottom of the class loader hierarchy and is the immediate child of the application class loader. It loads the jars and classes specified by the CLASSPATH ENV variable.
+
+Linking:
++ The linking process consists of the following three steps −
+
++ Verification − This is done by the Bytecode verifier to ensure that the generated .class files (the Bytecode) are valid. If not, an error is thrown and the linking process comes to a halt.
+
++ Preparation − Memory is allocated to all static variables of a class and they are initialized with the default values.
+
++ Resolution − All symbolic memory references are replaced with the original references. To accomplish this, the symbol table in the run-time constant memory of the method area of the class is used.
+
+Initialization:
++ This is the final phase of the class-loading process. Static variables are assigned original values and static blocks are executed.
+
+## 12.
+Polymorphism describes a pattern in object oriented programming in which classes have different functionality while sharing a common interface.
+
+Runtime polymorphism -> override
+
+Compiletime polymorphism -> overload
+
+## 13.
+Encapsulation is an implementation level process, and it is used to provide privacy and maintain control over the transparency of data at the implementation stage of a project. integrating data (variables) and code (methods) into a single unit.
+
+Use private to hide data from others; Providing public setter and getter methods to modify and view the variables values.
+
+Encapsulation helps us to keep related fields and methods together, which makes our code cleaner and easy to read.
+
+## 14. 
+An abstract class is a class that cannot be instantiated and can contain both abstract and non-abstract methods. 
+
+An interface is a contract that specifies a set of methods that a class must implement.
+
+| | interface | Abstract class |
+|--|--|--|
+|type of methods | abstract method, default method and static method | both abstract and concrete |
+| fianl variables | only default final | can contain non-final variables |
+| Type of variables | only static and final variables | final, non-final, static and non-static|
+| Multiple implementations | extend one or more Java interfaces | extend another Java class and implement multiple Java interfaces |
+
+## 15. 
+See [ParkingLot.Java](./../codingQuestions/coding1/ParkingLot.Java)
+
+## 16.
+* PriorityQueue: order elements based on priority 
+* LinkedList: It is a linear data structure where the elements are not stored in contiguous locations and every element is a separate object with a data part and address part.
+* PriorityBlockingQueue: thread safe comparing to PriorityQueue
