@@ -114,7 +114,7 @@ An interface is a contract that specifies a set of methods that a class must imp
 | Multiple implementations | extend one or more Java interfaces | extend another Java class and implement multiple Java interfaces |
 
 ## 15. 
-See [ParkingLot.Java](./../codingQuestions/coding1/ParkingLot.Java)
+See [ParkingLot.Java](./../codingQuestions/coding1/ParkingLot.java)
 
 ## 16.
 * PriorityQueue: order elements based on priority 
