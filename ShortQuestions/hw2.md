@@ -16,7 +16,7 @@ Their scopes:
 - `Public`: Accessible from anywhere in the program.
 - `Protected`: Accessible within the class, subclasses, and other classes in the same package.
 - `Default`: Accessible within the same package.
-- `Private: Accessible only within the same class.
+- `Private`: Accessible only within the same class.
 # 7. What is final key word? (Filed, Method, Class)
 The final key word can be used to declare that a field, method, or class cannot be modified after it has been initialized.
 - `Final field`: Final cannot be changed once it has been initialized. Final fields must be initialized either at the time of their declaration or in the constructor of the class. Once a final field has been initialized, it cannot be reassigned.
@@ -27,6 +27,7 @@ The static keyword can be used to declare that a field, method, or inner class b
 - `static field`: A static field is a field that belongs to the class itself, rather than to any instance of the class. This means that the value of the static field is shared by all instances of the class.
 - `static method`:  A static method is a method that belongs to the class itself, rather than to any instance of the class.
 - `static class`: static inner class is an inner class that belongs to the class itself, rather than to any instance of the class. This means that the static inner class can be accessed without creating an object of the outer class. Static inner classes are often used to encapsulate utility classes or helper functions that are closely related to the outer class.
+
 We usually use the static keyword to create class-level data or methods that can be shared across all instances of the class, or to encapsulate utility functions or helper classes that are closely related to the class. Static key word can also improve the performance of a Java project.
 # 9. What is the differences between overriding and overloading?
 - Overloading happens at compile time. Overriding happens at runtime
@@ -44,6 +45,7 @@ In Java, the order in which classes are loaded is determined by the Java Class L
 - Extension Class Loader.
 - System Class Loader.
 - Custom Class Loader.
+
 If two classes depend on each other, they must be loaded in the correct order to avoid circular references. If a class is loaded multiple times by different class loaders, it may cause conflicts or unexpected behavior.
 # 12. What is Polymorphism ? And how Java implements it ?
 In programming, polymorphism refers to the same object exhibiting different forms and behaviors.
@@ -67,6 +69,7 @@ Quene interface implementations contain:
 - ArrayDeque
 - ConcurrentLinkedQueue.
 - LinkedBlockingQueue.
+
 The choice of which implementation to use depends on the specific requirements of your application. If you need to order elements by priority, use PriorityQueue. If you need to add or remove elements from both ends of the queue, use LinkedList or ArrayDeque. If you need thread-safety, use ConcurrentLinkedQueue. If you need blocking behavior, use LinkedBlockingQueue.
 
 
