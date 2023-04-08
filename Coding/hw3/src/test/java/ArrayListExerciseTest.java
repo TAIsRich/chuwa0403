@@ -1,10 +1,22 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ArrayListExerciseTest {
+    List<Integer> list = new ArrayList<>();
+
+    @Before
+    public void setup() {
+        list.clear();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+    }
+
     /**
      * new ArrayList()
      * add elements
@@ -12,19 +24,16 @@ public class ArrayListExerciseTest {
      * get Size
      * list.addAll(anotherList)
      */
-    List<Integer> list = new ArrayList<>();
-
-    @Before
-    public void setup() {
-        list.add(1);
-        list.add(2);
-        list.add(3);
-    }
-
     @Test
     public void learn_Inserting_And_Retrieving() {
         list.add(3, 4);
-        System.out.println(list);
+        assertEquals(4, list.size());
+        assertEquals(1, list.get(0).intValue());
+        List<Integer> anotherList = new ArrayList<>();
+        anotherList.add(5);
+        anotherList.add(6);
+        list.addAll(anotherList);
+        assertEquals(6, list.size());
     }
 
     /**
@@ -45,7 +54,25 @@ public class ArrayListExerciseTest {
      */
     @Test
     public void learn_Remove_Replacing_Updating() {
+        list.remove(0);
+        assertEquals(2, list.get(0).intValue());
+        List<Integer> anotherList = new ArrayList<>();
+        anotherList.add(5);
+        anotherList.add(6);
+        list.removeAll(anotherList);
+        assertEquals(2, list.size());
+        list.clear();
+        assertEquals(0, list.size());
 
+        list.add(1);
+        list.set(0, 100);
+        assertEquals(100, list.get(0).intValue());
+        list.replaceAll((a) -> a + 1);
+        assertEquals(101, list.get(0).intValue());
+
+        assertTrue(list.contains(101));
+        assertEquals(0, list.indexOf(101));
+        assertEquals(0, list.lastIndexOf(101));
     }
 
     /**
@@ -58,7 +85,11 @@ public class ArrayListExerciseTest {
 
     @Test
     public void learn_Iterator() {
-
+        for (Iterator<Integer> iterator = list.iterator(); iterator.hasNext();) {
+            int val = iterator.next();
+            iterator.remove();
+        }
+        assertTrue(list.isEmpty());
     }
 
     /**
@@ -69,6 +100,11 @@ public class ArrayListExerciseTest {
 
     @Test
     public void learn_Sorting() {
-
+        list.sort(Comparator.naturalOrder());
+        assertEquals(1, list.get(0).intValue());
+        Collections.sort(list);
+        assertEquals(1, list.get(0).intValue());
+        list.sort(Comparator.reverseOrder());
+        assertEquals(3, list.get(0).intValue());
     }
 }
