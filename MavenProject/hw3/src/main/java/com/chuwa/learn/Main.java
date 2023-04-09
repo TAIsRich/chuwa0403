@@ -1,5 +1,4 @@
-package org.cirun;
-//import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.chuwa.learn;
 
 public class Main {
     public static void main(String[] args) {
