@@ -350,3 +350,106 @@ upsertedCount: 0
 chuwa0403> db.oms_company_address.deleteOne({name: "Lily"})
 { acknowledged: true, deletedCount: 1 }
 ```
+
+# HW3 Part 2 -Design Pattern
+## 1. What are the types of design patterns in Java?
+### Creation Design Pattern
+* Factory Pattern
+* Abstract Factory Pattern
+* Singleton Pattern
+* Prototype Pattern
+* Builder Pattern
+
+### Structural Design Pattern
+* Adapter Pattern
+* Bridge Pattern
+* Composite Pattern
+* Decorator Pattern
+* Facade Pattern
+* Flyweight Pattern
+* Proxy Pattern
+
+### Behavioral Design Pattern
+* Chain Of Responsibility Pattern
+* Command Pattern
+* Interpreter Pattern
+* Iterator Pattern
+* Mediator Pattern
+* Memento Pattern
+* Observer Pattern
+* State Pattern
+* Strategy Pattern
+* Template Pattern
+* Visitor Pattern
+
+## 2. What are the SOLID Principles?
+SOLID:
+1. **A Responsibility**: a class should have only one responsibility or reason to change
+2. **Open/Closed**: classes should be open for extension but closed for modification.
+3. **Liskov Substitution**:  a subclass should be substitutable for its superclass without affecting the correctness of the program.
+4. **Interface Segregation** clients should not be forced to depend on interfaces that they do not use.
+5. **Dependency Inversion** high-level modules should not depend on low-level modules.
+
+## 3. How can you achieve thread-safe singleton patterns in Java?
+Eager:
+```java
+public class Singleton {
+    private static Singleton instance = new Singleton();
+    private Singleton() {}
+    
+    public Singleton getInstance() {
+        return instance;
+    }
+}
+```
+
+Lazy:
+```java
+public class Singleton {
+    private Singleton() {}
+    private static class SingletonHolder {
+        private static final Singleton INSTANCE;
+    }
+
+    public static Singleton getInstance() {
+        return SingletonHolder.INSTANCE;
+    }
+}
+```
+## 4. What do you understand by the Open-Closed Principle (OCP)?
+Classes should be open for extension but closed for modification. In other words, we should be able to
+extend the behavior of a class without modify its existing code.
+
+We can follow this rules to achieve OCP:
+1. **Abstraction**: By using interfaces or abstract classes, we can define contracts that specify the behavior of a class, without exposing its implementation details.
+2. **Polymorphism**: By using polymorphism, we can define behavior that can be overridden or extended by subclasses, without modifying the existing code.
+3. **Dependency Inversion**: By depending on abstractions rather than concrete implementations, we can create code that is less tightly coupled and more easily extensible.
+
+## 5. What do you understand by the Liskov Substitution Principle?
+If a program is using a base class, it should be able to use any of its derived classes without knowing it.
+This means that a subclass should not change the behavior or contract of its base class. It should only add new behaviors or override existing ones.
+
+Liskov's substitution principle is violated if :
+* Pre-conditions are strengthened, or
+* Post-conditions are weakened
+
+## 6. 12. (SOLID-L)Liskov’s substitution principle states that if class B is a subtype of class A, then object of type A may be substituted with any object of type B. What does this actually mean? (from OA ) choose your answer.
+First is correct, see part 1 answer.
+
+## 7. Watch the design pattern video,and type the code
+See
+
+```shell
+MavenProject/hw3/src/main/java/com/chuwa/learn/singleton
+MavenProject/hw3/src/main/java/com/chuwa/learn/builder
+MavenProject/hw3/src/main/java/com/chuwa/learn/factory
+MavenProject/hw3/src/main/java/com/chuwa/learn/pubsub
+```
+
+# HW3 Part 3 - Credit Card Notification.
+Please check `MavenProject/hw3/src/main/java/com/chuwa/learn/credit_card_notification`
+
+Design pattern I used:
+* **Singleton**
+* **Abstract factory**
+* **Pub-sub**
