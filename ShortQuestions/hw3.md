@@ -2,7 +2,7 @@ Q2
 Checked exceptions are checked at compile time and must be handled using the try-catch block or by adding a throws clause in the method signature. These exceptions are typically caused by external factors beyond the control of the programmer and are expected to occur occasionally. Examples of checked exceptions include IOException, SQLException, and ClassNotFoundException.
 
 Here's an example of how to handle a checked exception:
-```
+```java
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class FileReaderExample {
 On the other hand, unchecked exceptions are not checked at compile time and do not have to be handled explicitly. These exceptions are usually caused by programming errors such as null pointers, array out of bounds, or division by zero. Examples of unchecked exceptions include NullPointerException, ArrayIndexOutOfBoundsException, and ArithmeticException.
 
 Here's an example of an unchecked exception:
-```
+```java
 public class DivideByZeroExample {
     public static void main(String[] args) {
         int a = 10;
@@ -83,7 +83,7 @@ D - Dependency Inversion Principle
 
 Q10  
 Eager Initialization: In this approach, the singleton instance is created at the time of class loading. This approach is thread-safe because the JVM guarantees that only one instance of a class will be created at the time of class loading.
-```
+```java
 public class MySingleton {
    private static final MySingleton instance = new MySingleton();
    private MySingleton() {}
@@ -94,7 +94,7 @@ public class MySingleton {
 }
 ```
 Lazy Initialization with Double-Checked Locking: In this approach, the singleton instance is created lazily when the getInstance() method is called for the first time. This approach is thread-safe because it uses double-checked locking to ensure that only one instance is created even when multiple threads are accessing the singleton object simultaneously.
-```
+```java
 public class MySingleton {
    private volatile static MySingleton instance;
 
@@ -118,3 +118,57 @@ The Open-Closed Principle (OCP) is one of the SOLID principles of object-oriente
 
 Q12  
 1
+
+Q14  
+MySQL
+```genericsql
+CREATE TABLE oms_company_address (
+id bigint, 
+address_name varchar(200),
+send_status int,
+receive_status int,
+name varchar(64),
+phone varchar(64),
+province varchar(64),
+city varchar(64),
+region varchar(64),
+detail_address varchar(200), 
+primary key(id)
+);
+
+INSERT INTO oms_company_address
+(id, address_name, send_status, receive_status, name, phone, province, city, region, detail_address)
+VALUES
+('1','Home', 1, 0, 'John Doe', '123456789', 'Ontario', 'Toronto', 'North York', '123 Main St.'),
+('2','Office', 0, 1, 'Jane Doe', '987654321', 'British Columbia', 'Vancouver', 'Richmond', '456 Market St.'),
+('3','Factory', 1, 1, 'Bob Smith', '55555555', 'Quebec', 'Montreal', 'Laval', '789 Industrial Rd.');
+
+SELECT * FROM oms_company_address;
+
+SELECT * FROM oms_company_address LIMIT 3;
+
+UPDATE oms_company_address SET phone = '666-6666-8888';
+
+DELETE FROM oms_company_address WHERE id = 1;
+```
+MongoDB
+```genericsql
+use testDB
+
+db.createCollection("oms_company_address")
+
+db.oms_company_address.insertMany([
+   { address_name: "address1", send_status: 1, receive_status: 0, name: "John Doe", phone: "555-1234", province: "Ontario", city: "Toronto", region: "Downtown", detail_address: "123 Main St" },
+   { address_name: "address2", send_status: 0, receive_status: 1, name: "Jane Smith", phone: "555-5678", province: "Ontario", city: "Ottawa", region: "Downtown", detail_address: "456 Queen St" },
+   { address_name: "address3", send_status: 1, receive_status: 1, name: "Bob Johnson", phone: "555-9876", province: "Quebec", city: "Montreal", region: "West Island", detail_address: "789 Lakeshore Blvd" }
+])
+
+db.oms_company_address.findOne({ address_name: "address1" })
+
+db.oms_company_address.find()
+    
+db.oms_company_address.update({ address_name: "address2" }, { $set: { phone: "555-4321" }})
+
+db.oms_company_address.deleteOne({ address_name: "address3" })
+
+```
