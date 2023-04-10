@@ -43,7 +43,7 @@ One should always catch the most specific exception first and then the most gene
 ```
 public class ThreadSafeExample {
   private static volatile ThreadSafeExample threadSafeExample;
-  
+  private ThreadSafeExample() {}
   public static ThreadSafeExample getInstance() {
     if (threadSafeExample == null) {
       synchronized(ThreadSafeExample.class) {
