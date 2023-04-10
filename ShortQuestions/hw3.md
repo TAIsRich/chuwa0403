@@ -6,7 +6,7 @@ Checked exception is the one that can be detected during compile time. If some c
 Unchecked exception, also called runtime exception, can be thrown during the normal operation of the Java Virtual Machine. ArrayOutOfBoundException.
 
 ## 3. Can there be multiple finally blocks?
-No. One finally block follows one catch block.
+No. One finally block follows one catch block. In one method, there can be multiple try catch finally blocks.
 
 ## 4. When both catch and finally return values, what will be the final result?
 Finally block.
@@ -21,3 +21,12 @@ Throw is used in methods to throw exceptions explicitly.
 Throws is used at the method signature to declare an exception that might be thrown by the function while executing.
 
 ## 7. why do we put the Null/Runtime exception before Exception ?
+One should always catch the most specific exception first and then the most generic. In this specific question, NullPointerException is the subclass of Runtime Exception which is the subclass of Exception, where NullPointerException is the most specific and the Exception is the most generic.
+
+## 8. Why finally always be executed ?
+* Finally block is used to cleanup code, like closing a file or closing an connection;
+* It allows to print out some important information.
+
+## 9. What are the types of design patterns in Java ?
+* Creational design pattern: provide solutions to instantiate an object in the best possible way for specifci situations;
+* Struct
