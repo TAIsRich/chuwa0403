@@ -136,5 +136,57 @@ It tells you to write your code so that you will be able to add new functionalit
 see MavenProject/pattern
 
 ## 14.  CRUD MySQL and MongoDB (separated PDF)
+### MySQL-1.  Create  oms_company_address  table
+```
+CREATE TABLE oms_company_address(
+    id bigint AUTO_INCREMENT PRIMARY KEY,
+    address_name varchar(200),
+    send_status int(1),
+    receive_status int(1),
+    name varchar(64),
+    phone varchar(64),
+    province varchar(64),
+    city varchar(64),
+    region varchar(64),
+    detail_address varchar(200)
+)
+```
+### MySQL-2.  Insert some random data to  oms_company_address  table
+```
+INSERT INTO oms_company_address (id, address_name, send_status, receive_status, name, phone, province, city, region, detail_address) VALUES 
+(1, 'Home', 0, 1, 'Alice', '00000000', 'MA', 'BOS', 'BOS', 'xxxxxx'),
+(1, 'School', 1, 1, 'Bob', '11111111', 'MA', 'BOS', 'BOS', 'yyyyyy'),
+
+```
+### MySQL-3.  Write a SQL query to fetch all data from  oms_company_address  `table
+```SELECT * FROM oms_company_address;```
+### MySQL-4.  Write a SQL query to fetch top 3 records from  oms_company_address  table
+```SELECT * FROM oms_company_address LIMIT 3;```
+### MySQL-5.  Update  oms_company_address  table to set all  phone to 666-6666-8888
+```UPDATE oms_company_address SET phone = '666-6666-8888';```
+### MySQL-6.  Delete one entry from  oms_company_address  table
+```DELETE FROM oms_company_address WHERE id = 1;```
+
+### MongoDB-1. Create  test DB
+```use test```
+### MongoDB-2.  Create  oms_company_address  collection  (method: createCollection() )
+```db.createCollection("oms_company_address")```
+### MongoDB-3.  Insert few random entries to  oms_company_address  collection (method: insert() )
+```
+db.oms_company_address.insertMany([
+{ address_name: "Home", send_status: 1, receive_status: 0, name: "Alice", phone: "00000000", province: "MA", city: "BOS", region: "BOS", detail_address: "xxxxxx" },
+{ address_name: "School", send_status: 1, receive_status: 1, name: "Bob", phone: "11111111", province: "MA", city: "BOS", region: "BOS", detail_address: "yyyyyy" }
+])
+```
+### MongoDB-4.  Read one entry from  oms_company_address  collection (method: find() )
+```db.oms_company_address.findOne({ name: "Alice" })```
+### MongoDB-5.  Read all entries from  oms_company_address  collection (method: find() )
+```db.oms_company_address.find()```
+### MongoDB-6.  Update one entry from  oms_company_address collection (method: update() or save() )
+```db.oms_company_address.update({ name: "Alice" }, { $set: { name: "Anna" }})```
+### MongoDB-7.  Remove one entry from  oms_company_address collection (method: remove() )
+```db.oms_company_address.remove({ name: "Anna" })```
+
+ 
  
  
