@@ -28,5 +28,41 @@ One should always catch the most specific exception first and then the most gene
 * It allows to print out some important information.
 
 ## 9. What are the types of design patterns in Java ?
-* Creational design pattern: provide solutions to instantiate an object in the best possible way for specifci situations;
-* Struct
+* Creational design pattern: provide way to create objects while hiding the creation logic, rather than instantiating objects directly using new operator. This gives program more flexibility in deciding which objects need to be created for a given use case;
+* Structural pattern: concern class and object composition. Inheritance is used to compose interfaces and define ways to compose objects to obtain new functionality;
+* Behavioral pattern: concern the communication between objects and how to provide loose-coupling and flexibility to extend easily.
+
+## 10. What are the SOLID principles? 
+* Single Responsibility Principle: It states that every java class must perform a single functionality. It precise the code and the code can be easily maintained.
+* Open closed principle: The module should be open for extension but closed for modification. The extension allows to implement new functionality to the module.
+* Liskov Substitution principle: it applies to the inheritance in such a way that the derived class must be completely substitutable for their base classes. If class A is subtype of B, then we should be able to replace B with A without interupting the behavior of the program.
+* Interface Segregation Principle: split the large interface into small interfaces. Because the implementation class use only the function. The goal is same to the Single Responsibility Principle.
+* Dependency Inversion Principle: high-level modules should depend on abstractions rather than concrete implementations. It helps decouple the high-level and low-level modules, making it easier to change the low-level ones without affecting the high-level ones.
+
+## 11. How can you achieve thread-safe singleton patterns in Java ?
+```
+public class ThreadSafeExample {
+  private static volatile ThreadSafeExample threadSafeExample;
+  
+  public static ThreadSafeExample getInstance() {
+    if (threadSafeExample == null) {
+      synchronized(ThreadSafeExample.class) {
+        if (threadSafeExample == null) {
+          threadSafeExample = new ThreadSafeExample();
+        }
+      }
+    }
+    return threadSafeExample;
+  }
+}
+```
+
+## 12. What do you understand by the Open-Closed Principle (OCP) ?
+Creating software entities whose behavior can be changed without the need to edit and recompile the code. For example, if the method try to enter a file and file name is hard code in the method. If the file address is changed, then the only way to modify it is by changing the hardcode part of the file. A better way is to pass the address into the method then we would be able to modify the behavior without changing its source. 
+
+## 13. 
+A
+
+## 14. 
+## 15. 
+
