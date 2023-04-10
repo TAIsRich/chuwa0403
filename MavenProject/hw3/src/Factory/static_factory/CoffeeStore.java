@@ -1,9 +1,9 @@
-package Factory.simple_factory;
+package Factory.static_factory;
 
 public class CoffeeStore {
     public Coffee orderCoffee(String type){
-       SimpleCoffeFactory factory = new SimpleCoffeFactory();
-       Coffee coffee = factory.CreateCoffee(type);
+
+       Coffee coffee = SimpleCoffeFactory.CreateCoffee(type);
         coffee.addMilk();
         coffee.addSugar();
 

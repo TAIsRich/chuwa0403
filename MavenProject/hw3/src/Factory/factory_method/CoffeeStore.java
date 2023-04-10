@@ -1,11 +1,14 @@
-package Factory.static_factory;
+package Factory.factory_method;
 
 
 public class CoffeeStore {
-    public Coffee orderCoffee(String type){
-//       SimpleCoffeFactory factory = new SimpleCoffeFactory();
-//       Coffee coffee = factory.createCoffee(type);
-       Coffee coffee = SimpleCoffeFactory.createCoffee(type);
+    private CoffeeFactory factory;
+    public void setFactory(CoffeeFactory factory){
+        this.factory=factory;
+    }
+
+    public Coffee orderCoffee(){
+       Coffee coffee = factory.createCoffee();
        coffee.addMilk();
        coffee.addSugar();
         return coffee;

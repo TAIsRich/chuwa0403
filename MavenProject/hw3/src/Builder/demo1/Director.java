@@ -1,4 +1,4 @@
-package Builder;
+package Builder.demo1;
 
 public class Director {
     private Builder builder;

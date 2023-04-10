@@ -1,3 +1,5 @@
+package Singleton.demo1;
+
 public class Client {
     public static void main(String[] args) {
         //创建Singleton类的对象

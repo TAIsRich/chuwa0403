@@ -1,3 +1,5 @@
+package Singleton.demo1;
+
 /**饿汉式:静态成员变量**
  */
 public class Singleton {

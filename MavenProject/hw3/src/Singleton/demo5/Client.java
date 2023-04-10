@@ -1,4 +1,6 @@
-package Singleton.demo4;
+package Singleton.demo5;
+
+import Singleton.demo4.Singleton;
 
 public class Client {
     public static void main(String[] args) {

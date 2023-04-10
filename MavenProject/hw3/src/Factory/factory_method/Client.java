@@ -1,9 +1,11 @@
-package Factory.static_factory;
+package Factory.factory_method;
 
 public class Client {
     public static void main(String[] args) {
         CoffeeStore store = new CoffeeStore();
-        Coffee coffee = store.orderCoffee("latte");
+        CoffeeFactory factory= new AmericanCoffeeFactory();
+        store.setFactory(factory);
+        Coffee coffee = store.orderCoffee();
         System.out.println(coffee.getName());
     }
 }

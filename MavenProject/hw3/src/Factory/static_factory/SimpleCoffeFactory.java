@@ -1,7 +1,7 @@
-package Factory.simple_factory;
+package Factory.static_factory;
 
 public class SimpleCoffeFactory {
-    public Coffee CreateCoffee(String type){
+    public static Coffee CreateCoffee(String type){
         Coffee coffee = null;
         if("american".equals(type)){
             coffee = new AmericanCoffee();

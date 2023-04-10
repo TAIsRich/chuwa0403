@@ -1,4 +1,4 @@
-package Factory.simple_factory;
+package Factory.static_factory;
 
 public abstract class Coffee {
     public abstract  String getName();

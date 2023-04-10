@@ -1,2 +1,5 @@
-package Factory.abstract_factory;public interface Dessert {
+package Factory.abstract_factory;
+
+public abstract class Dessert {
+    public abstract void show();
 }

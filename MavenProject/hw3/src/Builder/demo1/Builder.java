@@ -1,4 +1,4 @@
-package Builder;
+package Builder.demo1;
 
 public abstract class Builder {
     protected Bike bike = new Bike();
