@@ -27,6 +27,7 @@ public class ArrayListExerciseTest {
         // Retrieving elements from the ArrayList
         String firstElement = myList.get(0);
         String thirdElement = myList.get(2);
+        myList.addAll(myList);
         int size = myList.size();
 
         System.out.println("First element: " + firstElement); // Output: First element: apple
@@ -66,7 +67,7 @@ public class ArrayListExerciseTest {
 
         // Replacing an element in the ArrayList
         myList.set(2, "orange"); // Replaces the third element ("cherry") with "orange"
-
+        list.replaceAll(fruit -> fruit.equals("apple") ? "pear" : fruit);
         // Retrieving elements from the ArrayList
         String secondElement = myList.get(1);
         String thirdElement = myList.get(2);
@@ -123,6 +124,10 @@ public class ArrayListExerciseTest {
         Collections.sort(myList);
 
         // Printing the sorted ArrayList
+        for (String element : myList) {
+            System.out.println(element);
+        }
+        Collections.sort(myList, Comparator.reverseOrder());
         for (String element : myList) {
             System.out.println(element);
         }

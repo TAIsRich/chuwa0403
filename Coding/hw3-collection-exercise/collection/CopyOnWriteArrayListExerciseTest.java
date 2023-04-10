@@ -31,6 +31,9 @@ public class CopyOnWriteArrayListExerciseTest {
         myList.add(3);
         myList.add(8);
         myList.add(1);
+        myList.add(2,2);
+        myList.addIfAbsent(2);
+        myList.addAllAbsent(myList);
 
         // Iterating over the thread-safe ArrayList
         for (Integer i : myList) {
@@ -54,5 +57,13 @@ public class CopyOnWriteArrayListExerciseTest {
 
         //Created an iterator
         Iterator<String> itr = list.iterator();
+        while (it.hasNext()) {
+            String element = it.next();
+            System.out.println(element);
+            if (element.equals("Banana")) {
+                it.remove();
+            }
+        }
+        System.out.println(list);
     }
 }
