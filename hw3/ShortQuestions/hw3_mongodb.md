@@ -5,7 +5,7 @@ use test
 
 # 2.
 ```mongodb
-use test
+db.createCollection("oms_company_address")
 ```
 
 # 3.
@@ -21,4 +21,17 @@ db.oms_company_address.insertMany([
 db.oms_company_address.findOne({id: 2})
 ```
 
-#5. 
+# 5.
+```mongodb
+db.oms_company_address.find({})
+```
+
+# 6.
+```mongodb
+db.oms_company_address.update({ name: "address1" }, { $set: { name: "address1Update" }})
+```
+
+# 7.
+```mongodb
+db.oms_company_address.remove({id: 2})
+```
