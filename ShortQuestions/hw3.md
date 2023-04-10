@@ -154,6 +154,21 @@ public class Singleton() {
 }
 ```
 
+### Lazy inner static class
+```java
+public class Singleton {
+    private Singleton() {}
+
+    private static class SingletonHolder {
+        private static final Singleton INSTANCE = new Singleton();
+    }
+
+    public Singleton getInstance() {
+        return SingletonHolder.INSTANCE;
+    }
+}
+```
+
 ### Eager thread-safe
 ```java
 public class Singleton {
@@ -186,3 +201,152 @@ Liskov’s substitution principle is about subtyping and it states that if a cla
 
 ## 13 Watch the design pattern video, and type the code
 
+Please see:
+```
+MavenProject/hw3/src/main/java/com/chuwa/learn/singleton
+MavenProject/hw3/src/main/java/com/chuwa/learn/builder
+MavenProject/hw3/src/main/java/com/chuwa/learn/factory
+MavenProject/hw3/src/main/java/com/chuwa/learn/pubsub
+```
+## 14 CRUD MySQL and MongoDB
+## `MySQL`
+
+### 1. Create `oms_company_address` table
+```sql
+CREATE TABLE IF NOT EXISTS oms_company_address(
+    id bigint AUTO_INCREMENT PRIMARY KEY,
+    address_name varchar(200),
+    send_status int(1),
+    receive_status int(1),
+    name varchar(64),
+    phone varchar(64),
+    province varchar(64),
+    city varchar(64),
+    region varchar(64),
+    detail_address varchar(200)
+) ENGINE=INNODB;
+```
+### 2. Insert some random data to oms_company_address table
+```sql
+INSERT INTO oms_company_address (address_name, send_status, receive_status, name, phone, province, city, region, detail_address)
+VALUES ('home', 0, 0, 'tom', '13311322111', 'BEJ', 'BEJ', 'HD', 'Some Addr');
+```
+
+### 3. Write a SQL query to fetch all data from oms_company_address `table
+```sql
+SELECT * FROM oms_company_address;
+```
+
+### 4. Write a SQL query to fetch top 3 records from oms_company_address table
+```sql
+SELECT * FROM oms_company_address LIMIT 3;
+```
+
+### 5. Update oms_company_address table to set all phone to 666-6666-8888
+```sql
+UPDATE oms_company_address set phone = '666-6666-8888';
+```
+
+### 6. Delete one entry from oms_company_address table
+```sql
+DELETE FROM oms_company_address WHERE id=1;
+```
+
+## `MongoDB`
+### 1. Create test DB
+```mongodb-json-query
+test> use chuwa0403
+switched to db chuwa0403
+```
+
+### 2.  Create oms_company_address collection
+```mongodb-json-query
+chuwa0403> db.createCollection("oms_company_address")
+{ ok: 1 }
+```
+
+### 3. Insert few random entries to oms_company_address collection
+```mongodb-json-query
+db.oms_company_address.insertOne({
+  address_name: "home", 
+  send_status: 1, 
+  receive_status: 0, 
+  name: "Tom", 
+  phone:  "111-222-333", 
+  address: {
+    province: "BEJ", 
+    city: "BEJ", 
+    region: "HD", 
+    detail_address: "some_addr"
+  }
+})
+
+db.oms_company_address.insertOne({
+  address_name: "home",
+  send_status: 1,
+  receive_status: 0,
+  name: "Jerry", 
+  phone:  "111-444-555",
+  address: {
+    province: "CA",
+    city: "LA",
+    region: "HX",
+    detail_address: "some_addr"
+  }
+})
+
+db.oms_company_address.insertOne({
+  address_name: "office",
+  send_status: 0,
+  receive_status: 0,
+  name: "Lily", phone:  "111-444-111",
+  address: {
+    province: "HEB",
+    city: "SJZ",
+    region: "SK",
+    detail_address: "some_addr"
+  }
+})
+```
+
+### 4. Read one entry from oms_company_address collection
+```mongodb-json-query
+chuwa0403> db.oms_company_address.findOne({name: "Tom"})
+{
+  _id: ObjectId("64332dad26441b9cb06ca0ca"),
+  address_name: 'home',
+  send_status: 1,
+  receive_status: 0,
+  name: 'Tom',
+  phone: '111-222-333',
+  address: {
+    province: 'BEJ',
+    city: 'BEJ',
+    region: 'HD',
+    detail_address: 'some_addr'
+  }
+}
+```
+
+### 5. Read all entries from oms_company_address collection
+```mongodb-json-query
+chuwa0403> db.oms_company_address.find()
+```
+
+### 6. Update one entry from oms_company_address collection (method:update() or save())
+```mongodb-json-query
+chuwa0403> db.oms_company_address.updateMany({name:  "Tom"}, {$set: {name: "Tim"}})
+{
+acknowledged: true,
+insertedId: null,
+matchedCount: 0,
+modifiedCount: 0,
+upsertedCount: 0
+}
+```
+
+### 7. Remove one entry from oms_company_address collection
+```mongodb-json-query
+chuwa0403> db.oms_company_address.deleteOne({name: "Lily"})
+{ acknowledged: true, deletedCount: 1 }
+```
