@@ -76,32 +76,10 @@ public class Example {
 
 ## 9. What are the types of design patterns in Java?
 
-   1. Creational Patterns:
-      a. Singleton Pattern
-      b. Factory Pattern
-      c. Abstract Factory Pattern
-      d. Builder Pattern
-      e. Prototype Pattern
-   2. Structural Patterns:
-      a. Adapter Pattern
-      b. Bridge Pattern
-      c. Composite Pattern
-      d. Decorator Pattern
-      e. Proxy Pattern
-      f. Facade Pattern
-      g. Flyweight Pattern
-   3. Behavioral Patterns:
-      a. Chain of Responsibility Pattern
-      b. Command Pattern
-      c. Interpreter Pattern
-      d. Iterator Pattern
-      e. Mediator Pattern
-      f. Memento Pattern
-      g. Observer Pattern
-      h. State Pattern
-      i. Strategy Pattern
-      j. Template Method Pattern
-      k. Visitor Pattern
+   There are three types of design patterns in Java.
+   1. Creational Patterns: Singleton Pattern, Factory Pattern, Abstract Factory Pattern, Builder Pattern, Prototype Pattern
+   2. Structural Patterns: Adapter Pattern, Bridge Pattern, Composite Pattern, Decorator Pattern, Proxy Pattern, Facade Pattern, Flyweight Pattern
+   3. Behavioral Patterns: Chain of Responsibility Pattern, Command Pattern, Interpreter Pattern, Iterator Pattern,Mediator Pattern, Memento Pattern, Observer Pattern, State Pattern, Strategy Pattern, Template Method Pattern, Visitor Pattern
 
 ## 10. What are the SOLID Principles?
    
@@ -173,10 +151,13 @@ public class Singleton {
    The Liskov Substitution Principle (LSP) is a fundamental principle in object-oriented design that states that if a program is using a base class (or interface), then the program should be able to use any of its derived classes (or implementations of the interface) without knowing it, and without the program's correctness being affected. The LSP is closely related to the concept of inheritance, and helps ensure that classes that inherit from a base class or interface do not violate the expected behavior of the base class or interface.
 
 ## 14. (SOLID-L)Liskov’s substitution principle states that if class B is a subtype of class A, then object of type A may be substituted with any object of type B. What does this actually mean? 
-   Option 1
+   Option 1 & 3
 
 ## 15. Watch the design pattern video, and type the code, submit it to MavenProject folder
    See Coding/MavenProject
 
 ## 16. CRUD MySQL and MongoDB (separated PDF)
    See hw3_db.md
+
+## Design Pattern Credit Card Notification
+   See Coding/MavenProject/src/main/java/com/chuwa/learn/DesignPattern
