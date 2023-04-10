@@ -121,4 +121,81 @@ See `MavenProject`
 
 ### Q14
 
-Done
+* MySQL
+
+```
+CREATE TABLE oms_company_address (
+
+id bigint,
+
+address_name varchar(200),
+
+send_status int,
+
+receive_status int,
+
+name varchar(64),
+
+phone varchar(64),
+
+province varchar(64),
+
+city varchar(64),
+
+region varchar(64),
+
+detail_address varchar(200),
+
+primary key(id)
+
+);
+
+INSERT INTO oms_company_address
+
+(id, address_name, send_status, receive_status, name, phone, province, city, region, detail_address)
+
+VALUES
+
+('1','Home', 1, 0, 'A', '123456789', 'Ontario', 'Toronto', 'North York', '123 Main St.'),
+
+('2','Office', 0, 1, 'B', '123456789', 'British Columbia', 'Vancouver', 'Richmond', '456 Market St.'),
+
+('3','Factory', 1, 1, 'C', '123456789', 'Quebec', 'Montreal', 'Laval', '789 Industrial Rd.');
+
+SELECT * FROM oms_company_address;
+
+SELECT * FROM oms_company_address LIMIT 3;
+
+UPDATE oms_company_address SET phone = '123-456789';
+
+DELETE FROM oms_company_address WHERE id = 1;
+
+```
+
+* MongoDB
+
+```
+
+use testDB
+
+db.createCollection("oms_company_address")
+
+db.oms_company_address.insertMany([
+
+{ address_name: "1", send_status: 1, receive_status: 0, name: "A", phone: "456-1234", province: "Ontario", city: "Toronto", region: "Downtown", detail_address: "123 Main St" },
+
+{ address_name: "2", send_status: 0, receive_status: 1, name: "B", phone: "456-5678", province: "Ontario", city: "Ottawa", region: "Downtown", detail_address: "456 Queen St" },
+
+{ address_name: "3", send_status: 1, receive_status: 1, name: "C", phone: "456-7890", province: "Quebec", city: "Montreal", region: "West Island", detail_address: "789 Lakeshore Blvd" }
+
+])
+
+db.oms_company_address.findOne({ address_name: "1" })
+
+db.oms_company_address.find()
+
+db.oms_company_address.update({ address_name: "2" }, { $set: { phone: "555-4321" }})
+
+db.oms_company_address.deleteOne({ address_name: "3" })
+
+```
