@@ -1,0 +1,6 @@
+db.createCollection(“oms_company_address”)
+db.oms_company_address.insert({“address_name”:”Ace Tower”, “send_status”:”1”,”receive_status”:”1”,”name”:”Richard”,”phone”:”123456779”,”city”:”Brooklyn”,”region”:”Brooklyn”,”detail_address”:”250 Gold St”})
+db.oms_company_address.find({name:’Richard’})
+db.oms_company_address.find()
+db.oms_company_address.update({_id:1},{$set:{name:”Peter”}})
+db.oms_company_address.remove({_id:”1”})
