@@ -239,6 +239,10 @@ Please check MavenProject folder
 
 Done
 
+## 16. Creadit Card Notification Design
+
+Please check MavenProject folder/hw3/MyCreditCardDsign
+
 
 
 
