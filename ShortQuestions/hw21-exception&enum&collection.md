@@ -115,21 +115,27 @@ CREATE TABLE oms_order_return_reason(
 ```
 ### MongoDB:
 1. Create test DB
+```
 use test
+```
 2. Create oms_company_address collection (method: createCollection() )
 ```
 db.createCollection("oms_company_address")
 ```
 3. Insert few random entries to oms_company_address collection (method: insert() )
+```
 db.oms_company_address.insertMany([
 {id: 00001, address_name: 'dizhi1', send_status: 0, receive_status: 0, name: 'chen', phone: '9704022499', province: 'Heilongjiang', city: 'Daqing', region: 'region1', datail_address: 'address1' },
 {id: 00002, address_name: 'dizhi2', send_status: 0, receive_status: 1, name: 'yuan', phone: '9705482499', province: 'Zhejiang', city: 'Hangzhou', region: 'region2', datail_address: 'address2'},
 {id: 00003, address_name: 'dizhi3', send_status: 1, receive_status: 0, name: 'zhao', phone: '9849895699', province: 'Jiangsu', city: 'Changzhou', region: 'region3', datail_address: 'address3'}
 ])
+```
 4. Read one entry from oms_company_address collection (method: find() )
+```
 db.oms_company_address.findOne(
 {"id": 00001}
 )
+```
 5. Read all entries from oms_company_address collection (method: find() )
 ```
 db.oms_company_address.find()
