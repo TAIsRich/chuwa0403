@@ -62,6 +62,8 @@ The default column name in the database for the `@Column` annotation is the same
 
 https://www.mongodb.com/compatibility/spring-boot
 
+check folder Coding/hw4/mongo-blog
+
 8.  In your redbook application, write the code for RUD APIs.
 
 https://github.com/TAIsRich/springboot-redbook.git
@@ -74,3 +76,5 @@ You need to type it line by line and try your best to understand it. DO NOT COPY
     @Column(columnDefinition = "varchar(255) default 'John Snow'")
     private String name;
 
+
+check folder Coding/hw4/springboot-redbook-02_post_RUD
