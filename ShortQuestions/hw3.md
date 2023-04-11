@@ -64,5 +64,63 @@ Creating software entities whose behavior can be changed without the need to edi
 A
 
 ## 14. 
-## 15. 
+## 15. SQL
+### 1.
+create database test;
+use test;
+create table oms_company_address(
+ id bigint,
+ address_name varchar(200), 
+ send_status int(1), 
+ receive_status int(1),
+ `name` varchar(64),
+ phone varchar(64),
+ province varchar(64),
+ city varchar(64),
+ region varchar(64),
+ detail_address varchar(200),
+ primary key (id)
+);
 
+### 2.
+insert into oms_company_address (id,address_name) values(0, "beach");
+insert into oms_company_address (id,address_name) values(1, "ktown");
+insert into oms_company_address (id,address_name) values(2, "china town");
+insert into oms_company_address (id,address_name) values(3, "george town");
+
+### 3.
+select * from oms_company_address;
+
+### 4. 
+select * from oms_company_address limit 3;
+
+### 5. 
+update oms_company_address set phone = "666-6666-8888";
+
+### 6. 
+delete from oms_company_address where id = 0;
+
+## 16. Mongodb
+### 1.
+show dbs
+use test
+
+### 2.
+db.createCollection("oms_company_address")
+
+### 3.
+db.oms_company_address.insertOne({"address_name":"Beach" "name":"Jakob"})
+db.oms_company_address.insertOne({"address_name":"Ktown","name":"Yusurf"})
+db.oms_company_address.insertOne({"address_name":"Apex","name":"Fluffy"})
+db.oms_company_address.insertOne({"address_name":"Ctown","name":"Jeremy"})
+
+### 4.
+db.oms_company_address.find({ name: "Jeremy" })
+
+### 5.
+db.oms_company_address.find()
+### 6.
+db.oms_company_address.updateOne({name:"Apex"}, "$set":{phone:"6789986753"})
+
+### 7. 
+db.oms_company_address.deleteMany({name:"Jeremy"})
