@@ -65,6 +65,7 @@ Creating software entities whose behavior can be changed without the need to edi
 A
 
 ## 14. 
+See [Pattern](./../MavenProject/src/main/java/pattern)
 ## 15. SQL
 ### 1.
 create database test;
