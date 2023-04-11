@@ -12,12 +12,12 @@ No, there is only 0 or 1. Because `finally` represents the final execution, if t
 If both `catch` and `finally` return, the receiving method will get the returned value from the `finally` block.
 # 5. What is Runtime/unchecked exception ? what is Compile/Checked Exception ?
 `Checked exceptions` Checked exceptions are checked at compile time. The calling method must handle the exception or declare it in its throws clause. 
+
 `Unchecked exceptions` Unchecked exceptions, are not checked at compile time. if a method throws an unchecked exception, the calling method is not required to handle it or declare it in its throws clause.
 # 6. What is the difference between throw and throws?
 `throw` is used in a method to throw an exception object, pass the exception object to the caller, and end the execution of the current method. `throws` is used to declare exception classes, and multiple exceptions can be declared.
 `throw` is used in method implementation, and `throws` is used in method declaration.
-# 7. Run the below three pieces codes, Noticed the printed exceptions. why do we put the Null/Runtime
-exception before Exception ?
+# 7. Run the below three pieces codes, Noticed the printed exceptions. why do we put the Null/Runtime exception before Exception ?
 In the following three pieces of code, they respectively throw 'ArithmeticException', 'NullPointerException', 'RuntimeException'. Putting specific exceptions in front allows us to better detect exception. If we put the general exception at the top, the program will throw the general exception directly and end the detection, so we may not know what went wrong.
 # 8. Why finally always be executed ?
 When you get an exception, whether it is thrown or returned, it has never been closed, so `finally` will always be executed.
