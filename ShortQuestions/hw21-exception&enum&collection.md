@@ -23,18 +23,27 @@ In the following three pieces of code, they respectively throw 'ArithmeticExcept
 When you get an exception, whether it is thrown or returned, it has never been closed, so `finally` will always be executed.
 # 9. What are the types of design patterns in Java ?
 There are three types of design patterns in Java:
+
 `Creational Patterns`: These patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The main aim of creational design patterns is to provide a way to create objects while hiding the creation logic, rather than instantiating objects directly using the new operator. Examples of creational patterns include Factory Pattern, Singleton Pattern, Abstract Factory Pattern, Builder Pattern, and Prototype Pattern.
+
 `Structural Patterns`: These patterns are concerned with object composition and provide a way to compose objects to obtain new functionalities. Structural patterns are used to form large object structures and relationships between them. Examples of structural patterns include Adapter Pattern, Bridge Pattern, Composite Pattern, Decorator Pattern, Facade Pattern, Flyweight Pattern, and Proxy Pattern.
+
 `Behavioral Patterns`: These patterns are concerned with communication between objects and how objects operate together to achieve a task. Behavioral patterns deal with the assignment of responsibilities between objects and how they communicate with each other. Examples of behavioral patterns include Chain of Responsibility Pattern, Command Pattern, Interpreter Pattern, Iterator Pattern, Mediator Pattern, Memento Pattern, Observer Pattern, State Pattern, Strategy Pattern, Template Method Pattern, and Visitor Pattern.
 # 10. What are the SOLID Principles ?
 The SOLID principles are:
+
 `Single Responsibility Principle (SRP)`: A class should have only one reason to change, meaning that it should have only one responsibility. This principle suggests that a class should only be responsible for doing one thing, and should not have multiple responsibilities.
+
 `Open-Closed Principle (OCP)`: Software entities should be open for extension, but closed for modification. This principle suggests that you should be able to add new functionality to a system without changing the existing code. The idea is to use abstraction and interfaces to create flexible systems.
+
 `Liskov Substitution Principle (LSP)`: Subtypes should be substitutable for their base types. This principle suggests that a subclass should be able to replace its parent class without causing errors in the program.
+
 `Interface Segregation Principle (ISP)`: Clients should not be forced to depend on interfaces they do not use. This principle suggests that you should create specific interfaces for specific clients, rather than creating a single interface that does too much.
+
 `Dependency Inversion Principle (DIP)`: High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details. Details should depend on abstractions. This principle suggests that you should use interfaces to decouple your code from specific implementations.
 # 11. How can you achieve thread-safe singleton patterns in Java ?
 There are two ways:
+
 `Eager load`: The instance is created before the method is called.
 `Lazy load`: The instance will be created after the method is called. The implementation scheme can be to put the instantiation into the no-argument constructor, so that the instance of the object will only be created when it is called.
 # 12.  What do you understand by the Open-Closed Principle (OCP) ?
@@ -103,7 +112,7 @@ CREATE TABLE oms_order_return_reason(
 	create_time	DATETIME,
 	PRIMARY KEY(id)	  
 );
-
+```
 ### MongoDB:
 1. Create test DB
 use test
@@ -137,32 +146,3 @@ db.oms_company_address.remove({'id': 00001})
 ```
 db.createCollection("oms_order_return_reason")
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
