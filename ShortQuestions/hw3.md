@@ -1,5 +1,6 @@
 ### Homework 3
 ## 1. Practice collection
+See [CollectionTest](./MavenProject/src/main/java/hw3)
 ## 2. What is the checked exception and unchecked exception in Java, could you give one example?
 Checked exception is the one that can be detected during compile time. If some code throws an exception, then the method must either handle the exception or throws the exception. IOException.
 
