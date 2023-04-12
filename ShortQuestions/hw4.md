@@ -45,3 +45,10 @@ private String operatingSystem;
 
 Both `application.properties` and `application.yml` can be used to set configuration properties for the Spring Boot application, but the choice between them is mostly a matter of personal preference and the complexity of the application. Some developers prefer `application.yml` for its readability and structure, while others prefer `application.properties` for its simplicity and familiarity.
 
+## 7. mongo-blog
+
+See Coding/mongo-blog
+
+## 8. redbook
+
+See Coding/redbook
