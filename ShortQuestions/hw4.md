@@ -75,7 +75,7 @@ server:
 ```
 
 ## 7. Create a Project,name it with mongo-blog,write a POST API for mongo-blog, change database to MongoDB;
-
+Please see `MavenProject/redbook-mongo`
 
 ## 8. In your redbook application, write the code for RUD APIs.
 Please see `MavenProject/redbook`
