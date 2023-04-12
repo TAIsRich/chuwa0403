@@ -1,31 +1,28 @@
-package com.chuwa.redbook.entity;
+package com.chuwa.redbookmongo.entity;
 
-import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name="posts", uniqueConstraints = {@UniqueConstraint(columnNames = {"title"})})
+@Document("posts")
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    @Column(name = "title", nullable = false)
+    private String id;
     private String title;
-    @Column(name = "description", nullable = false)
     private String description;
-    @Column(name = "content", nullable = false)
     private String content;
     @CreationTimestamp
     private LocalDateTime createDateTime;
     @UpdateTimestamp
     private LocalDateTime updateDateTime;
 
-    public Post() {}
+    public Post() {
+    }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 

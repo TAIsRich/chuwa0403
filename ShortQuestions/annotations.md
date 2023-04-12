@@ -274,6 +274,26 @@ public class SimpleBookRestController {
 }
 ```
 
+### `@ResponseStatus`
+@ResponseStatus marks a method or exception class with the status code and reason message that should be returned. The status code is applied to the HTTP response when the handler method is invoked, or whenever the specified exception is thrown.
+```java
+@ResponseStatus(value = HttpStatus.NOT_FOUND)
+public class MyResourceNotFoundException extends RuntimeException {
+    public MyResourceNotFoundException() {
+        super();
+    }
+    public MyResourceNotFoundException(String message, Throwable cause) {
+        super(message, cause);
+    }
+    public MyResourceNotFoundException(String message) {
+        super(message);
+    }
+    public MyResourceNotFoundException(Throwable cause) {
+        super(cause);
+    }
+}
+```
+
 # JPA
 
 ### `@Entity`
