@@ -42,5 +42,29 @@ Contains all the database storage logic. It is responsible for converting busine
 Contains all the databases such as MongoDB, MySQL. Can contain multiple databases. It is responsible for performing the CRUD operations.
 
 ## 5. Describe the flow in all of the layers if an API is called by Postman
-Presentation handles the HTTP requests and transfer it into objects and pass it to Business Layer.
+1. Postman client send HTTP request to controller
+2. The HTTP request is forwarded to the Controller. The controller maps the request. It processes the handles and calls the server logic.
+3. The business logic is performed in the Service layer. The spring boot performs all the logic over the data of the database which is mapped to the spring boot model class through Java Persistence Library(JPA).
+4. The JSP page is returned as Response from the controller.
+
+## 6. What is the application.properties? do you know application.yml?
+application.properties file is used to write the application-related property into that file. This file contains the different configuration which is required to run the application in a different environment, and each environment will have a different property defined by it. Inside the application properties file, we define every type of property like changing the port, database connectivity.
+
+The application.properties file is not that readable. So most of the time developers choose application.yml file over application.properties file. YAML is a superset of JSON, and as such is a very convenient format for specifying hierarchical configuration data. YAML is more readable and it is good for the developers to read/write configuration files.
+
+An example of YAML files:
+```
+spring:
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+    username: springuser
+    password: ThePassword
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+```
+
+## 7.
+
 
