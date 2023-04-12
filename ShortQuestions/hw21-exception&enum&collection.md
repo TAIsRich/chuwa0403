@@ -1,0 +1,154 @@
+# 1. Practice collection
+See chuwa0403/coding2.
+# 2. What is the checked exception and unchecked exception in Java, could you give one example?
+Checked exceptions are checked at compile time. The calling method must handle the exception or declare it in its throws clause. 
+Unchecked exceptions, are not checked at compile time. if a method throws an unchecked exception, the calling method is not required to handle it or declare it in its throws clause.
+Some exception examples:
+- `checked exceptions`  IOException, SQLException and ClassNotFoundException.
+- `unchecked exceptions` NullPointerException, IndexOutOfBoundsException and IllegalArgumentException.
+# 3. Can there be multiple finally blocks?
+No, there is only 0 or 1. Because `finally` represents the final execution, if there are multiple finally, the program cannot identify which exception is thrown.
+# 4. When both catch and finally return values, what will be the final result ?
+If both `catch` and `finally` return, the receiving method will get the returned value from the `finally` block.
+# 5. What is Runtime/unchecked exception ? what is Compile/Checked Exception ?
+`Checked exceptions` Checked exceptions are checked at compile time. The calling method must handle the exception or declare it in its throws clause. 
+
+`Unchecked exceptions` Unchecked exceptions, are not checked at compile time. if a method throws an unchecked exception, the calling method is not required to handle it or declare it in its throws clause.
+# 6. What is the difference between throw and throws?
+`throw` is used in a method to throw an exception object, pass the exception object to the caller, and end the execution of the current method. `throws` is used to declare exception classes, and multiple exceptions can be declared.
+`throw` is used in method implementation, and `throws` is used in method declaration.
+# 7. Run the below three pieces codes, Noticed the printed exceptions. why do we put the Null/Runtime exception before Exception ?
+In the following three pieces of code, they respectively throw 'ArithmeticException', 'NullPointerException', 'RuntimeException'. Putting specific exceptions in front allows us to better detect exception. If we put the general exception at the top, the program will throw the general exception directly and end the detection, so we may not know what went wrong.
+# 8. Why finally always be executed ?
+When you get an exception, whether it is thrown or returned, it has never been closed, so `finally` will always be executed.
+# 9. What are the types of design patterns in Java ?
+There are three types of design patterns in Java:
+
+`Creational Patterns`: These patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The main aim of creational design patterns is to provide a way to create objects while hiding the creation logic, rather than instantiating objects directly using the new operator. Examples of creational patterns include Factory Pattern, Singleton Pattern, Abstract Factory Pattern, Builder Pattern, and Prototype Pattern.
+
+`Structural Patterns`: These patterns are concerned with object composition and provide a way to compose objects to obtain new functionalities. Structural patterns are used to form large object structures and relationships between them. Examples of structural patterns include Adapter Pattern, Bridge Pattern, Composite Pattern, Decorator Pattern, Facade Pattern, Flyweight Pattern, and Proxy Pattern.
+
+`Behavioral Patterns`: These patterns are concerned with communication between objects and how objects operate together to achieve a task. Behavioral patterns deal with the assignment of responsibilities between objects and how they communicate with each other. Examples of behavioral patterns include Chain of Responsibility Pattern, Command Pattern, Interpreter Pattern, Iterator Pattern, Mediator Pattern, Memento Pattern, Observer Pattern, State Pattern, Strategy Pattern, Template Method Pattern, and Visitor Pattern.
+# 10. What are the SOLID Principles ?
+The SOLID principles are:
+
+`Single Responsibility Principle (SRP)`: A class should have only one reason to change, meaning that it should have only one responsibility. This principle suggests that a class should only be responsible for doing one thing, and should not have multiple responsibilities.
+
+`Open-Closed Principle (OCP)`: Software entities should be open for extension, but closed for modification. This principle suggests that you should be able to add new functionality to a system without changing the existing code. The idea is to use abstraction and interfaces to create flexible systems.
+
+`Liskov Substitution Principle (LSP)`: Subtypes should be substitutable for their base types. This principle suggests that a subclass should be able to replace its parent class without causing errors in the program.
+
+`Interface Segregation Principle (ISP)`: Clients should not be forced to depend on interfaces they do not use. This principle suggests that you should create specific interfaces for specific clients, rather than creating a single interface that does too much.
+
+`Dependency Inversion Principle (DIP)`: High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details. Details should depend on abstractions. This principle suggests that you should use interfaces to decouple your code from specific implementations.
+# 11. How can you achieve thread-safe singleton patterns in Java ?
+There are two ways:
+
+`Eager load`: The instance is created before the method is called.
+`Lazy load`: The instance will be created after the method is called. The implementation scheme can be to put the instantiation into the no-argument constructor, so that the instance of the object will only be created when it is called.
+# 12.  What do you understand by the Open-Closed Principle (OCP) ?
+Objects in a program (classes, modules, functions, etc.) should be open for extension, but closed for modification. When the requirements change, we follow this principle to minimize the changes to the source code. This can save a lot of follow-up review and testing links, and improve the efficiency of software development.
+# 13. (SOLID-L)Liskov's substitution principle states that if class B is a subtype of class A, then object of type A may be substituted with any object of type B. What does this actually mean? (from OA ) choose your answer.
+```
+1. It mean that if the object of type A can do something, the object of type B could also be able to perform the same thing.
+2. It means that all the objects of type A could execute all the methods present in its subtype B
+3. It means if a method is present in class A, it should also be present in class B so that the object of type B could substitute object of type A.
+4. It means that for the class B to inherit class A, objects of type B and objects of type A must be same
+```
+My answer is 1. According to the Liskov's principle. The subclass can implement the abstract method of superclass. It means the object in A can do something, so B can do, either. But subclass cannot override the non-abstract method of superclass.
+# 14. Watch the design pattern video, and type the code, submit it to MavenProject folder.
+See `MavenProject` folder.
+# 15. CRUD MySQL and MongoDB (separated PDF)
+### MySQL:
+1. Create oms_company_address table
+```
+CREATE TABLE oms_company_address(
+	id	BIGINT;
+	address_name	VARCHAR(200),
+	send_status	INT,
+	receive_status	INT,
+	name	VARCHAR(64),
+	phone	VARCHAR(64),
+	province	VARCHAR(64),
+	city	VARCHAR(64),
+	region	VARCHAR(64),
+	detail_address	VARCHAR(200),
+	PRIMARY KEY(id)	  
+);
+```
+2. Insert some random data to oms_company_address table
+```
+INSERT INTO oms_company_address VALUES
+(00001, 'dizhi1', 0, 0, 'chen', '3035269886', 'heilongjiang', 'daqing', 'ranghulu', 'huijing-e6-203'),
+(00002, 'dizhi2', 1, 0, 'Tom', '9705128899', 'Colorado', 'Fort Collins', 'Somerville', '1826 Street'),
+(00003, 'dizhi3', 1, 1, 'Lisa', '8469855464', 'Zhejiang', 'Hangzhou', 'Xiaoshan', 'Dizhi-502-xiaxiede');
+```
+3. Write a SQL query to fetch all data from oms_company_address `table
+```
+SELECT * FROM oms_company_address;
+```
+4. Write a SQL query to fetch top 3 records from oms_company_address table
+```
+SELECT * 
+FROM oms_company_address
+LIMIT 3
+```
+5. Update oms_company_address table to set all phone to 666-6666-8888
+```
+UPDATE oms_company_address SET phone = '666-6666-8888';
+```
+6. Delete one entry from oms_company_address table
+```
+DELETE FROM oms_company_address
+WHERE id = '00001';
+```
+7. (Optional) You can also try to create other tables that listed above
+```
+CREATE TABLE oms_order_return_reason(
+	id	BITINT,
+	name	VARCHAR(100),
+	sort	INT,
+	status	INT,
+	create_time	DATETIME,
+	PRIMARY KEY(id)	  
+);
+```
+### MongoDB:
+1. Create test DB
+```
+use test
+```
+2. Create oms_company_address collection (method: createCollection() )
+```
+db.createCollection("oms_company_address")
+```
+3. Insert few random entries to oms_company_address collection (method: insert() )
+```
+db.oms_company_address.insertMany([
+{id: 00001, address_name: 'dizhi1', send_status: 0, receive_status: 0, name: 'chen', phone: '9704022499', province: 'Heilongjiang', city: 'Daqing', region: 'region1', datail_address: 'address1' },
+{id: 00002, address_name: 'dizhi2', send_status: 0, receive_status: 1, name: 'yuan', phone: '9705482499', province: 'Zhejiang', city: 'Hangzhou', region: 'region2', datail_address: 'address2'},
+{id: 00003, address_name: 'dizhi3', send_status: 1, receive_status: 0, name: 'zhao', phone: '9849895699', province: 'Jiangsu', city: 'Changzhou', region: 'region3', datail_address: 'address3'}
+])
+```
+4. Read one entry from oms_company_address collection (method: find() )
+```
+db.oms_company_address.findOne(
+{"id": 00001}
+)
+```
+5. Read all entries from oms_company_address collection (method: find() )
+```
+db.oms_company_address.find()
+```
+6. Update one entry from oms_company_address collection (method: update() or save() )
+```
+db.oms_company_address,update({'id': 00001}, {$set: {'address_name': 'dizhi5'}})
+```
+7. Remove one entry from oms_company_address collection (method: remove() )
+```
+db.oms_company_address.remove({'id': 00001})
+```
+8. (Optional) You can also try to create other tables that listed above
+```
+db.createCollection("oms_order_return_reason")
+```
