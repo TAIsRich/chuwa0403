@@ -126,15 +126,49 @@ REST End points are annotated with these annotation, to indicate specific HTTP m
 ## Spring Boot Data JPA related annotations:
 ### @Entity
 @Entity — class which need to be mapped with underlying DB Table
+
+### @Id
+@Id indicates the entity id.
+
+### @GenerateValue
+@GenerateValue indicate that the ID should be generated automatically.
+```
+@Entity
+public class Customer {
+
+  @Id
+  @GeneratedValue(strategy=GenerationType.AUTO)
+  private Long id;
+  private String firstName;
+  private String lastName;
+
+}
+```
 ### @Table
-@Table — Used along with @Entity annotated, to specify custom name for DB Table(by default DB Table has same name as Entity Class name)
+@Table — Used along with @Entity annotated, to specify custom name for DB Table(by default DB Table has same name as Entity Class name). JPA annotation is used for adding the table name in the particular MySQL database. 
+
+```
+@Entity
+
+@Table(name=”Customer”)
+```
+
 ### @Column
-@Column — Used with Data members of Entity class, to indicate a Column of DB Table.
+@Column — Used with Data members of Entity class, to indicate a Column of DB Table. @Column annotation is used for Adding the column the name in the table of a particular MySQL database.
+```
+@Column(name = "Student_name")
+      private String name;
+```
 
 ### Validation related
-Data field Validation related — @NotNull, @Max, @Min, @Positive, @Negative, etc…
+Data field Validation related — @NotNull, @Max, @Min, @Positive, @Negative, etc
+
 ### @Query
 @Query — to specify Custom Query String(native or JPQL query), along with method declaration in Repository interface.
+```
+@Query("SELECT u FROM User u WHERE u.status = 1")
+Collection<User> findAllActiveUsers();
+```
 
 ### Entity class relationships
 Entity class relationships — @OnetoOne, @OnetoMany, @ManytoOne, @ManytoMany
