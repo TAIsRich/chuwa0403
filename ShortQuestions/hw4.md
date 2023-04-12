@@ -1,4 +1,4 @@
-## 1. Whatistheapplication.properties?doyouknowapplication.yml? create a file to list all of the annotaitons you learned and known,and explain the usage and how do you understand it. you need to update it when you learn a new annotation. Please organize those annotations well, like annotations used by entity, annotations used by controller
+## 1. create a file to list all of the annotaitons you learned and known,and explain the usage and how do you understand it. you need to update it when you learn a new annotation. Please organize those annotations well, like annotations used by entity, annotations used by controller
 
 See annotations.md
 
@@ -55,7 +55,14 @@ This layer consists of the actual database where the data is stored. The Persist
 
 ## 6. What is the application.properties? do you know application.yml? 
 
-application.properties and application.yml are configuration files used in Spring Boot applications. application.properties is a file that contains key-value pairs of configuration properties that Spring Boot uses to configure the application. The properties can be used to configure various aspects of the application, such as database connections, logging, server port, etc. The properties are typically defined in a file named application.properties in the root of the classpath. application.yml is an alternative to application.properties. It is a YAML file that is structured differently than the application.properties file. It uses a hierarchical structure that allows for more complex configurations. It is often preferred over application.properties for its readability and maintainability. Both application.properties and application.yml are used to externalize configuration, which means that the configuration properties can be easily modified without changing the application code. This makes it easier to configure the application for different environments and reduces the risk of hard-coding configuration values in the application code.
+application.properties and application.yml are configuration files used in Spring Boot applications. 
+
+1. application.properties is a file that contains key-value pairs of configuration properties that Spring Boot uses to configure the application. The properties can be used to configure various aspects of the application, such as database connections, logging, server port, etc. The properties are typically defined in a file named application.properties in the root of the classpath. 
+2. application.yml is an alternative to application.properties. It is a YAML file that is structured differently than the application.properties file. It uses a hierarchical structure that allows for more complex configurations. It is often preferred over application.properties for its readability and maintainability. Both application.properties and application.yml are used to externalize configuration, which means that the configuration properties can be easily modified without changing the application code. This makes it easier to configure the application for different environments and reduces the risk of hard-coding configuration values in the application code.
 
 ## 7. Create a Project, name it with mongo-blog, write a POST API for mongo-blog, change database to MongoDB
+See Coding/mongo-blog
 
+## 8. In your redbook application, write the code for RUD APIs.
+
+See Coding/redbook
