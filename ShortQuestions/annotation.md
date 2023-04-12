@@ -27,7 +27,7 @@ public class User {
 
 }
 ```
-#Annotations used by Controller
+# Annotations used by Controller
 ### @Controller
 Indicates that a class is a Spring MVC controller.
 ### @RestController
