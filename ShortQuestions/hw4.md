@@ -60,25 +60,18 @@ The default column names in the database table for firstName and operatingSystem
 
 **application.properties** is a configuration file used in Spring Boot applications to configure various properties such as server port, database connection details, logging levels, etc. It uses key-value pairs to specify the configuration settings.
 
-**application.yml** is an alternative to application.properties which uses YAML format instead of properties format. YAML is a human-readable format that uses whitespace indentation to delimit different levels of nesting. It can be easier to read and write than the properties format, especially for complex configurations.
-
-## 6. What is the application.properties? do you know application.yml
-
-*application.properties* is a text file that contains key-value pairs of configuration properties that Spring uses to configure the application. The file is usually located in the src/main/resources directory of the application. Some of the common configuration properties that can be set in the application.properties file include server port number, database connection settings, logging configuration, and security settings.
 
 ```java
 server.port=8080
 ```
 
-*application.yml* is another type of configuration file used in Spring applications. It is a YAML file that contains configuration properties in a structured format. YAML is a human-readable data serialization language that is often preferred over other formats such as XML or JSON because it is more concise and easier to read. application.yml can be used to define the same configuration properties as application.properties, but in a more readable and concise format.
+**application.yml** is an alternative to application.properties which uses YAML format instead of properties format. YAML is a human-readable format that uses whitespace indentation to delimit different levels of nesting. It can be easier to read and write than the properties format, especially for complex configurations.
 
 ```java
 server:
   port: 8080
 ```
-
-## 7. Create a Project, name it with mongo-blog, write a POST API for mongo-blog, change database to
-MongoDB;
+## 7. Create a Project, name it with mongo-blog, write a POST API for mongo-blog, change database to MongoDB;
 
 Please check MavenProject/hw4/mango-blog
 
