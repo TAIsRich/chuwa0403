@@ -120,4 +120,21 @@ public ResponseEntity<String> greeting(@RequestHeader(HttpHeaders.ACCEPT_LANGUAG
 }
 ```
 
-### 
+### @RequestMapping, @GetMapping, @PostMapping, @PutMapping, @DeleteMapping
+REST End points are annotated with these annotation, to indicate specific HTTP method. 
+
+## Spring Boot Data JPA related annotations:
+### @Entity
+@Entity — class which need to be mapped with underlying DB Table
+### @Table
+@Table — Used along with @Entity annotated, to specify custom name for DB Table(by default DB Table has same name as Entity Class name)
+### @Column
+@Column — Used with Data members of Entity class, to indicate a Column of DB Table.
+
+### Validation related
+Data field Validation related — @NotNull, @Max, @Min, @Positive, @Negative, etc…
+### @Query
+@Query — to specify Custom Query String(native or JPQL query), along with method declaration in Repository interface.
+
+### Entity class relationships
+Entity class relationships — @OnetoOne, @OnetoMany, @ManytoOne, @ManytoMany
