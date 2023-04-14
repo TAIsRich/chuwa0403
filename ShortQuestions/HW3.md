@@ -102,3 +102,113 @@ The correct answer is:
 1. It means that if the object of type A can do something, the object of type B could also be able to perform the same thing.
 
 Liskov's Substitution Principle (LSP) emphasizes that a subclass should be able to replace its parent class without causing any errors or issues. This means that any object of type A should be able to be replaced with an object of type B, without affecting the behavior of the program. In other words, if a program can work correctly with an object of type A, it should also be able to work correctly with an object of type B, since B is a subtype of A.
+
+
+
+
+
+
+
+MYSQL And MongoDB
+
+`MYSQL`
+
+Create `oms_company_address` table
+
+```sql
+CREATE TABLE oms_company_address(
+    id bigint AUTO_INCREMENT PRIMARY KEY,
+    address_name varchar(200),
+    send_status int(1),
+    receive_status int(1),
+    name varchar(64),
+    phone varchar(64),
+    province varchar(64),
+    city varchar(64),
+    region varchar(64),
+    detail_address varchar(200)
+);
+```
+Insert some random data to oms_company_address table
+
+```sql
+INSERT INTO oms_company_address (address_name, send_status, receive_status, name, phone, province, city, region, detail_address) VALUES ('Homepalce', 1,10, 'Chuwa', '231231241', 'dewd', 'dsf', 'nvidia3090', '1234 Water St ');
+```
+
+3.fetch all data from oms_company_address table
+
+```sql
+SELECT * FROM oms_company_address;
+```
+
+Write a SQL query to fetch top 3 records from oms_company_address table
+
+```sql
+SELECT * FROM oms_company_address LIMIT 3;
+```
+
+Update oms_company_address table to set all phone to 666-6666-8888
+
+```sql
+UPDATE oms_company_address set phone = '666-6666-8888';
+```
+
+Delete one entry from oms_company_address table
+
+```sql
+DELETE FROM oms_company_address WHERE id = <id>;
+```
+
+ `MongoDB`
+
+Create test DB
+
+```json
+use chuwa0403
+```
+
+Create oms_company_address collection
+
+```json
+db.createCollection("oms_company_address")
+```
+
+Insert few random entries to oms_company_address collection
+
+```json
+db.oms_company_address.insertOne({
+  address_name: "Homeland", 
+  send_status: 1, 
+  receive_status: 1, 
+  name: "chuwa", 
+  phone:  "12333445", 
+  province: "CA", 
+  city: "LA", 
+  region: "Nvidia", 
+  detail_address: "1234 water St"
+})
+```
+
+Read one entry from oms_company_address collection
+
+```json
+db.oms_company_address.findOne({name: "chuwa"})
+```
+
+Read all entries from oms_company_address collection
+
+```json
+db.oms_company_address.find()
+```
+
+Update one entry from oms_company_address collection (method:update() or save())
+
+```json
+db.oms_company_address.update({region: "Nvidia"}, {$set: {region: "I don't know"}})
+```
+
+Remove one entry from oms_company_address collection
+
+```json
+db.oms_company_address.deleteOne({name: "chuwa"})
+```
