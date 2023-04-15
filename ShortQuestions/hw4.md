@@ -1,5 +1,5 @@
-## 1. create a file to list all of the annotations you learned and known, and explain the usage and how do you 
-understand it. you need to update it when you learn a new annotation. Please organize those annotations well, like annotations used by entity, annotations used by controller.
+## 1. create a file to list all of the annotations you learned and known, and explain the usage and how do you understand it. you need to update it when you learn a new annotation. Please organize those annotations well, like annotations used by entity, annotations used by controller.
+
 Please check annotations.md.
 
 ## 2. Explain how the below annotations specify the table in database?
