@@ -7,16 +7,17 @@ generic class that contains declares a generic type. `public class<T> {}`
 
 ### Generic method
 Can pass a generic type to a method `<T extends ?> void func()`
-See []().
+
+See [generic class](./../Coding/Hw5/genericclass).
 
 ## 2.
-See []().
+See [java8](./../Coding/Hw5/java8).
 
 ## 3.
-See []().
+See [stream exercise](./../Coding/Hw5/streamexercise).
 
 ## 4. 
-See []().
+See [optional](./../Coding/Hw5/java8).
 
 ## 5. Write the Singleton design pattern include eager load and lazy load. 
 ### Eager load
