@@ -19,7 +19,12 @@ public class ShoppingCartUtil2 {
      * 如果客户或购物车信息缺失，或购物车为空，则返回一个空的Optional对象。
      */
     public static Optional<String> getFirstItemName(Customer customer) {
-        return null;
+        return Optional.ofNullable(customer)
+                .map(Customer::getShoppingCart)
+                .map(ShoppingCart::getItems)
+                .filter(items -> !items.isEmpty())
+                .map(items -> items.get(0))
+                .map(Item::getName);
     }
 
     /**
@@ -28,14 +33,24 @@ public class ShoppingCartUtil2 {
      * @return
      */
     public static double getTotalPrice(Optional<Customer> customer) {
-        return 0.0;
+        return customer
+                .map(Customer::getShoppingCart)
+                .map(ShoppingCart::getItems)
+                .map(items -> items.stream().mapToDouble(Item::getPrice).sum())
+                .orElse(0.0);
     }
 
     /**
      * 假设我们想要获取客户购物车中的第一个商品名称，如果不存在，则从一个备选商品列表中随机选择一个商品名称作为默认值。
      */
     public static String getFirstItemNameWithAlternative(Customer customer) {
-        return null;
+        return Optional.ofNullable(customer)
+                .map(Customer::getShoppingCart)
+                .map(ShoppingCart::getItems)
+                .filter(items -> !items.isEmpty())
+                .map(items -> items.get(0))
+                .map(Item::getName)
+                .orElseGet(ShoppingCartUtil::getRandomAlternativeItem);
     }
 
 
@@ -46,7 +61,13 @@ public class ShoppingCartUtil2 {
      * 这个方法将在客户或购物车信息缺失，或购物车为空的情况下被调用。
      */
     public static String getFirstItemNameOrThrowException(Customer customer) throws EmptyCartException {
-        return null;
+        return Optional.ofNullable(customer)
+                .map(Customer::getShoppingCart)
+                .map(ShoppingCart::getItems)
+                .filter(items -> !items.isEmpty())
+                .map(items -> items.get(0))
+                .map(Item::getName)
+                .orElseThrow(() -> new EmptyCartException("empty cart"));
     }
 
     /**
@@ -59,6 +80,16 @@ public class ShoppingCartUtil2 {
      */
     public static void checkItemsInCart(Customer customer) {
         // write you code
+        Optional<List<Item>> optional = Optional.ofNullable(customer)
+                .map(Customer::getShoppingCart)
+                .map(ShoppingCart::getItems)
+                .filter(items -> !items.isEmpty());
+
+        if (optional.isPresent()) {
+            System.out.println("has item");
+        } else {
+            System.out.println("no item");
+        }
     }
 
     /**
@@ -72,6 +103,11 @@ public class ShoppingCartUtil2 {
      */
     public static void printItemsInCart(Customer customer) {
         // write your code
+        Optional.ofNullable(customer)
+                .map(Customer::getShoppingCart)
+                .map(ShoppingCart::getItems)
+                .filter(items -> !items.isEmpty())
+                .ifPresent(items -> items.forEach(item -> System.out.println(item.getName())));
     }
 
     /**

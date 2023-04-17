@@ -1,15 +1,21 @@
 # HW5
 
 ## 1. What is generic in Java? and type the generic code by yourself.
+Generics means parameterized types. Using Generics, it is possible to create classes that work with different data types
+
+* Generic Method: Generic Java method takes a parameter and returns some value after performing a task.
+* Generic Classes: A generic class is implemented exactly like a non-generic class. The only difference is that it contains a type parameter section.
+
+Please see: `MavenProject/tutorial/src/main/java/com/chuwa/t01_generics`
 
 ## 2. Read those codes and type it one by one by yourself. the push the code to your branch.
-
 Please see `MavenProject/tutorial/src/main/java/com/chuwa/t06_java8`
 
 ## 3. practice stream API at least 3 times
 Please see  `MavenProject/stream-api-exercises-main/src/test/java/space/gavinklfong/demo/streamapi`
 
 ## 4. Practice Optional methods at least 2 times
+Please see `MavenProject/tutorial/src/main/java/com/chuwa/optional_exercise`
 
 ## 5. Write the Singleton design pattern include eager load and lazy load
 ### Lazy
