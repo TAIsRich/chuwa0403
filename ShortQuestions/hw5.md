@@ -1,14 +1,22 @@
 ## 1.  What is generic in Java?  and type the generic code by yourself.
 a. https://github.com/TAIsRich/chuwa-eij-tutorial/tree/main/02-java-core/src/main/java/com/chuwa/tutorial/t01_basic/generic
 
+Check folder Coding/hw5_Generic
+
 ## 2.  Read those codes and type it one by one by yourself. the push the code to your branch.
 https://github.com/TAIsRich/chuwa-eij-tutorial/tree/main/02-java-core/src/main/java/com/chuwa/tutorial/t06_java8
+
+Check folder Coding/hw5_java8
 
 ## 3.  practice stream API at least 3 times
 a. https://blog.devgenius.io/15-practical-exercises-help-you-master-java-stream-api-3f9c86b1cf82
 
+Check folder Coding/hw5_stream
+
 ## 4.  Practice Optional methods at least 2 times
 a. https://github.com/TAIsRich/chuwa-eij-tutorial/blob/main/02-java-core/src/main/java/com/chuwa/tutorial/t06_java8/exercise/ShoppingCartUtil.java
+
+Check folder Coding/hw5_optional
 
 ## 5.  Write the Singleton design pattern include eager load and lazy load. 
 
