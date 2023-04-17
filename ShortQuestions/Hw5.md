@@ -1,5 +1,12 @@
 # Homework 5
 ## 1. What is generic in Java? 
+Generic means an parameteried types which can be any class. Using generic, it is possible to create classes that can work on differet classes.
+
+### Generic class
+generic class that contains declares a generic type. `public class<T> {}`
+
+### Generic method
+Can pass a generic type to a method `<T extends ?> void func()`
 See []().
 
 ## 2.
