@@ -7,11 +7,11 @@
 Please see `MavenProject/tutorial/src/main/java/com/chuwa/t06_java8`
 
 ## 3. practice stream API at least 3 times
+Please see  `MavenProject/stream-api-exercises-main/src/test/java/space/gavinklfong/demo/streamapi`
 
 ## 4. Practice Optional methods at least 2 times
 
 ## 5. Write the Singleton design pattern include eager load and lazy load
-
 ### Lazy
 
 ```java
