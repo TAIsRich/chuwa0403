@@ -308,3 +308,16 @@ public class UserServiceImpl implements UserService {
     //...
 }
 ```
+
+3. `@Column`
+
+   An annotation used to specify the properties of the corresponding columns in the database table.
+
+```java
+@Column(columnDefinition = "varchar(255) default 'John Snow'")
+private String name;
+
+@Column(name="STUDENT_NAME", length=50, nullable=false, unique=false)
+private String studentName; 
+```
+
