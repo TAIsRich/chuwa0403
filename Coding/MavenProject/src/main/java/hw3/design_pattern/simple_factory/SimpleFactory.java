@@ -1,3 +1,5 @@
+package hw3.design_pattern.simple_factory;
+
 public class SimpleFactory {
     
 }
@@ -46,10 +48,10 @@ class AmericanCoffee extends Coffee {
     }
 }
 
-class CoffeeFactory {
+class SimpleCoffeeFactory {
 
     // change this method to static -> avoid creating object
-    public static Coffee createCoffee(String type) {
+     static Coffee createCoffee(String type) {
         //声明Coffee类型的变量，根据不同类型创建不同的coffee子类对象
         Coffee coffee = null;
         if("american".equals(type)) {

@@ -1,4 +1,4 @@
-/*
+package hw3.design_pattern;/*
  * involves only one class which is responsible to make sure there is no more than one instance; 
  * it does it by instantiating itself and in the same time it provides a global point of access to that instance. 
  * The singleton class ensures the same instance can be used from everywhere, preventing direct invocation of the singleton constructor.
@@ -9,7 +9,7 @@
  * use: design of logger, configuration
  */
 
-public class SingletonL{
+public class Singleton{
     public static void main(String[] args) {
         SingletonEager eager1 = SingletonEager.getInstance();
         SingletonEager eager2 = SingletonEager.getInstance();
