@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import java.util.Optional;
 
+import static org.junit.Assert.assertEquals;
+
 public class OptionalMainMethodTest {
     @Test
     public void testOptionalWithOutHandleException(){
@@ -66,4 +68,5 @@ public class OptionalMainMethodTest {
         System.out.println(employee1);
 
     }
+
 }
