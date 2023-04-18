@@ -1,3 +1,7 @@
+# 1. What is generic in Java? and type the generic code by yourself.
+# 2. Read those codes and type it one by one by yourself. the push the code to your branch.
+# 3. practice stream API at least 3 times.
+# 4. Practice Optional methods at least 2 times.
 # 5. Write the Singleton design pattern include eager load and lazy load.
 Here is an example of `eager load`
 ```
@@ -98,7 +102,6 @@ A method reference is used to directly access an existing method or constructor 
 It's a method reference. It refers to the static valueOf method in the String class. This method is used to convert different types of values, including primitive types and objects, into a string representation.
 # 20. What are Intermediate and Terminal operations?
 `Intermediate Operations` Transform a stream into another stream, and can be chained together to form a pipeline of operations.
-
 `Terminal operations` It doesn't produce any final result or side effect, but instead create a new stream that can be further operated upon. 
 # 21. What are the most commonly used Intermediate operations?
 Some examples of intermediate operations are `filter`, `map`, `flatMap`, `distinct`, and `sorted`.
