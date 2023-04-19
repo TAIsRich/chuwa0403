@@ -1,4 +1,4 @@
-package hw3.design_pattern;
+package hw3.design_pattern.factory;
 
 public class Factory {
     
@@ -53,23 +53,29 @@ class AmericanCoffee extends Coffee {
 }
 
 interface CoffeeFactory {
-    Coffee creatCoffee();
+
+    Coffee createCoffee();
 }
 
 class AmericanCoffeeFactory implements CoffeeFactory {
-    Coffee createCoffee() {
+
+    @Override
+    public Coffee createCoffee() {
         return new AmericanCoffee();
     }
+
 }
 
 class LatteCoffeeFactory implements CoffeeFactory {
-    Coffee createCoffee() {
+    @Override
+    public Coffee createCoffee() {
         return new LatteCoffee();
     }
+
 }
 
 
-class CoffeeStore {
+ class CoffeeStore {
     private CoffeeFactory factory;
 
     public void setFactory(CoffeeFactory factory) {
