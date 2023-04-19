@@ -1,7 +1,7 @@
 package lambda;
 
-import employee.Employee;
-import employee.EmployeeData;
+import t00_common.Employee;
+import t00_common.EmployeeData;
 import org.junit.Test;
 
 import java.util.List;

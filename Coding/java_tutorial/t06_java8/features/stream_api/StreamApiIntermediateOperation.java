@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import employee.Employee;
-import employee.EmployeeData;
+import t00_common.Employee;
+import t00_common.EmployeeData;
 public class StreamApiIntermediateOperation {
     /**
      * 创建Stream的中间操作

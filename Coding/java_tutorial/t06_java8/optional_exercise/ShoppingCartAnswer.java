@@ -1,4 +1,4 @@
-package optional_exercise;
+package t06_java8.optional_exercise;
 
 import java.util.Arrays;
 import java.util.List;
