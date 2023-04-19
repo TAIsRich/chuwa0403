@@ -1,6 +1,6 @@
 package stream_api;
 
-import employee.Employee;
+import t00_common.Employee;
 import org.junit.Test;
 
 import java.util.Arrays;
