@@ -75,12 +75,15 @@ A thread pool is a collection of pre-initialized threads that are ready to perfo
 - `ThreadPoolExecutor`
 - `ScheduledThreadPoolExecutor`
 - `ForkJoinPool`
+
 Here is an example to create a `ThreadPoolExecutor` with 10 threads.
 ```
 ExecutorService executor = Executors.newFixedThreadPool(10);
 ```
 # 14. Difference between shutdown() and shutdownNow() methods of executor
-`shutdown()` method initiates a graceful shutdown of the executor service, allowing existing tasks to complete before shutting down the executor service. And the `shutdownNow()` method initiates an immediate shutdown, interrupting any running tasks and preventing any new tasks from being submitted.
+`shutdown()` method initiates a graceful shutdown of the executor service, allowing existing tasks to complete before shutting down the executor service. 
+
+`shutdownNow()` method initiates an immediate shutdown, interrupting any running tasks and preventing any new tasks from being submitted.
 # 15. What is Atomic classes? when do we use it?
 - `AtomicInteger`: provides atomic operations on an int variable.
 -`AtomicLong`: provides atomic operations on a long variable
@@ -88,11 +91,18 @@ ExecutorService executor = Executors.newFixedThreadPool(10);
 -`AtomicReference`: provides atomic operations on a reference variable.
 We use Atomic classes when we need to perform atomic operations on a single variable in a multi-threaded environment.
 # 16. What is the cocurrent collections?
-Cocurrent collections are thread-safe collections. Here are some examples:
+Cocurrent collections are thread-safe collections. 
+
+Here are some examples:
+
 `CopyOnWriteArrayList`
+
 `ConcurrentHashMap`
+
 `CopyOnWriteArraySet`
+
 `ArrayBlockingQueue`
+
 `LinkedBlockingDeque`
 # 17. what kind of locks you know?
 - `ReentrantLock` It allows a thread to acquire and release a lock multiple times, and also provides support for interruptible lock acquisition, fairness, and timeouts.
@@ -106,6 +116,3 @@ Object locks are used to synchronize access to instance methods and instance var
 - `completableFuture` is an extension of `future` that provides more advanced features for handling asynchronous computations. It provides a wide range of methods for composing, combining, and manipulating asynchronous computations. It also provides a way to explicitly complete a computation with a result or an exception, and to combine the results of multiple computations.
 # 20. what is ThreadLocal?
 ThreadLocal is a class in Java that provides thread-local variables. A thread-local variable is a variable that is local to a specific thread and is not shared between threads. Each thread that accesses the variable sees its own, independently initialized copy of the variable.
-21. Type the code by your self and try to understand it. (package
-com.chuwa.tutorial.t08_multithreading)
-22. Read those interview questions and pick some important questions to this homework.
