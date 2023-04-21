@@ -105,3 +105,17 @@ ThreadLocal instances are typically private static fields in classes that wish t
 It guarantees keeping the context in the stream work without having to pass parameters.
 
 ## 21. 
+
+## 22.
+What's the difference between thread and process?
+
+Thread: It simply refers to the smallest units of the particular process. It has the ability to execute different parts (referred to as thread) of the program at the same time.  
+
+Process: It simply refers to a program that is in execution i.e., an active program. A process can be handled using PCB (Process Control Block). 
+
+What’s the difference between class lock and object lock?
+
+Class Lock: In java, each and every class has a unique lock usually referred to as a class level lock. These locks are achieved using the keyword ‘static synchronized’ and can be used to make static data thread-safe. It is generally used when one wants to prevent multiple threads from entering a synchronized block. 
+
+Object Lock: In java, each and every object has a unique lock usually referred to as an object-level lock. These locks are achieved using the keyword ‘synchronized’ and can be used to protect non-static data. It is generally used when one wants to synchronize a non-static method or block so that only the thread will be able to execute the code block on a given instance of the class.  
+
