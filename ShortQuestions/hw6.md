@@ -86,9 +86,9 @@ ExecutorService executor = Executors.newFixedThreadPool(10);
 `shutdownNow()` method initiates an immediate shutdown, interrupting any running tasks and preventing any new tasks from being submitted.
 # 15. What is Atomic classes? when do we use it?
 - `AtomicInteger`: provides atomic operations on an int variable.
--`AtomicLong`: provides atomic operations on a long variable
--`AtomicBoolean`: provides atomic operations on a boolean variable.
--`AtomicReference`: provides atomic operations on a reference variable.
+- `AtomicLong`: provides atomic operations on a long variable
+- `AtomicBoolean`: provides atomic operations on a boolean variable.
+- `AtomicReference`: provides atomic operations on a reference variable.
 We use Atomic classes when we need to perform atomic operations on a single variable in a multi-threaded environment.
 # 16. What is the cocurrent collections?
 Cocurrent collections are thread-safe collections. 
