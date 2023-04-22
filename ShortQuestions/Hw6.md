@@ -127,6 +127,6 @@ Object Lock: In java, each and every object has a unique lock usually referred t
 Please see [PrintNumber.java](./../Coding/Hw6/multithreadHw/src/main/java/print_number/PrintNumber.java)
 
 ## 25.
-* Please see [Hw1.java](./../Coding/Hw6/multithreadHw/src/main/java/completebalefuture/Hw1.java)
-* Please see [Hw2.java](./../Coding/Hw6/multithreadHw/src/main/java/completebalefuture/Hw2.java)
-* Please see [Hw3.java](./../Coding/Hw6/multithreadHw/src/main/java/completebalefuture/Hw3.java)
+* Please see [Hw1.java](./../Coding/Hw6/multithreadHw/src/main/java/completablefuture/Hw1.java)
+* Please see [Hw2.java](./../Coding/Hw6/multithreadHw/src/main/java/completablefuture/Hw2.java)
+* Please see [Hw3.java](./../Coding/Hw6/multithreadHw/src/main/java/completablefuture/Hw3.java)
