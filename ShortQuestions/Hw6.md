@@ -105,7 +105,7 @@ ThreadLocal instances are typically private static fields in classes that wish t
 It guarantees keeping the context in the stream work without having to pass parameters.
 
 ## 21. 
-Please see [PrintNumber.java](./../Coding/Hw6/multithreading/src/main/java)
+Please see [multithreading](./../Coding/Hw6/multithreading/src/main/java)
 
 ## 22.
 What's the difference between thread and process?
