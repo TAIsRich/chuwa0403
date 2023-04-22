@@ -120,4 +120,13 @@ Class Lock: In java, each and every class has a unique lock usually referred to 
 Object Lock: In java, each and every object has a unique lock usually referred to as an object-level lock. These locks are achieved using the keyword ‘synchronized’ and can be used to protect non-static data. It is generally used when one wants to synchronize a non-static method or block so that only the thread will be able to execute the code block on a given instance of the class.  
 
 ## 23.
-Please see [OddEventPrinter.java](./../Coding/Hw6/multithreadHw/src/main/java/odd_even_printer)
+* Please see [OddEventPrinter.java](./../Coding/Hw6/multithreadHw/src/main/java/odd_even_printer/OddEventPrinter.java)
+* Please see [OddEventPrinter2.java](./../Coding/Hw6/multithreadHw/src/main/java/odd_even_printer/OddEventPrinter2.java)
+
+## 24.
+Please see [PrintNumber.java](./../Coding/Hw6/multithreadHw/src/main/java/print_number/PrintNumber.java)
+
+## 25.
+* Please see [Hw1.java](./../Coding/Hw6/multithreadHw/src/main/java/completebalefuture/Hw1.java)
+* Please see [Hw2.java](./../Coding/Hw6/multithreadHw/src/main/java/completebalefuture/Hw2.java)
+* Please see [Hw3.java](./../Coding/Hw6/multithreadHw/src/main/java/completebalefuture/Hw3.java)
