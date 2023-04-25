@@ -1,4 +1,4 @@
-package com.chuwa.learn;
+package com.chuwa.learn.payload;
 
 
 import java.util.List;
@@ -12,19 +12,16 @@ public class RequestPayload {
     private boolean enableGenericPageContext;
     private String tenant;
 
-    // getters and setters
 
     public static class P13n {
         private UserClientInfo userClientInfo;
         private UserReqInfo userReqInfo;
 
-        // getters and setters
 
         public static class UserClientInfo {
             private String deviceType;
             private String callType;
 
-            // getters and setters
         }
 
         public static class UserReqInfo {
@@ -33,7 +30,6 @@ public class RequestPayload {
             private CartContext cartContext;
             private List<String> requestType;
 
-            // getters and setters
 
             public static class CartContext {
                 private String cartIntent;
@@ -44,14 +40,12 @@ public class RequestPayload {
                 private boolean isUnScheduledPickUp;
                 private List<Item> items;
 
-                // getters and setters
 
                 public static class ThresholdInfo {
                     private int balanceToMinimumThreshold;
                     private Object belowMinFee;
                     private Object deliveryMinFee;
 
-                    // getters and setters
                 }
 
                 public static class Item {
@@ -63,7 +57,6 @@ public class RequestPayload {
                     private String fulfillmentGroup;
                     private List<String> badges;
 
-                    // getters and setters
                 }
             }
         }
