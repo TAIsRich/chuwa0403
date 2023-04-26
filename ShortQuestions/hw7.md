@@ -157,7 +157,7 @@ Serialization is the process of converting an object into a format that can be s
 # 14. 
 `MavenProject/springboot-redbook-03_post_pageable`
 
-# 15. (Optional) 抄写 https://github.com/TAIsRich/springboot-redbook/tree/04_comm 
+# 15. 抄写 https://github.com/TAIsRich/springboot-redbook/tree/04_comm 
 
 # 16. Try to write the CRUD api for a new application Cassandra-Blog
 Try to write the CRUD api for a new application Cassandra-Blog
