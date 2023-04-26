@@ -82,4 +82,15 @@ public class MyExceptionHandler {
 }
 ```
 
+- `@PostMapping` This annotation is used to map HTTP POST requests to specific controller methods in Spring and handle form data or JSON requests.
+- `@RequestBody` This annotation is used to indicate that the incoming request should be bound to the method parameter. It is used to handle the body of the incoming HTTP request.
+- `@RestController` This annotation is used to define a controller in Spring that is responsible for handling RESTful requests.
+- `@RequestMapping` This annotation is used to map HTTP requests to specific methods in Spring. It can be used to map URLs to controller methods, set HTTP headers or request parameters.
+- `@GetMapping` This annotation is used to map HTTP GET requests to specific methods in Spring. It is used to handle form data or JSON requests.
+- `@PathVaribale` This annotation is used to bind a URI template variable to a method parameter in Spring. It is used to extract values from the URL path.
+- `@DeleteMapping` This annotation is used to map HTTP DELETE requests to specific controller methods in Spring. It is used to delete resources.
+- `@PutMapping` This annotation is used to map HTTP PUT requests to specific controller methods in Spring. It is used to update resources.
+- `@ResponseStatus` This annotation is used to define the HTTP status code to be returned by the controller method. It is used to customize the HTTP response status of the API.
+
+
 
