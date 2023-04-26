@@ -1,4 +1,4 @@
-package com.example.redbook_post_pageable.util;
+package com.example.redbook_comment.util;
 
 public class AppConstants {
 
