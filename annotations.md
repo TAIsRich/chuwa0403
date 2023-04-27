@@ -18,3 +18,14 @@
 9. @RequestParam: Used to extract values from the request query string and bind them to method parameters.
 
 10. @ResponseBody: Used to indicate that the return value of a method should be written directly to the HTTP response body, rather than being interpreted as a view name.
+11. @Entity: Specifies that the class is an entity and is mapped to a database table.
+12. @Table: Specifies the table name for the entity class.
+13. @Column: Specifies the column name in the table for a particular field or property.
+14. @Id: Specifies the primary key for the entity class.
+15. @GeneratedValue: Specifies the strategy to generate the primary key value.
+16. @OneToMany: Specifies a one-to-many relationship between two entities.
+17. @ManyToOne: Specifies a many-to-one relationship between two entities.
+18. @JoinColumn: Specifies the foreign key column in a join relationship.
+19. @Transactional: Specifies that a method should be executed within a transaction.
+20. @Query: Specifies a SQL or JPQL query to retrieve data from the database.
+21. @Repository: Specifies that the class is a repository, which is used to access data from the database.
