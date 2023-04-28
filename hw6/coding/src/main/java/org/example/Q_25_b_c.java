@@ -16,8 +16,8 @@ public class Q_25_b_c {
 
         OkHttpClient okHttpClient = new OkHttpClient();
 
-        CompletableFuture<String> posts = GetData(okHttpClient, "https://jsonplaceholder.typicode.com/postsw");
-        CompletableFuture<String> users = GetData(okHttpClient, "https://jsonplaceholder.typicode.com/usersw");
+        CompletableFuture<String> posts = GetData(okHttpClient, "https://jsonplaceholder.typicode.com/posts");
+        CompletableFuture<String> users = GetData(okHttpClient, "https://jsonplaceholder.typicode.com/users");
 
         CompletableFuture completableFuture = CompletableFuture.allOf(posts, users).thenRun(() -> {
             try {
