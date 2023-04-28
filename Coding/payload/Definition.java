@@ -1,0 +1,9 @@
+package com.chuwa.learn.payload;
+
+import java.util.List;
+
+public class Definition {
+    private String type;
+    private String flow;
+    private List<Contents> contents;
+}
