@@ -130,6 +130,10 @@ REST End points are annotated with these annotation, to indicate specific HTTP m
 ### @Id
 @Id indicates the entity id.
 
+### @PrimaryKey
+Indicate the primary key of cassandra.
+
+
 ### @GenerateValue
 @GenerateValue indicate that the ID should be generated automatically.
 ```
