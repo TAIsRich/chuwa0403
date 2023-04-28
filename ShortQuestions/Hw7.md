@@ -33,3 +33,37 @@ spring-boot-starter-web is used for building the web application, including REST
 @RequestMapping(value = "/users/{id}", method = RequestMethod.DELETE)
 @RequestMapping(value = "/users", method = RequestMethod.POST)
 ```
+
+## 8. What is ResponseEntity? why do we need it?
+ResponseEntity is an extension of HttpEntity that represents an HTTP response including status, headers and body. ResponseEntity allows you to modify the response with optional headers and status code. We can use it to fully configure the HTTP response.
+
+## 9. What is ResultSet in jdbc? and describe the flow how to get data using JDBC
+Result set is an interface representing the result set of a database query. 
+
+The flow works like:
+1.  establishing a connection
+2.  creating a prepared statement or query
+3.  execute the query
+4.  looping through the result set to get the objects
+5.  close the connection
+
+## 10. What is the ORM framework?
+Object-relational mapping (ORM) is a way to align programming code with database structures. ORM uses metadata descriptors to create a layer between the programming language and a relational database.
+
+A simple answer is that you wrap your tables or stored procedures in classes in your programming language, so that instead of writing SQL statements to interact with your database, you use methods and properties of objects.
+
+## 11. 
+See []();
+
+## 12. What is the serialization and desrialization?
+Serialization is the process of converting a data object—a combination of code and data represented within a region of data storage—into a series of bytes that saves the state of the object in an easily transmittable form.
+
+The reverse process—constructing a data structure or object from a series of bytes—is deserialization. The deserialization process recreates the object, thus making the data easier to read and modify as a native structure in a programming language.
+
+## 13.
+
+## 14.
+
+## 15.
+
+## 16. 
