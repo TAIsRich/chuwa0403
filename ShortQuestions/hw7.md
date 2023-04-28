@@ -173,6 +173,8 @@ This line is using the objectMapper instance to serialize the FoodOutlet object 
 3. objectMapper.readTree():
 objectMapper.readTree() is a method in the Jackson library for reading a JSON string or JSON data from an input source (such as an InputStream or Reader) and creating a JsonNode object that represents the data.
 
+See Coding/objectMapper
+
 ## 12. What is the serialization and desrialization?
 
 Serialization is the process of converting an object or data structure into a format that can be stored or transmitted. The serialized data can then be saved to a file, sent over a network, or stored in a database. During serialization, the object or data structure is converted into a stream of bytes that can be reconstructed later. Deserialization is the process of converting the serialized data back into an object or data structure. This process involves reading the stream of bytes and reconstructing the object or data structure as it was before serialization. Serialization and deserialization are commonly used in software development, particularly in distributed systems, where data needs to be transmitted between different processes or machines. By serializing an object, it can be easily transmitted across a network or stored in a file. When the data is needed, it can be deserialized to reconstruct the original object or data structure.
