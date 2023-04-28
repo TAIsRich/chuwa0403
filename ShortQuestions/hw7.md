@@ -40,8 +40,8 @@ public class Strapi {
 }
 ```
 # 14. 抄写，https://github.com/TAIsRich/springboot-
-## Redbook.java
+## Redbook
 # 15. 抄写 https://github.com/TAIsRich/springboot-redbook/tree/04_comm
-## Redbook.java
+## Redbook
 # 16. Try to write the CRUD api for a new application Cassandra-Blog
-## Casscurd.java
+## Cassandra-Blog

@@ -1,18 +1,18 @@
 package com.chuwa.redbook.payload;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
 public class PostDto {
-
     private Long id;
     private String title;
     private String description;
     private String content;
 
     public PostDto() {
+    }
+
+    public PostDto(Long id, String title, String description, String content) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.content = content;
     }
 
     public Long getId() {
@@ -45,5 +45,15 @@ public class PostDto {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "PostDto{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", content='" + content + '\'' +
+                '}';
     }
 }
