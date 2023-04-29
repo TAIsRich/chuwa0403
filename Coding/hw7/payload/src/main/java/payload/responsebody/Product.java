@@ -1,6 +1,6 @@
 package payload.responsebody;
 
-import sun.jvm.hotspot.debugger.ProcessInfo;
+// import sun.jvm.hotspot.debugger.ProcessInfo;
 
 import java.math.BigInteger;
 import java.util.Date;
@@ -12,7 +12,7 @@ public class Product {
     private int orderLimit = 12;
     private int weightIncrement;
     private String fulfillmentType;
-    private String availabilityStatus; //enum
+    private String availabilityStatus; // enum
     private boolean showAtc;
     private boolean showOptions;
     private String canonicalUrl;
@@ -35,6 +35,7 @@ public class Product {
         private String flags;
         private List<String> labels;
         private List<Tag> tags;
+
         public class Tag {
             private String key;
             private String text;
@@ -54,14 +55,16 @@ public class Product {
             private String priceDisplay;
         }
 
-        public class  UnitPrice {
+        public class UnitPrice {
             private String priceString;
         }
+
         public class PriceDisplayCodes {
             private Double finalCostByWeight;
             private String priceDisplayCondition;
         }
     }
+
     public class ImageInfo {
         private String thumbnailUrl;
     }
