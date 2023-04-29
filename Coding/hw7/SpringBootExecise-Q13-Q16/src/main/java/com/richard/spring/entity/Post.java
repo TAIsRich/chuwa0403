@@ -4,6 +4,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 /**
  * @Author zhuhaotian
@@ -37,15 +38,28 @@ public class Post {
     @CreationTimestamp
     private LocalDateTime updateDateTime;
 
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Comment> comments;
+
     public Post() {
     }
 
-    public Post(Long id, String description, String content, LocalDateTime createDateTime, LocalDateTime updateDateTime) {
+    public Post(Long id, String title, String description, String content, LocalDateTime createDateTime, LocalDateTime updateDateTime, Set<Comment> comments) {
         this.id = id;
+        this.title = title;
         this.description = description;
         this.content = content;
         this.createDateTime = createDateTime;
         this.updateDateTime = updateDateTime;
+        this.comments = comments;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 
     public String getTitle() {
@@ -100,10 +114,12 @@ public class Post {
     public String toString() {
         return "Post{" +
                 "id=" + id +
+                ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", content='" + content + '\'' +
                 ", createDateTime=" + createDateTime +
                 ", updateDateTime=" + updateDateTime +
+                ", comments=" + comments +
                 '}';
     }
 }
