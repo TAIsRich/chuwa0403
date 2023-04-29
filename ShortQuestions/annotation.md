@@ -269,7 +269,7 @@ public User getUserById(@RequestParam Long id) {
    }
    ```
 
-##Service
+## Service
 
 1. `@Service`
 
@@ -320,4 +320,73 @@ private String name;
 @Column(name="STUDENT_NAME", length=50, nullable=false, unique=false)
 private String studentName; 
 ```
+
+4. @Entity
+
+   JPA (Java Persistence API) annotation that marks a Java class as an entity, which means it is a mapped object that can be persisted to a database.
+
+   When we add the `@Entity` annotation to a Java class, it indicates that the class will be mapped to a database table. Each instance of the class will be a row in the table and each field will be a column.
+
+   @Id is another commonly used Spring annotation in the context of entity classes. It is used to specify the primary key field of an entity.
+
+   ```java
+   @Entity
+   public class Customer {
+       @Id
+       private Long id;
+   
+       private String name;
+   
+       private String email;
+   
+       // Getters and setters
+   }
+   ```
+
+   
+
+5. @Table
+
+   To map an entity to a database table. It allows developers to specify the details of the table, such as the name, schema, and indexes
+
+   ```java
+   @Entity
+   @Table(name = "users")
+   public class User {
+       @Id
+       @GeneratedValue(strategy = GenerationType.IDENTITY)
+       private Long id;
+   
+       @Column(name = "first_name")
+       private String firstName;
+   
+       @Column(name = "last_name")
+       private String lastName;
+   
+       // getters and setters
+   }
+   ```
+
+## Json
+
+1. @JsonProperty("")
+
+A Jackson annotation used in Java to specify the property name of a JSON object during serialization or deserialization. The `@JsonProperty` annotation is used to map a Java field or getter/setter method to a specific key in the JSON data.
+
+```java
+public class Person {
+    @JsonProperty("name")
+    private String firstName;
+    @JsonProperty("age")
+    private int age;
+    
+    // getters and setters
+}
+```
+
+This annotation map the `firstName` field to the key "name" and the `age` field to the key "age" during JSON serialization and deserialization. So, when a `Person` object is serialized to JSON, the resulting JSON object will have properties "name" and "age" instead of "firstName" and "age"
+
+
+
+
 
