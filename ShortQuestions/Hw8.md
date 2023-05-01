@@ -189,6 +189,8 @@ public class Author {
 ## 7. What is the  cascade = CascadeType.ALL, orphanRemoval = true? and what are the other CascadeType and their features? In which situation we choose which one?
 Cascading refers to the ability to automatically propagate the state of an entity (i.e., an instance of a mapped class) across associations between entities. For example, if you have a Customer entity that has a one-to-many relationship with an Order entity, you can define cascading to specify that when a customer is deleted, all of their orders should be deleted as well.
 
+orphanRemoval = true specifies that when a child entity is removed from the parent entity, it should also be deleted from the database. This is useful in cases where the child entity is only associated with a single parent entity and doesn't have any other references.
+
 1. CascadeType.ALL: is a cascading type in Hibernate that specifies that all state transitions (create, update, delete, and refresh) should be cascaded from the parent entity to the child entities. When we want any operations on parent entity will be propogated to child entities.
 2. CascadeType.PERSIST: is a cascading type in Hibernate that specifies that all state transitions (create, update, delete, and refresh) should be cascaded from the parent entity to the child entities. When we only want to make the child class to persist. 
 3. CascadeType.MERGE: is a cascading type in Hibernate that specifies that the update (or merge) operation should be cascaded from the parent entity to the child entities.
@@ -200,6 +202,8 @@ Cascading refers to the ability to automatically propagate the state of an entit
 
 
 ## 8. What is the  fetch = FetchType.LAZY, fetch = FetchType.EAGER? what is the difference? In which situation you choose which one?
+* FetchType.LAZY load data when its really needed.
+* FetchType.EAGER load it with other fields.
 
 ## 9. What is the rule of JPA naming convention? Shall we implement the method by ourselves? Could you list some examples?
 
