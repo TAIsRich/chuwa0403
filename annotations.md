@@ -29,3 +29,4 @@
 19. @Transactional: Specifies that a method should be executed within a transaction.
 20. @Query: Specifies a SQL or JPQL query to retrieve data from the database.
 21. @Repository: Specifies that the class is a repository, which is used to access data from the database.
+22. @NamedQuery and @NamedQueries : used to define named queries that can be used to retrieve persistent objects from the database.
