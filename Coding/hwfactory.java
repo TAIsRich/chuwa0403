@@ -1,4 +1,4 @@
-public class hwfactory {
+public class factory {
 }
 public abstract class Coffee{
     public abstract String getName();
