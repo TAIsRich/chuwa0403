@@ -8,8 +8,155 @@ check annotations.md
 
 ## 2. Type the Comment feature for the class project.
 
+check folder Coding/hw8_comment
 
 ## 3. In postman, call of the APIs in PostController and CommentController.
+
+### Post
+```
+
+
+http://localhost:8088/api/v1/posts
+
+{
+"title":"posthaha",
+"description":"haha",
+"content":"nihao"
+}
+
+response
+
+{
+    "id": 8,
+    "title": "posthaha",
+    "description": "haha",
+    "content": "nihao"
+}
+
+get response
+{
+    "isLast": true,
+    "pageNo": 0,
+    "pageSize": 10,
+    "totalElements": 4,
+    "totalPages": 1,
+    "content": [
+        {
+            "id": 1,
+            "title": "qwer",
+            "description": "qwee",
+            "content": "qwer"
+        },
+        {
+            "id": 6,
+            "title": "qwerqw",
+            "description": "qwee",
+            "content": "qwer"
+        },
+        {
+            "id": 7,
+            "title": "title1",
+            "description": "qwee",
+            "content": "qwer"
+        },
+        {
+            "id": 8,
+            "title": "posthaha",
+            "description": "haha",
+            "content": "nihao"
+        }
+    ]
+}
+
+get http://localhost:8088/api/v1/posts/1
+response
+{
+    "id": 1,
+    "title": "qwer",
+    "description": "qwee",
+    "content": "qwer"
+}
+
+put http://localhost:8088/api/v1/posts/1
+{
+"title":"postnew",
+"description":"haha",
+"content":"nihao"
+}
+response
+{
+    "id": 1,
+    "title": "postnew",
+    "description": "haha",
+    "content": "nihao"
+}
+
+delete http://localhost:8088/api/v1/posts/1
+response
+Post entity deleted successfully.
+```
+
+### comments
+```
+post http://localhost:8088/api/v1/posts/6/comments
+{
+"name":"commentnew",
+"email":"123@123.com",
+"body":"nihao"
+}
+response
+{
+    "id": 1,
+    "name": "commentnew",
+    "email": "123@123.com",
+    "body": "nihao"
+}
+
+get http://localhost:8088/api/v1/posts/6/comments
+response
+[
+    {
+        "id": 1,
+        "name": "commentnew",
+        "email": "123@123.com",
+        "body": "nihao"
+    },
+    {
+        "id": 2,
+        "name": "commentnew",
+        "email": "123@123.com",
+        "body": "nihao"
+    }
+]
+
+get http://localhost:8088/api/v1/posts/6/comments/1
+response
+{
+    "id": 1,
+    "name": "commentnew",
+    "email": "123@123.com",
+    "body": "nihao"
+}
+
+put http://localhost:8088/api/v1/posts/6/comments/1
+{
+"name":"commentnewnew",
+"email":"123123@123123.com",
+"body":"nihaonihao"
+}
+
+response
+{
+    "id": 1,
+    "name": "commentnewnew",
+    "email": "123123@123123.com",
+    "body": "nihaonihao"
+}
+
+delete http://localhost:8088/api/v1/posts/6/comments/1
+response
+Comment deleted Successfully
+```
 
 
 ## 4. what is JPA? and what is Hibernate?
@@ -179,7 +326,7 @@ You do not need to implement these rules yourself, as JPA will automatically map
 
 
 ## 10. Try to use JPA advanced methods in your class project. In the repository layer, you need to use the naming convention to use the method provided by JPA.
-
+check folder Coding/hw8_comment
 
 ## 11. (Optional) Check out a new branch(https://github.com/TAIsRich/springboot-redbook/tree/hw02_01_jdbcTemplate) from branch 02_post_RUD, replace the dao layer using JdbcTemplate.
 
@@ -196,7 +343,7 @@ check annotations.md
 
 
 ## 2. type the code, you need to checkout new branch from branch 02_post_RUD, name the new branch with https://github.com/TAIsRich/springboot-redbook/tree/hw05_01_slides_JPQL.
-
+check folder Coding/hw8_jpql
 
 ## 3. What is JPQL?
 JPQL (Java Persistence Query Language) is a query language defined in the JPA specification for querying data from a relational database using JPA entities. It is an object-oriented query language that allows you to write queries using the entity classes and properties rather than the database table and column names. JPQL queries are similar to SQL queries but are written in a platform-independent way, allowing them to be executed on any JPA-compliant database.
@@ -330,7 +477,13 @@ The main difference between the first-level cache and the second-level cache is 
 
 
 ## 12. How do you understand @Transactional? (不要clone，要⾃⼰抄写并测试 transactional，https://github.com/TAIsRich/tutorial-transaction)
+@Transactional is a Spring annotation that is used to manage transactions in a Spring application. When applied to a method or a class, it enables a transaction for the annotated method or class. This annotation takes care of the boilerplate code related to transaction management, such as starting a transaction, committing it, or rolling it back in case of an exception.
 
+When a method is annotated with @Transactional, Spring creates a proxy that intercepts calls to the method and manages the transaction. By default, the transactional behavior is applied to checked exceptions that are not subclasses of RuntimeException. This means that the transaction will be rolled back if the method throws an unchecked exception or any checked exception that is a subclass of RuntimeException.
+
+@Transactional can be customized with several attributes that allow you to control transaction behavior, such as the propagation level of the transaction, the isolation level, the timeout, or the read-only status.
+
+In summary, @Transactional is a powerful and flexible mechanism to manage transactions in a Spring application, and it can help to reduce the amount of boilerplate code related to transaction management.
 
 ## 13. Write a simple factory design pattern.
 ```java

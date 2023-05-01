@@ -18,6 +18,7 @@
 9. @RequestParam: Used to extract values from the request query string and bind them to method parameters.
 
 10. @ResponseBody: Used to indicate that the return value of a method should be written directly to the HTTP response body, rather than being interpreted as a view name.
+    
 11. @Entity: Specifies that the class is an entity and is mapped to a database table.
 12. @Table: Specifies the table name for the entity class.
 13. @Column: Specifies the column name in the table for a particular field or property.
@@ -30,3 +31,4 @@
 20. @Query: Specifies a SQL or JPQL query to retrieve data from the database.
 21. @Repository: Specifies that the class is a repository, which is used to access data from the database.
 22. @NamedQuery and @NamedQueries : used to define named queries that can be used to retrieve persistent objects from the database.
+23. @Transactional is a Spring annotation that is used to manage transactions in a Spring application. When applied to a method or a class, it enables a transaction for the annotated method or class. This annotation takes care of the boilerplate code related to transaction management, such as starting a transaction, committing it, or rolling it back in case of an exception.
