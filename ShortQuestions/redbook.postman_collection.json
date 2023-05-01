@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "796eb4b5-46f6-4c2a-89be-325893c55c8b",
+		"name": "chuwa.redbook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7594665"
+	},
+	"item": [
+		{
+			"name": "Create new post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     \"title\": \"Is Richard Richy?\",\r\n//     \"description\": \"Richard is Richy?\",\r\n//     \"content\": \"This is a new post to discuess if Richard is Richy or not. Acctually Richard and Richy is the same person\"\r\n// }\r\n// {\r\n//     \"title\": \"Chuwa yyds?\",\r\n//     \"description\": \"Chuwa is a good ICC?\",\r\n//     \"content\": \"ICC mai jiucai, not sure if it is yyds or not\"\r\n// }\r\n{\r\n    \"title\": \"To Jiu Friends\",\r\n    \"description\": \"A Poem to Jiucai Friends\",\r\n    \"content\": \"Tong shi tian ya lun luo jiu, xiang jian he bi ceng xiang shi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/v1/posts",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get post by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/v1/posts/1",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update post by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Update third post\",\r\n    \"description\": \"update post\",\r\n    \"content\": \"update: replacement is hard\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/v1/posts/3",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/v1/posts/3",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/v1/posts/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get posts by page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/v1/posts?pageNo=0&pageSize=10&sortBy=id&sortDir=desc",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "sortBy",
+							"value": "id"
+						},
+						{
+							"key": "sortDir",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comment By PostId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/v1/posts/1/comments",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Joe\",\r\n    \"email\": \"jql@gmail.com\",\r\n    \"body\": \"Good good good\"\r\n}"
+				},
+				"url": {
+					"raw": "{{localhost}}/api/v1/posts/1/comments",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comment By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/v1/posts/1/comments/1",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"1",
+						"comments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Comment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/v1/posts/1/comments/1",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"1",
+						"comments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/v1/posts/1/comments/1",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"1",
+						"comments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

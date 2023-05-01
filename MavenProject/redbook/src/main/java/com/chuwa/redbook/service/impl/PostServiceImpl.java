@@ -1,5 +1,6 @@
 package com.chuwa.redbook.service.impl;
 
+import com.chuwa.redbook.dao.PostJPQLRepository;
 import com.chuwa.redbook.dao.PostRepository;
 import com.chuwa.redbook.entity.Post;
 import com.chuwa.redbook.exception.ResourceNotFoundException;
@@ -21,6 +22,8 @@ public class PostServiceImpl implements PostService {
     @Autowired
     private PostRepository postRepository;
 
+    @Autowired
+    PostJPQLRepository postJPQLRepository;
     @Override
     public PostDto createPost(PostDto postDto) {
         // 把payload转换成entity，这样才能dao去把该数据存到数据库中。
@@ -59,6 +62,7 @@ public class PostServiceImpl implements PostService {
         List<PostDto> postDtos = posts.stream().map(post -> mapToDTO(post)).collect(Collectors.toList());
         return postDtos;
     }
+
 
     @Override
     public PostResponse getAllPost(int pageNo, int pageSize, String sortBy, String sortDir) {
@@ -132,5 +136,35 @@ public class PostServiceImpl implements PostService {
         post.setContent(postDto.getContent());
 
         return post;
+    }
+
+    @Override
+    public List<PostDto> getAllPostWithJPQL() {
+        return postJPQLRepository.getAllPostWithJPQL().stream().map(
+                this::mapToDTO).collect(Collectors.toList());
+    }
+
+    @Override
+    public PostDto getPostByIdJPQLIndexParameter(Long id, String title) {
+        Post post = postRepository.getPostByIdOrTitleWithJPQLIndexParameters(id, title);
+        return mapToDTO(post);
+    }
+
+    @Override
+    public PostDto getPostByIdJPQLNamedParameter(Long id, String title) {
+        Post post = postRepository.getPostByIdOrTitleWithJPQLNamedParameters(id, title);
+        return mapToDTO(post);
+    }
+
+    @Override
+    public PostDto getPostByIdSQLIndexParameter(Long id, String title) {
+        Post post = postRepository.getPostByIdOrTitleWithSQLIndexParameters(id, title);
+        return mapToDTO(post);
+    }
+
+    @Override
+    public PostDto getPostByIdSQLNamedParameter(Long id, String title) {
+        Post post = postRepository.getPostByIdOrTitleWithSQLNamedParameters(id, title);
+        return mapToDTO(post);
     }
 }
