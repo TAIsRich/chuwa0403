@@ -1,4 +1,4 @@
-# Homework 8
+# Homework 8 Part 1
 ## 1. 
 ## 2. 
 See []().
@@ -45,8 +45,51 @@ Hibernate caching is a mechanism provided by Hibernate to improve the performanc
 
 First level -> second level -> database.
 
-## 12. 
+## 12. How do you understand @Transactional
+@Transactional is called, Spring starts a transaction before the method executes, and commits the transaction after the method completes. If an exception is thrown during the method execution, Spring rolls back the transaction.
+
+@Transactional can be applied at the class or method level. When applied at the class level, it applies to all methods in the class.
+
+@Transactional is a powerful feature of Spring Framework that simplifies the management of transactions in your application. By using @Transactional, you can ensure that database operations are atomic, consistent, isolated, and durable, which are the key properties of a transaction.
+
+Spring uses a transaction manager to manage transactions. It can be added and application by @EnableTransactionManagement.
+
 See []().
 
 ## 13. Write a simple factory design pattern.
+```
+public abstract class Car {
+    abstract public void whistle();
+    private String name;
+}
+  
+public class Porsche implements Car {
+    public Porsche() {
+        this.name = "Benz";
+    }
+    public void whistle() {
+        
+    }
+}
+
+public class Benz implements Car {
+    public Benz(String name) {
+        this.name = "Porsche";
+    }
+    public void whistle() {
+        
+    }
+}
+
+public class CarFactory {
+    public void makeACar(String name) {
+        Car car;
+        if (name == "Benz") {
+            car = new Benz();
+        } else if (name == "Porsche") {
+            car = new Porsche();
+        }
+        car.whistle();
+    }
+}
 ```
