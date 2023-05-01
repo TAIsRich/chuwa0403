@@ -162,6 +162,49 @@ public class Order {
 
 In this example, @JoinColumn annotation is used to specify the name of the foreign key column. This will create a column named "customer_id" in the database to establish the many-to-one relationship between the Order and Customer entity classes.
 
+## @OneToMany
+
+@OneToMany is a Java annotation used in Object-Relational Mapping (ORM) frameworks, such as Hibernate or JPA (Java Persistence API). It is used to define a one-to-many relationship between two entities in a database schema.
+
+In a one-to-many relationship, one instance of an entity (the "one" side) can be associated with multiple instances of another entity (the "many" side"). For example, a customer can have multiple orders, or a university can have multiple students.
+
+Using @OneToMany, we can annotate a field in an entity class that represents the "many" side of the relationship. This field typically holds a collection (e.g. a List or a Set) of instances of the other entity.
+
+```java
+@Entity
+public class Customer {
+ 
+    @OneToMany(mappedBy = "customer")
+    private List<Order> orders;
+ 
+    // other fields and methods
+}
+```
+
+## @ManyToMany
+
+@ManyToMany is a JPA annotation used to define a many-to-many relationship between two entities. In a many-to-many relationship, an instance of one entity can be related to multiple instances of another entity, and vice versa.
+
+In JPA, a many-to-many relationship is implemented using an intermediary table that holds the foreign keys of both entities. The @ManyToMany annotation is typically used to define this intermediary table and the relationships between the entities.
+
+## @JoinTable
+
+@JoinTable is a JPA annotation used in object-relational mapping to define the association between two entities in a many-to-many relationship. It is used to join the tables of the two entities that have a many-to-many relationship.
+
+```java
+/**
+* sku和inventory是M:N的关系
+* 仓库ID，表示可以下单到哪些仓库
+*/
+@ManyToMany(fetch = FetchType.LAZY)
+@JoinTable(name = "sku_inventory",
+joinColumns = @JoinColumn(name = "sku_id"),
+inverseJoinColumns = @JoinColumn(name =
+"inventory_id"))
+private Set<PmsInventory> pmsInventories = new HashSet<>();
+
+```
+
 
 # Annotations Used by Controller
 
@@ -274,6 +317,42 @@ public class UserController {
 }
 ```
 
+## @RequestParam 
+
+@RequestParam is a Spring annotation used to bind request parameters (such as query parameters) to a method parameter in a controller handler method.
+
+It allows the values of the request parameters to be retrieved and converted to the appropriate type before being passed into the controller method. By default, @RequestParam expects that the parameter is required, but it can be configured to be optional using the required attribute.
+
+```java
+@GetMapping("/users")
+public List<User> getUsers(@RequestParam("active") boolean isActive, 
+                            @RequestParam(value = "sort", defaultValue = "name") String sortBy) {
+    // Do something with isActive and sortBy parameters
+    ...
+}
+
+```
+
+## @PathVariable
+
+@PathVariable is a Spring annotation used to extract a variable from the URI path and use it as a method parameter in a Spring MVC controller. It allows you to map a URI template variable to a method parameter.
+
+For example, consider the following URL: http://example.com/users/123. In this URL, 123 is the value of the userId path variable. You can use @PathVariable to extract this value from the URL and pass it as a method parameter to your controller method.
+
+```java
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+    @GetMapping("/{userId}")
+    public User getUserById(@PathVariable(name = "userId") Long userId) {
+        // code to retrieve user by ID
+    }
+}
+
+```
+
+
 # Annotations Used by Service
 
 ## @Service
@@ -302,3 +381,76 @@ public class UserServiceImpl implements UserService {
 ```
 
 In this example, the UserServiceImpl class is annotated with the @Service annotation to indicate that it is a Spring service bean. The UserRepository dependency is injected into the class using the @Autowired annotation on the field declaration. When the Spring container creates an instance of the UserServiceImpl bean, it will automatically inject an instance of the UserRepository bean into the userRepository field.
+
+## @Transactional
+
+@Transactional is an annotation used in Spring Framework to indicate that a method should be executed within a transaction. The annotation can be applied to class or method level, and it provides declarative transaction management, simplifying the code needed to manage transactions.It ensures that the method is executed as an atomic operation, with all changes made to the database either committed if the operation is successful or rolled back if it fails.
+
+```java
+  @Transactional
+    public OrderResponse placeOrder(OrderRequest orderRequest) {
+        Order order = orderRequest.getOrder();
+        order.setStatus("INPROGRESS");
+        order.setOrderTrackingNumber(UUID.randomUUID().toString());
+        orderRepository.save(order);
+
+        Payment payment = orderRequest.getPayment();
+        if(!payment.getType().equals("DEBIT")){
+            throw new PaymentException("Payment card type do not support");
+        }
+        payment.setOrderId(order.getId());
+        paymentRepository.save(payment);
+
+        OrderResponse orderResponse = new OrderResponse();
+        orderResponse.setOrderTrackingNumber(order.getOrderTrackingNumber());
+        orderResponse.setStatus(order.getStatus());
+        orderResponse.setMessage("SUCCESS");
+        return orderResponse;
+
+    }
+```
+
+# Annotations Used by Repository
+
+## @Repository 
+
+@Repository is a Spring Framework annotation that marks a class as a repository component, typically used to perform database operations. It serves as a specialization of the @Component annotation, allowing for automatic bean detection through classpath scanning.
+
+By marking a class with @Repository, Spring will perform exception translation from exceptions such as SQLException and DataAccessException to the Spring hierarchy of unchecked exceptions. This helps to decouple the application code from persistence-specific exceptions.
+
+Additionally, @Repository is used to indicate that an exception in the repository layer should be caught and then translated to a meaningful, high-level exception that can be handled by the application layer.
+
+```java
+@Repository
+public class PostJPQLRepositoryImpl implements PostJPQLRepository{
+
+}
+```
+
+## @PersistenceContext
+
+@PersistenceContext is a Spring annotation used to inject a javax.persistence.EntityManager instance into a Spring-managed bean. It allows the container to provide a JPA EntityManager instance to the application context. This annotation helps to simplify the use of the JPA API in a Spring application. By using @PersistenceContext, developers do not need to create and manage the EntityManager instance themselves.
+
+```java
+ @PersistenceContext
+    EntityManager entityManager;
+```
+
+## @NamedQuery and @NamedQueries
+
+In JPA, @NamedQuery and @NamedQueries are used to define pre-defined JPQL queries that can be executed multiple times with different parameter values.
+
+@NamedQuery is used to define a single JPQL query that can be executed by its name.
+```java
+@NamedQuery(name = "findAllEmployees", query = "SELECT e FROM Employee e")
+
+```
+
+@NamedQueries is used to define multiple named JPQL queries that can be executed by their respective names.
+```java
+@NamedQueries({
+    @NamedQuery(name = "findAllEmployees", query = "SELECT e FROM Employee e"),
+    @NamedQuery(name = "findEmployeesByDepartment", query = "SELECT e FROM Employee e WHERE e.department = :department")
+})
+
+```
