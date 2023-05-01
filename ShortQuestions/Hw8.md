@@ -1,5 +1,6 @@
 # Homework 8 Part 1
 ## 1. 
+Done.
 ## 2. 
 See []().
 
@@ -93,3 +94,113 @@ public class CarFactory {
     }
 }
 ```
+
+# Part 2
+## 1. 
+Done.
+
+## 2.
+Done in Hw7.
+
+## 3.
+DOne.
+
+## 4. what is JPA? and what is Hibernate?
+JPA is a java specification that offers java applications that written in Java for mapping objects to relational database. It offers a management mechanism for persistence and object relational mapping system. JPA is responsible for defining mappings internally. JPA defines a set of interfaces and annotations that provide a high level abstraction over relational databases. This allows developeres to interact with java objects rather than SQL.
+
+Hibernate is an implementation of JPA and provide additional features. It is an object relational mapping framework. 
+
+Some key features:
+1. ORM: Hibernate provides a set of annotations and XML configuration files that allow developers to map Java objects to database tables and columns.
+2. Automatic schema generation: Hibernate can generate database schema automatically based on the entity mappings defined in Java classes.
+3. Querying: Hibernate provides a powerful query language called Hibernate Query Language (HQL) that allows developers to query entities using object-oriented syntax, rather than SQL.
+4. Caching: Hibernate supports caching of frequently accessed data, which can significantly improve the performance of database access.
+5. Transactions: Hibernate provides transaction management capabilities, allowing developers to specify transaction boundaries and manage transactions in a declarative manner.
+
+
+
+
+
+
+
+## 5. What is Hiraki? what is the benefits of connection pool?
+Hiraki is a JDBC datasource implementation that provides a connection pooling mechanism. 
+
+1. faster application start time. Because they don't need to establish new database connection.
+2. reduce overhead. by reusing exists connection
+3. improve scalability: connecting pools allows multiple threads to share a limit number of connections, enbaling the application to handle more concurrent users and requests
+4. improved performance. by reuse exixts connections.
+
+## 6. What is the  @OneToMany, @ManyToOne, @ManyToMany? write some examples.
+@OneToMany: One source entity can be matched to many target entity.
+```
+@Entity
+public class Order {
+
+    @Id
+    private Long id;
+
+    @OneToMany(mappedBy = "order") // The mappedBy attribute specifies that the relationship is mapped by the order field in the OrderItem entity.
+    private List<OrderItem> items;
+
+}
+```
+
+@ManyToOne: Several source entity can be matched to one target Entity
+```
+@Entity
+public class OrderItem {
+
+    @Id
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id") // foreign key
+    private Order order;
+
+}
+```
+@ManyToMany: several source entity can be matched to one or more target entity
+```
+@Entity
+public class Book {
+
+    @Id
+    private Long id;
+
+    @ManyToMany(mappedBy = "books")
+    private List<Author> authors;
+}
+
+@Entity
+public class Author {
+
+    @Id
+    private Long id;
+
+    @ManyToMany
+    @JoinTable(name = "book_author",
+               joinColumns = @JoinColumn(name = "author_id"),
+               inverseJoinColumns = @JoinColumn(name = "book_id"))
+    private List<Book> books;
+
+}
+```
+## 7. What is the  cascade = CascadeType.ALL, orphanRemoval = true? and what are the other CascadeType and their features? In which situation we choose which one?
+Cascading refers to the ability to automatically propagate the state of an entity (i.e., an instance of a mapped class) across associations between entities. For example, if you have a Customer entity that has a one-to-many relationship with an Order entity, you can define cascading to specify that when a customer is deleted, all of their orders should be deleted as well.
+
+1. CascadeType.ALL: is a cascading type in Hibernate that specifies that all state transitions (create, update, delete, and refresh) should be cascaded from the parent entity to the child entities. When we want any operations on parent entity will be propogated to child entities.
+2. CascadeType.PERSIST
+3. CascadeType.MERGE
+4. CascadeType.REMOVE
+5. CascadeType.REFRESH
+6. CascadeType.DETACH
+7. CascadeType.REPLICATE
+8. CascadeType.SAVE_UPDATE
+
+
+## 8. What is the  fetch = FetchType.LAZY, fetch = FetchType.EAGER? what is the difference? In which situation you choose which one?
+
+## 9. What is the rule of JPA naming convention? Shall we implement the method by ourselves? Could you list some examples?
+
+## 10. Try to use JPA advanced methods in your class project. In the repository layer, you need to use the naming convention to use the method provided by JPA.
