@@ -190,13 +190,13 @@ public class Author {
 Cascading refers to the ability to automatically propagate the state of an entity (i.e., an instance of a mapped class) across associations between entities. For example, if you have a Customer entity that has a one-to-many relationship with an Order entity, you can define cascading to specify that when a customer is deleted, all of their orders should be deleted as well.
 
 1. CascadeType.ALL: is a cascading type in Hibernate that specifies that all state transitions (create, update, delete, and refresh) should be cascaded from the parent entity to the child entities. When we want any operations on parent entity will be propogated to child entities.
-2. CascadeType.PERSIST
-3. CascadeType.MERGE
-4. CascadeType.REMOVE
-5. CascadeType.REFRESH
-6. CascadeType.DETACH
-7. CascadeType.REPLICATE
-8. CascadeType.SAVE_UPDATE
+2. CascadeType.PERSIST: is a cascading type in Hibernate that specifies that all state transitions (create, update, delete, and refresh) should be cascaded from the parent entity to the child entities. When we only want to make the child class to persist. 
+3. CascadeType.MERGE: is a cascading type in Hibernate that specifies that the update (or merge) operation should be cascaded from the parent entity to the child entities.
+4. CascadeType.REMOVE: is a cascading type in Hibernate that specifies that the delete operation should be cascaded from the parent entity to the child entities.
+5. CascadeType.REFRESH: is a cascading type in Hibernate that specifies that the refresh operation should be cascaded from the parent entity to the child entities.
+6. CascadeType.DETACH: is a cascading type in Hibernate that specifies that the detach operation should be cascaded from the parent entity to the child entities.
+7. CascadeType.REPLICATE: is a cascading type in Hibernate that specifies that the replicate operation should be cascaded from the parent entity to the child entities.
+8. CascadeType.SAVE_UPDATE: is a cascading type in Hibernate that specifies that the replicate operation should be cascaded from the parent entity to the child entities.
 
 
 ## 8. What is the  fetch = FetchType.LAZY, fetch = FetchType.EAGER? what is the difference? In which situation you choose which one?
