@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
+
+    Post findByTitle(String title);
+    Post findByContent(String content);
 }

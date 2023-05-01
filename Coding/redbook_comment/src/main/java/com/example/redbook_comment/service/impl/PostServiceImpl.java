@@ -69,6 +69,18 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
+    public PostDto getPostByTitle(String title){
+        Post post = postRepository.findByTitle(title);
+        return mapToDTO(post);
+    }
+
+    @Override
+    public PostDto getPostByContent(String content){
+        Post post = postRepository.findByContent(content);
+        return mapToDTO(post);
+    }
+
+    @Override
     public PostDto updatePost(PostDto postDto, long id) {
         Post post = postRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Post","id",id));
         post.setTitle(postDto.getTitle());
