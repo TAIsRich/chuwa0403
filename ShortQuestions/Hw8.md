@@ -23,15 +23,27 @@ Hibernate Query Language (HQL) is an object-oriented query language, similar to 
 Criteria Queries allows developers to manipulate objects and in turn data available in RDBMS tables.
 
 ## 7. What is EnityManager?
-An entitymanager manages connection to a database as well as to database operations. EntityManager is associated with a PersistentContext
+An entitymanager manages connection to a database as well as to database operations. EntityManager is associated with a PersistentContext. All operations that are performed in a specific session are stored inside the PersistentContext. Entity manager is the interface to the persistent context. All operations on the entity goes through the EntityManager.
 
 ## 8. What is SessionFactory and Session?
+Session factory is a thread safe factory to create hibernate session. It is responsible for initializing hibernate configuration settings, caching metadata, and creating new sessions to access meta data.
+
+Session provides a persistence context for Hibernate to interact with database. It is used to get a physical connection with a database. It is used to perform CRUD.
 
 ## 9. What is Transaction? how to manage your transaction?
+A transaction represents a unit of work. If one step fail, then the transaction fails. Add annotations @Transactional on the method that needs to be a transaction.
 
 ## 10. What is hibernate Caching?
+Hibernate caching is a mechanism provided by Hibernate to improve the performance of database access by reducing the number of database round trips. Caching allows frequently accessed data to be stored in memory, which can reduce the reponse time.
 
 ## 11. What is the difference between first-level cache and second-level cache?
+|First level | Second level|
+|----|----|
+|Maintained by each session, not shared | SessionFactory level cache, shared by all sessions|
+|Enabled by default, no way to disable it | Disabled by default|
+|Available until the session is open, destroyed when close | Available through the application life cycle|
+
+First level -> second level -> database.
 
 ## 12. 
 See []().
