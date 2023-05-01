@@ -17,10 +17,8 @@ public class CommentDto {
     }
 
     public CommentDto(long id, String name, String email, String body) {
+        this(name, email, body);
         this.id = id;
-        this.name = name;
-        this.email = email;
-        this.body = body;
     }
 
     public long getId() {

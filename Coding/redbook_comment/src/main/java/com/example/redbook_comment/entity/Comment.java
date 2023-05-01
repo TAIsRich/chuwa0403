@@ -95,7 +95,6 @@ public class Comment {
         this.updateDateTime = updateDateTime;
     }
 
-
     @Override
     public String toString() {
         return "Comment{" +
