@@ -1,11 +1,11 @@
 package com.chuwa.redbook.service;
 
 import com.chuwa.redbook.payload.PostDto;
-import com.chuwa.redbook.payload.PostResponse;
 
 import java.util.List;
 
 public interface PostService {
+
     PostDto createPost(PostDto postDto);
 
     List<PostDto> getAllPost();
@@ -16,13 +16,9 @@ public interface PostService {
 
     void deletePostById(long id);
 
-    /**
-     * 分页
-     * @param pageNo
-     * @param pageSize
-     * @param sortBy
-     * @param sortDir
-     * @return
-     */
-    PostResponse getAllPost(int pageNo, int pageSize, String sortBy, String sortDir);
+    List<PostDto> getAllPostWithJPQL();
+    PostDto getPostByIdJPQLIndexParameter(Long id, String title);
+    PostDto getPostByIdJPQLNamedParameter(Long id, String title);
+    PostDto getPostByIdSQLIndexParameter(Long id, String title);
+    PostDto getPostByIdSQLNamedParameter(Long id, String title);
 }

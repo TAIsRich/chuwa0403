@@ -10,16 +10,18 @@ import java.time.LocalDateTime;
 @Entity
 @Table(
         name = "posts",
-        uniqueConstraints = {@UniqueConstraint(columnNames = {"title"})}
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = {"title"})
+        }
 )
+@NamedQuery(name="Post.getAll", query="select p from Post p")
 public class Post {
-    @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
-    private long id;
 
-    @Column(nullable = false)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "title", nullable = false)
     private String title;
 
     @Column(name = "description", nullable = false)
@@ -29,19 +31,17 @@ public class Post {
     private String content;
 
     @CreationTimestamp
+    @Column(name = "create_date_time")
     private LocalDateTime createDateTime;
 
     @UpdateTimestamp
+    @Column(name = "update_date_time")
     private LocalDateTime updateDateTime;
 
-    public Post(long id, String title, String description, String content) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.content = content;
+    public Post() {
     }
 
-    public Post(long id, String title, String description, String content, LocalDateTime createDateTime, LocalDateTime updateDateTime) {
+    public Post(Long id, String title, String description, String content, LocalDateTime createDateTime, LocalDateTime updateDateTime) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -50,15 +50,11 @@ public class Post {
         this.updateDateTime = updateDateTime;
     }
 
-    public Post() {
-
-    }
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
