@@ -206,5 +206,22 @@ orphanRemoval = true specifies that when a child entity is removed from the pare
 * FetchType.EAGER load it with other fields.
 
 ## 9. What is the rule of JPA naming convention? Shall we implement the method by ourselves? Could you list some examples?
+1. Entity class naming convention: Entity classes should be named using the singular form of the table name, with the first letter capitalized. For example, if the table name is "customers", the entity class should be named "Customer".
+
+2. Property naming convention: Property names should be in camelCase, starting with a lowercase letter. For example, if the property represents the customer's first name, it should be named "firstName".
+
+3. Primary key naming convention: The primary key field should be named "id", with a data type that corresponds to the database primary key type.
+
+4. Table naming convention: By default, JPA maps entity classes to database tables with the same name as the class. However, it is possible to specify a different table name using the @Table annotation.
+
+5. Relationship naming convention: Relationships between entities should be named using a combination of the name of the target entity class and the property name in the owning entity class. For example, if a Customer entity has a OneToMany relationship with an Order entity, the property name in the Customer entity should be named "orders", and the property name in the Order entity should be named "customer".
+
+6. Join table naming convention: When a many-to-many relationship is defined between two entities, JPA creates a join table to store the relationship. By default, the join table is named using the names of the two entities being joined, in alphabetical order. For example, if there is a many-to-many relationship between Customer and Product, the join table would be named "customer_product".
+
+7. Follow the query rules to generate advanced methods. Use key words And, Or, between, isNull, isNotNull, in, not in, find by etc. Methdo parameters should be in entities.
+
+We don't need to implement this ourselves. For example findByNameAndDescription(String name, String description).
+
 
 ## 10. Try to use JPA advanced methods in your class project. In the repository layer, you need to use the naming convention to use the method provided by JPA.
+Done.
