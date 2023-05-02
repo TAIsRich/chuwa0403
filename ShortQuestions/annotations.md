@@ -368,3 +368,72 @@ public class UserController {
 }
 ```
 The `@ResponseStatus(HttpStatus.CREATED)` annotation is used to indicate that the HTTP response status code should be set to `201 Created` if the method completes successfully. This status code is typically returned by a successful POST request to indicate that a new resource has been created.
+
+
+## 18. @JsonProperty
+`@JsonProperty` is a Jackson annotation in Java that is used to specify the mapping between a Java object property and a JSON field during serialization and deserialization.
+```java
+public class Product {
+    @JsonProperty("description_yyds")
+    private String description;
+
+    // other properties and methods
+}
+```
+In this example, the `description` property of the `Product` class is annotated with `@JsonProperty("description_yyds")`. This means that during serialization, the property `description` will be mapped to the JSON field `description_yyds`, and during deserialization, the JSON field `description_yyds` will be mapped to the property `description`. This allows you to customize the naming of JSON fields in the serialized and deserialized JSON representations of the `Product` class.
+
+## 19. @ManyToOne
+`@ManyToOne` is a JPA annotation used to define a many-to-one relationship between two entities in a relational database. It is used to define a foreign key constraint between two tables where one table has multiple instances of another table's primary key value.
+
+The `@ManyToOne` annotation is placed on the field or property in the dependent entity that represents the relationship to the parent entity. It requires a `@JoinColumn` annotation to specify the column in the dependent table that references the primary key column in the parent table.
+```java
+@Entity
+public class Product {
+    // ...
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+    // ...
+}
+
+@Entity
+public class Category {
+    // ...
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
+    // ...
+}
+```
+In this example, the `Product` entity has a many-to-one relationship with the `Category` entity. The `category` field in the `Product` entity is annotated with `@ManyToOne` to specify the relationship, and the `category_id` column in the `product` table is used as the foreign key to the `id` column in the `category` table. The `Category` entity has a one-to-many relationship with the `Product` entity, which is mapped by the `products` field.
+
+## 20. @OneToMany
+`@OneToMany` is a JPA annotation used to specify a one-to-many relationship between two entities. It is used to associate multiple instances of an entity with a single instance of another entity. In other words, it defines a parent-child relationship between two entities, where the parent entity has a collection of child entities.
+
+For example, consider two entities, `Order` and `OrderItem`, where an order can have multiple items. The `Order` entity would have a collection of `OrderItem` entities defined with the @OneToMany annotation. This tells JPA that each instance of `Order` can be associated with multiple instances of `OrderItem`.
+```java
+@Entity
+public class Order {
+    // ...
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> items = new ArrayList<>();
+    // getters and setters
+}
+
+@Entity
+public class OrderItem {
+    // ...
+    @ManyToOne
+    private Order order;
+    // getters and setters
+}
+```
+
+## 21. @NoArgsConstructor
+`@NoArgsConstructor` is a Lombok annotation that generates a no-argument constructor for a class. This annotation can be added to a class to automatically generate a constructor without any arguments. The generated constructor initializes all fields to their default values. This can be useful when using frameworks that require a default constructor, or when creating objects that will be initialized later. The annotation can be customized to generate additional code or to specify different access levels for the constructor.
+
+## 22. @AllArgsConstructor
+`@AllArgsConstructor` is a Lombok annotation that generates a constructor with a parameter for each field in the class. The generated constructor initializes each field with the corresponding parameter passed to the constructor.
+
+## 23. @Transactional
+`@Transactional` is an annotation used in Spring Framework to provide transactional support. It is used to mark a method, class, or interface as transactional. When the `@Transactional` annotation is applied to a method, Spring creates a transaction around that method. If the method succeeds, the transaction is committed, and if the method fails, the transaction is rolled back.
+
