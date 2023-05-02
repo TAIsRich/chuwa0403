@@ -1,25 +1,24 @@
 package com.chuwa.redbook.entity;
-
-import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(
-        name = "post",
-        uniqueConstraints = {@UniqueConstraint(columnNames = {"tittle"})}
+        name = "posts",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = {"title"})
+        }
 )
 public class Post {
+
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String tittle;
+    @Column(name = "title", nullable = false)
+    private String title;
 
     @Column(name = "description", nullable = false)
     private String description;
@@ -33,40 +32,32 @@ public class Post {
     @UpdateTimestamp
     private LocalDateTime updateDateTime;
 
-    public Post(long id, String title, String description, String content) {
-        this.id = id;
-        this.tittle = tittle;
-        this.description = description;
-        this.content = content;
+    public Post() {
     }
 
-    public Post(long id, String tittle, String description, String content, LocalDateTime createDateTime, LocalDateTime updateDateTime) {
+    public Post(Long id, String title, String description, String content, LocalDateTime createDateTime, LocalDateTime updateDateTime) {
         this.id = id;
-        this.tittle = tittle;
+        this.title = title;
         this.description = description;
         this.content = content;
         this.createDateTime = createDateTime;
         this.updateDateTime = updateDateTime;
     }
 
-    public Post() {
-
-    }
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     public String getTitle() {
-        return tittle;
+        return title;
     }
 
-    public void setTitle(String tittle) {
-        this.tittle = tittle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -99,5 +90,17 @@ public class Post {
 
     public void setUpdateDateTime(LocalDateTime updateDateTime) {
         this.updateDateTime = updateDateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", content='" + content + '\'' +
+                ", createDateTime=" + createDateTime +
+                ", updateDateTime=" + updateDateTime +
+                '}';
     }
 }

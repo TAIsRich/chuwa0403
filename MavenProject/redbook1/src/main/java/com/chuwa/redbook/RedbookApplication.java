@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RedbookApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(RedbookApplication.class, args);
 	}
 
