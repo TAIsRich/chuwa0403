@@ -1,7 +1,7 @@
 package com.chuwa.redbook.payload;
 
 public class PostDto {
-    private long id;
+    private Long id;
     private String title;
     private String description;
     private String content;
@@ -9,11 +9,18 @@ public class PostDto {
     public PostDto() {
     }
 
-    public long getId() {
+    public PostDto(Long id, String title, String description, String content) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.content = content;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -39,5 +46,15 @@ public class PostDto {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "PostDto{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", content='" + content + '\'' +
+                '}';
     }
 }
