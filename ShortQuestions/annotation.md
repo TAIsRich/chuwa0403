@@ -91,6 +91,19 @@ public class MyExceptionHandler {
 - `@DeleteMapping` This annotation is used to map HTTP DELETE requests to specific controller methods in Spring. It is used to delete resources.
 - `@PutMapping` This annotation is used to map HTTP PUT requests to specific controller methods in Spring. It is used to update resources.
 - `@ResponseStatus` This annotation is used to define the HTTP status code to be returned by the controller method. It is used to customize the HTTP response status of the API.
+- `@Query` This annotation is used in Spring Data JPA to declare a custom query to be executed by the JPA provider. It allows developers to write custom SQL or JPQL queries and map the results to Java objects.
+- `@EnableTransactionManagement` This annotation is used to enable transaction management in Spring. It is typically used in the main configuration class of a Spring application and allows for declarative transaction management using annotations such as `@Transactional`.
+- `@Transactional` This annotation provides a declarative way to manage transactions in Spring, allowing developers to focus on the business logic of their application rather than worrying about transaction management.
+- `@Repository` This annotation is used to perform database operations. It allows Spring to automatically create an instance of the repository and manage its lifecycle, including transaction management.
+- `@ManyToOne`  This annotation is used to define a many-to-one relationship between two entities.
+- `@OneToOne` This annotation is typically used to define a relationship between two entities where each entity has a unique reference to the other.
+- `@ManyToMany` This annotation is typically used to define a relationship where multiple instances of one entity can be associated with multiple instances of another entity.
+- `@JoinColumn` This annotation is used to define a column used for joining two entities in a database table.
+- `@JoinTable` This annotation is used to define a join table used for many-to-many relationships. It allows developers to define the table used for the relationship, as well as any additional columns required.
+- `@PersistenceContext` This annotation is typically used to manage the persistence context in JPA.
+- `@UniqueConstraint` This annotation is typically used to enforce uniqueness constraints on one or more columns in a table.
+- `@NamedQueries` This annotation allows developers to define a named query using JPQL, which can be used to retrieve data from the database.
+
 
 
 
