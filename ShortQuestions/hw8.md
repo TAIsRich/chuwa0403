@@ -56,9 +56,7 @@ public class BookStore{
 
 8. `fetch = FetchType.LAZY` means when a replationship is marked as lazy, the related entity is not loaded from the database until it is actually accesed by the application. It is useful when we have a large number of related entites and we want to avoid loading them all at once. `fetch = FetchType.EAGER`means the related entity is loaded from the database immediately when the parent entity is loaded. It is useful when we know that we will always need the related entity when we access the parent entity ant it avoid the overhead of additional database queries.
 
-9. JPA naming convention
-    - 
-10. JPA naming convention:
+9. JPA naming convention:
     - Entity class naming convention: Entity classes should be named using the singular form of the table name, with the first letter capitalized. table "coustomers"->"Customer"
     - Property naming convention: Property names should be in CamelCase, starting with a lowercase letter. "firstName"
     - Primary key naming convention: should be named "id", with a data type that corresponds to the database primary key type.
@@ -70,6 +68,7 @@ public class BookStore{
     We don't need to implement this ourselves.
 
     findByNameAndDescription(String name, String description)
+10. see [redbook](/Coding/redbook/)
 11. see [redbook](/Coding/redbook/)
 
 # hw42-Spring-Data 2
