@@ -69,17 +69,47 @@ DI is dependency injection. It is a implementation of IOC. In DI, an object's de
 * annotation: @ComponentScan("package name") 
 
 ## 6. What is  @SpringbootApplication?
+@SpringBootApplication is a combination of three annotations - @Configuration, @EnableAutoConfiguration, and @ComponentScan.
 
+@Configuration marks the class as a source of bean definitions for the application context. This means that any beans defined in this class or any methods annotated with @Bean will be registered with the Spring application context.
+
+@EnableAutoConfiguration enables Spring Boot's auto-configuration mechanism, which automatically configures the application based on the dependencies on the classpath. This allows developers to focus on writing business logic, while Spring Boot takes care of the infrastructure configuration.
+
+@ComponentScan tells Spring to scan the current package and all its sub-packages for components such as controllers, services, and repositories, and register them with the Spring application context.
+
+When @SpringBootApplication is used, it replaces the need for developers to manually configure the application context, and provides a default set of configurations and conventions for building a Spring Boot application.
 
 ## 7. How many ways wo can define a bean?
+Using annotations:
+* class level: @Component, @Servie, @Repository, @Controller
+* method level: @Bean cooperate with @Configurable
+
+Using xml;Beans can be defined in an XML configuration file using the bean element. The bean element contains information about the class, scope, and properties of the bean.
 
 ## 8. What is default bean name for  @Component and  @Bean?
+The camel case of the class name or method name with the first letter small case.
 
 ## 9. What is the difference between  @component and  @service,@repository?
+No funcitonal difference. @Component includes @service,@repository. Using the appropriate stereotype annotation for a given class can make the code more self-explanatory and easier to understand. 
 
 ## 10. How many annotaitons we can use to inject the bean?
+3
+
+* @autowired: a spring type Spring-specific annotation. This annotation is used to inject beans by type. Spring will automatically search for a bean of the same type as the annotated field or parameter and inject it.
+* @Resource: a standard Java annotation. It can be used to inject beans by name or by type, and can be used with the name attribute to specify the name of the bean to inject.
+* @Inject: This annotation is a standard Java annotation that is similar to @Autowired. It can be used to inject beans by type,
 
 ## 11. Tell me the three types to do dependency injection(How can we inject the beans in Spring)? Which way is better and why?
+By constructor, by setter, by field.
+
+Constructor injection makes dependencies explicit: When using constructor injection, the required dependencies are explicitly listed as constructor parameters. This makes the dependencies clear and easy to understand, and also makes it harder to accidentally omit a required dependency.
+
+Constructor injection ensures that all dependencies are available: With constructor injection, all required dependencies must be passed as parameters to the constructor. This means that the object cannot be instantiated without all of its dependencies being available, preventing runtime errors due to missing dependencies.
+
+Constructor injection makes testing easier: With constructor injection, it's easy to provide mock or stub dependencies during testing by passing them to the constructor. This allows for more comprehensive testing of the object's behavior and also helps to isolate the object being tested from its dependencies.
+
+Constructor injection is more resilient to changes: With constructor injection, adding or removing dependencies simply requires changing the constructor parameters and any code that calls the constructor. This makes it easier to refactor the code without affecting its behavior or requiring extensive modifications.
+
 
 ## 12. If we have multiple beans for one type, how to set one is primary? and how to let the spring to pick one bean to inject if no primay.
 
