@@ -130,3 +130,23 @@ The scope of the bean defines the life cycle and visibility of the bean within t
 * global-session: This scopes a bean definition to a global HTTP session. Only valid in the context of a web-aware Spring ApplicationContext.
 
 ## 15. Configure a bean using xml. If bean has parameters/dependencies, how can we configure the bean? (you can google the tutorial how to configure beans in xml, and feel free to ask me any quesitons if you don't understand. it is a little bit old, I am not sure if I need to exaplain it in class)
+By constructor
+```
+<bean id="myBean" class="com.example.MyBean">
+    <constructor-arg ref="dependency1"/>
+    <constructor-arg ref="dependency2"/>
+</bean>
+
+<bean id="dependency1" class="com.example.Dependency1"/>
+<bean id="dependency2" class="com.example.Dependency2"/>
+
+```
+By setter
+<bean id="myBean" class="com.example.MyBean">
+    <property name="dependency1" ref="dependency1"/>
+    <property name="dependency2" ref="dependency2"/>
+</bean>
+
+<bean id="dependency1" class="com.example.Dependency1"/>
+<bean id="dependency2" class="com.example.Dependency2"/>
+```
