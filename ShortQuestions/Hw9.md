@@ -112,9 +112,21 @@ Constructor injection is more resilient to changes: With constructor injection, 
 
 
 ## 12. If we have multiple beans for one type, how to set one is primary? and how to let the spring to pick one bean to inject if no primay.
+Use @Primary (on the bean class)
+Use @Qualifier("bean id"). (on the bean)
 
 ## 13. What is the difference between BeanFactory and ApplicationContext in Spring?
-
+* Beanfactory use lazy initialization while ApplicarionContext use eager initialization.
+* BeanFactory only supports XML configuration; while ApplicationContext also supports annotation based configuration.
+* BeanFactory is more lightweight and extensible, allowing for more customization and flexibility in creating container instances. ApplicationContext provides more out-of-the-box features and functionality, such as internationalization support, event handling, and easier integration with other Spring components.
+* ApplicationContext provides additional functionality, such as support for message sources, AOP, and integration with various frameworks and technologies, while BeanFactory provides the basic functionality for managing beans.
 ## 14. What is the Scope of a Bean?  and list the examples for each scope.
+The scope of the bean defines the life cycle and visibility of the bean within the application context.
+
+* singleton: This scopes the bean definition to a single instance per Spring IoC container (default).
+* prototype: This scopes a single bean definition to have any number of object instances.
+* request: This scopes a bean definition to an HTTP request. Only valid in the context of a web-aware Spring ApplicationContext.
+* session: This scopes a bean definition to an HTTP session. Only valid in the context of a web-aware Spring ApplicationContext.
+* global-session: This scopes a bean definition to a global HTTP session. Only valid in the context of a web-aware Spring ApplicationContext.
 
 ## 15. Configure a bean using xml. If bean has parameters/dependencies, how can we configure the bean? (you can google the tutorial how to configure beans in xml, and feel free to ask me any quesitons if you don't understand. it is a little bit old, I am not sure if I need to exaplain it in class)
