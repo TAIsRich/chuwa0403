@@ -176,7 +176,35 @@ It is the same with Front-Controller.
 6. DispatcherServlet then return it to client.
 
 ## 5. What is JSP and What is ModelAndView？(please google to have a basic knowlege)
+JSP stands for JavaServer Pages. It is a technology used for developing dynamic web pages in Java. JSP allows developers to embed Java code within HTML pages, enabling the creation of dynamic content that can be generated based on user input, data from a database, or other sources.
+
+ModelAndView is a class in Spring MVC that is used to pass data between the controller and the view in a web application. It represents both the data model and the view that will be rendered to the client.
+
+The "model" in ModelAndView refers to the data that the controller wants to send to the view. It can be any Java object or a collection of objects that hold the necessary data for rendering the view. The model data is typically represented as key-value pairs, where the keys are used as identifiers in the view to retrieve the corresponding data.
+
+The "view" in ModelAndView represents the template or the view technology that will be used to render the response to the client. It can be a JSP page, Thymeleaf template, or any other view technology supported by Spring MVC.
 
 ## 6. Could you please google any other servlets
+A servlet is a Java programming language class that is used to extend the capabilities of servers that host applications accessed by means of a request-response programming model. 其主要功能在于交互式地浏览和修改数据，生成动态Web内容。
+
+1. JspServlet: It is a servlet implementation specifically designed for handling JavaServer Pages (JSP). It compiles JSP files into servlets and executes them to generate dynamic content.
+2. The HttpServlet class is a subclass of GenericServlet and provides specific functionality for handling HTTP requests and generating HTTP responses in Java web applications. It is part of the Java Servlet API.
+3. AsyncServlet: This type of servlet allows for asynchronous request processing. It enables a servlet to suspend the processing of a request, perform other tasks concurrently, and then resume processing the request when the results are ready. It utilizes the AsyncContext object for managing asynchronous processing.
 
 ## 7. How many web server do you know? (Tomcat, Jetty, Jboss)
+A web server is a software application that serves web pages and responds to requests from clients over the Hypertext Transfer Protocol (HTTP). It is responsible for hosting and delivering web content to users.
+
+Apache HTTP Server (Apache): Apache is one of the most widely used open-source web servers. It is known for its stability, security, and flexibility. Apache supports various operating systems and is highly extensible through modules.
+
+Nginx: Nginx is a lightweight, high-performance web server and reverse proxy server. It is designed to handle a large number of concurrent connections efficiently. Nginx is often used for serving static content, load balancing, and as a reverse proxy for application servers.
+
+Microsoft Internet Information Services (IIS): IIS is a web server provided by Microsoft and is the default web server for Windows operating systems. It supports various protocols like HTTP, HTTPS, FTP, SMTP, and others. IIS integrates well with other Microsoft technologies.
+
+Tomcat: Apache Tomcat is a popular web server and servlet container that is commonly used for Java-based web applications. It implements the Java Servlet and JavaServer Pages (JSP) specifications and provides a runtime environment for running Java web applications.
+
+Jetty: Jetty is a lightweight and embeddable web server that is often used for developing and testing web applications. It supports the latest Java Servlet API standards and is known for its simplicity and easy integration with Java applications.
+
+Lighttpd: Lighttpd (pronounced "lighty") is a lightweight web server designed for high-performance environments. It is known for its low memory footprint and efficient handling of concurrent connections.
+
+## 8.
+
