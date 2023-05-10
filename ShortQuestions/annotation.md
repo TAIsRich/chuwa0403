@@ -103,6 +103,13 @@ public class MyExceptionHandler {
 - `@PersistenceContext` This annotation is typically used to manage the persistence context in JPA.
 - `@UniqueConstraint` This annotation is typically used to enforce uniqueness constraints on one or more columns in a table.
 - `@NamedQueries` This annotation allows developers to define a named query using JPQL, which can be used to retrieve data from the database.
+- `@Bean`  This annotation is used to mark a method in a configuration class that returns an object which should be registered as a bean in the Spring application context. The method should return an instance of a class that can be managed by Spring's dependency injection container.
+- `@Primary` This annotation is used to indicate the primary bean when there are multiple beans of the same type.
+- `@ComponentScan` This annotation is used to specify the packages that should be scanned by Spring for detecting components, such as controllers, services, repositories, and so on. It is typically used in a configuration class that is annotated with @Configuration.
+- `@Controller` This annotation is used to mark a class as a Spring MVC controller. It is typically used to handle HTTP requests and return a response.
+- `@ControllerAdvice` This annotation is used to define global exception handling for a Spring MVC application. It is typically used to handle exceptions that occur across multiple controllers.
+- `@Service` This annotation is used to mark a class as a service in a Spring application. It is typically used to define business logic and transaction management.
+- `@Component` his annotation is used to mark a class as a component in a Spring application. It is a generic stereotype annotation that can be used for any Spring-managed component. Components are auto-detected by Spring's @ComponentScan.
 
 
 
