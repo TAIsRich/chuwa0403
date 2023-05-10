@@ -142,6 +142,7 @@ By constructor
 
 ```
 By setter
+```
 <bean id="myBean" class="com.example.MyBean">
     <property name="dependency1" ref="dependency1"/>
     <property name="dependency2" ref="dependency2"/>
@@ -150,3 +151,32 @@ By setter
 <bean id="dependency1" class="com.example.Dependency1"/>
 <bean id="dependency2" class="com.example.Dependency2"/>
 ```
+# Part 3
+## 1.
+## 2. What is MVC pattern?
+Controller contains the business logic of the application. They handle requests and perform marshalling and unmarshalling. The function of the controller is to handle a user request. The incoming request may be handled in different ways based on post, get, update and delete. The controller 
+places the data in the model which, simply put, is a container for the data. The controller 
+returns the model (containing data) back to the front controller.
+
+Model is the container for data. It is used to transfer data from one part of the spring mvc application to another. Controller populates the model with data from a form or a database or a web server. 
+
+View template receives the model containing data, It reads the model and displays the data. The model contains a list of players, the view can create a table to display that list. n most cases a view template is a JSP page that provides data to the user.
+
+## 3. What is Front-Controller?
+Front-Controller is a design pattern that handles incoming requests to a web application. It is a centralized controller thta receives all requests and dispatches them to the appropriate handler for further processing. In this pattern, all incoming requests are first received by the Front-Controller, which performs common tasks such as authentication, routing, and error handling. Once the request has been processed by the Front-Controller, it is passed on to a specific handler or controller that is responsible for handling that particular request.
+
+## 4. What is DispatcherServlet? please decribe how it works.
+It is the same with Front-Controller. 
+
+1. DispatcherServlet receives the HTTP requests;
+2. DispatcherServlet call the HandlerMapper;
+3. HandlerMapper will match request to handler method, then call the method;
+4. Controller return ModelAndView to dispatcher;
+5. DispatcherServlet then call the view resolver to find right view template, then view engine will inject the model into view template;
+6. DispatcherServlet then return it to client.
+
+## 5. What is JSP and What is ModelAndView？(please google to have a basic knowlege)
+
+## 6. Could you please google any other servlets
+
+## 7. How many web server do you know? (Tomcat, Jetty, Jboss)
