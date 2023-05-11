@@ -352,6 +352,24 @@ public class UserController {
 
 ```
 
+## validations
+
+**@NotNull:** Validates that the annotated field is not null.
+
+**@Size:** Validates that the annotated field has a size within the specified range.
+
+**@Email:** Validates that the annotated field is a valid email address.
+
+**@Pattern:** Validates that the annotated field matches the specified regular expression.
+
+**@Min:** Validates that the annotated field is a number greater than or equal to the
+specified value.
+
+**@Max:** Validates that the annotated field is a number less than or equal to the specified value.
+
+**@NotBlank:** Validates that the annotated field is not blank (i.e., contains at least one non-whitespace character).
+
+**@NotEmpty:** Validates that the annotated field is not empty (i.e., not null and has a length greater than zero).
 
 # Annotations Used by Service
 
@@ -453,4 +471,51 @@ In JPA, @NamedQuery and @NamedQueries are used to define pre-defined JPQL querie
     @NamedQuery(name = "findEmployeesByDepartment", query = "SELECT e FROM Employee e WHERE e.department = :department")
 })
 
+```
+
+# Other
+
+## @CompnonentScan
+
+@ComponentScan is an annotation in Spring that is used to instruct the Spring container to scan for and register beans (components) within a specified package or set of packages.
+
+When Spring scans the specified package(s), it looks for classes annotated with @Component, @Service, @Repository, @Controller, or any custom annotations that are themselves annotated with @Component. These classes are then registered as beans in the Spring container, which can be subsequently injected into other classes.
+
+```java
+@Configuration
+@ComponentScan("com.example.app")
+public class AppConfig {
+    // other configuration
+}
+```
+## @SpringbootApplication
+
+**@SpringBootApplication** is an annotation in Spring Boot that is used to combine the functionality of three annotations: @Configuration, @EnableAutoConfiguration, and @ComponentScan.
+
+```java
+@SpringBootApplication
+public class MyApp {
+    public static void main(String[] args) {
+        SpringApplication.run(MyApp.class, args);
+    }
+}
+```
+
+## @Qualifier
+
+**@Qualifier:** @Qualifier is used in conjunction with @Autowired to specify which bean to inject when there are multiple beans of the same type. We can use @Qualifier to specify the name of the bean to inject, as defined by the @Component or @Bean annotation.
+
+```java
+@Service
+public class MyService {
+    
+    private final MyRepository myRepository;
+    
+    @Autowired
+    public MyService(@Qualifier("myRepositoryImpl") MyRepository myRepository) {
+        this.myRepository = myRepository;
+    }
+    
+    // ...
+}
 ```
