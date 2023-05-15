@@ -85,3 +85,10 @@ Use a database sequence by setting the strategy attribute to `GenerationType.SEQ
 # Component
 - @Repository
 This annotation indicates that the class deals with CRUD operations, usually it’s used with DAO implementations that deal with database tables.
+
+# Exception
+- @ControllerAdvice: Class Level. It is used to handle the exceptions globally.
+- @ExceptionHandler: Method Level. It is used to handle the specific exceptions and send the custom responses to the client.
+
+# 
+@Value: get value from application.properties. @Value("${propertyName}") with a varibale. The value of the property will pass to the variable.
