@@ -9,6 +9,7 @@ import com.chuwa.redbook.util.AppConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.NoResultException;
@@ -33,6 +34,7 @@ public class PostController {
 
     // get all post rest api
     // {{localhost}}/api/v1/posts?pageNo=0&pageSize=10&sortBy=id&sortDir=desc
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public PostResponse getAllPosts(
             @RequestParam(value = "pageNo", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER, required = false) int pageNo,

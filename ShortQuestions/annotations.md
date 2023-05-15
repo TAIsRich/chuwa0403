@@ -515,3 +515,56 @@ public class UserController {
 ```
 In the above code, the `createUser` method accepts a `User` object as input and validates it using the `@Valid` annotation. If the validation fails, Spring Boot will throw a `MethodArgumentNotValidException`. You can handle this exception using the `@ExceptionHandler` annotation to return an appropriate response to the client.
 
+Define beans
+## 27. @Component
+## 28. @Service
+## 29. @Repository
+## 30. @Controller
+## 31. @ControllerAdvice
+## 32. @Bean
+
+Component Scan
+## 33. @Configuration
+`@Configuration` is a Spring Framework annotation that is used to indicate that a class is a configuration class.
+
+When a class is annotated with `@Configuration`, it is considered as a source of bean definitions and other application configuration. Spring will automatically detect and process the configuration class during application startup, allowing you to define and customize various components and settings.
+
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    public DataSource dataSource() {
+        // configure and return a data source bean
+    }
+
+    @Bean
+    public SomeService someService() {
+        // configure and return a service bean
+    }
+}
+```
+In this example, the AppConfig class is annotated with `@Configuration`, indicating that it is a configuration class. The class defines two bean methods, `dataSource()` and `someService()`, using the `@Bean` annotation. These methods configure and return instances of `DataSource` and `SomeService` beans, respectively.
+
+During the application startup, Spring will process the `AppConfig` class and create the beans defined in the configuration class. These beans can be injected into other components using the `@Autowired` annotation or accessed directly from the application context.
+
+Using `@Configuration` allows you to define and customize the configuration of your Spring application, such as creating beans, configuring third-party libraries, setting up database connections, and more.
+## 34. @ComponentScan
+## 35. @EnableAutoConfiguration
+
+Dependency Injection
+@Qualifier
+@Primary
+@Resource
+@Inject
+
+@RestController vs. @Controller
+
+## @EnableWebSecurity
+The `@EnableWebSecurity` annotation is used in a Spring Security configuration class to enable and customize web security for a Spring Boot application.
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    // Security configurations and methods
+}
+```
