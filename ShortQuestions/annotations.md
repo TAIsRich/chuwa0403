@@ -519,3 +519,36 @@ public class MyService {
     // ...
 }
 ```
+
+## @Value
+
+@Value is an annotation in Spring framework that is used to inject values from external sources into Spring-managed beans. It can be applied to fields, methods, or constructor parameters.
+
+When you use @Value annotation, you can provide a value expression or a placeholder that resolves to a value. The value can be retrieved from various sources such as properties files, environment variables, system properties, or command line arguments.
+
+```java
+
+@Component
+public class MyComponent {
+    @Value("${my.property}")
+    private String myProperty;
+
+    // ...
+}
+```
+
+## @PreAuthorize
+
+@PreAuthorize is an annotation provided by the Spring Security framework that is used to define method-level security expressions for authorization purposes. It allows you to specify access control rules directly on methods to restrict or allow access based on certain conditions.
+
+When you apply the @PreAuthorize annotation to a method, it indicates that the method can only be executed if the specified authorization expression evaluates to true. If the expression evaluates to false, an exception will be thrown, indicating access denied.
+
+```java
+@Service
+public class MyService {
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public void performAdminAction() {
+        // Perform admin action
+    }
+}
+```
