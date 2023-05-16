@@ -352,6 +352,24 @@ public class UserController {
 
 ```
 
+## validations
+
+**@NotNull:** Validates that the annotated field is not null.
+
+**@Size:** Validates that the annotated field has a size within the specified range.
+
+**@Email:** Validates that the annotated field is a valid email address.
+
+**@Pattern:** Validates that the annotated field matches the specified regular expression.
+
+**@Min:** Validates that the annotated field is a number greater than or equal to the
+specified value.
+
+**@Max:** Validates that the annotated field is a number less than or equal to the specified value.
+
+**@NotBlank:** Validates that the annotated field is not blank (i.e., contains at least one non-whitespace character).
+
+**@NotEmpty:** Validates that the annotated field is not empty (i.e., not null and has a length greater than zero).
 
 # Annotations Used by Service
 
@@ -453,4 +471,84 @@ In JPA, @NamedQuery and @NamedQueries are used to define pre-defined JPQL querie
     @NamedQuery(name = "findEmployeesByDepartment", query = "SELECT e FROM Employee e WHERE e.department = :department")
 })
 
+```
+
+# Other
+
+## @CompnonentScan
+
+@ComponentScan is an annotation in Spring that is used to instruct the Spring container to scan for and register beans (components) within a specified package or set of packages.
+
+When Spring scans the specified package(s), it looks for classes annotated with @Component, @Service, @Repository, @Controller, or any custom annotations that are themselves annotated with @Component. These classes are then registered as beans in the Spring container, which can be subsequently injected into other classes.
+
+```java
+@Configuration
+@ComponentScan("com.example.app")
+public class AppConfig {
+    // other configuration
+}
+```
+## @SpringbootApplication
+
+**@SpringBootApplication** is an annotation in Spring Boot that is used to combine the functionality of three annotations: @Configuration, @EnableAutoConfiguration, and @ComponentScan.
+
+```java
+@SpringBootApplication
+public class MyApp {
+    public static void main(String[] args) {
+        SpringApplication.run(MyApp.class, args);
+    }
+}
+```
+
+## @Qualifier
+
+**@Qualifier:** @Qualifier is used in conjunction with @Autowired to specify which bean to inject when there are multiple beans of the same type. We can use @Qualifier to specify the name of the bean to inject, as defined by the @Component or @Bean annotation.
+
+```java
+@Service
+public class MyService {
+    
+    private final MyRepository myRepository;
+    
+    @Autowired
+    public MyService(@Qualifier("myRepositoryImpl") MyRepository myRepository) {
+        this.myRepository = myRepository;
+    }
+    
+    // ...
+}
+```
+
+## @Value
+
+@Value is an annotation in Spring framework that is used to inject values from external sources into Spring-managed beans. It can be applied to fields, methods, or constructor parameters.
+
+When you use @Value annotation, you can provide a value expression or a placeholder that resolves to a value. The value can be retrieved from various sources such as properties files, environment variables, system properties, or command line arguments.
+
+```java
+
+@Component
+public class MyComponent {
+    @Value("${my.property}")
+    private String myProperty;
+
+    // ...
+}
+```
+
+## @PreAuthorize
+
+@PreAuthorize is an annotation provided by the Spring Security framework that is used to define method-level security expressions for authorization purposes. It allows you to specify access control rules directly on methods to restrict or allow access based on certain conditions.
+
+When you apply the @PreAuthorize annotation to a method, it indicates that the method can only be executed if the specified authorization expression evaluates to true. If the expression evaluates to false, an exception will be thrown, indicating access denied.
+
+```java
+@Service
+public class MyService {
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public void performAdminAction() {
+        // Perform admin action
+    }
+}
 ```
