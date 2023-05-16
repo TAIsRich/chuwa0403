@@ -437,3 +437,134 @@ public class OrderItem {
 ## 23. @Transactional
 `@Transactional` is an annotation used in Spring Framework to provide transactional support. It is used to mark a method, class, or interface as transactional. When the `@Transactional` annotation is applied to a method, Spring creates a transaction around that method. If the method succeeds, the transaction is committed, and if the method fails, the transaction is rolled back.
 
+## 24. @ExceptionHandler
+* Method Level
+* Used to handle the specific exceptions and sending the custom responses to the client
+
+`@ExceptionHandler` is a Spring annotation that is used to define methods which handle exceptions thrown by request mapping methods in a Spring MVC application. When an exception is thrown during the execution of a request, Spring MVC looks for a matching `@ExceptionHandler` method within the controller or one of its handler methods. If a matching method is found, it will be called to handle the exception.
+
+```java
+@ControllerAdvice
+public class ExceptionHandlerController {
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<Object> handleResourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
+        // create a custom error response object
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage(), request.getDescription(false));
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+}
+```
+In this example, the `@ExceptionHandler` annotation is applied to a method that handles the `ResourceNotFoundException` exception. The method takes two parameters: the exception itself and a `WebRequest` object that contains information about the current request. The method creates a custom error response object and returns a `ResponseEntity` with the error response and a `NOT_FOUND` HTTP status code. This response will be sent to the client when the exception is thrown.
+
+
+## 25. @ControllerAdvice
+* Class Level
+* to handle the exceptions globally
+
+`@ControllerAdvice` is an annotation in Spring MVC that allows you to write global exception handlers that are applied to all `@Controller` classes.
+
+By using `@ControllerAdvice`, you can define methods that handle exceptions for all controllers, or a subset of controllers. You can also apply filters to those controllers that will trigger the exception handlers.
+
+The methods annotated with `@ExceptionHandler` inside the `@ControllerAdvice` class will catch and handle exceptions thrown from the controllers that match the defined criteria. The exception handling logic can be customized, and can return error messages, HTTP status codes, or redirect to an error page.
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleResourceNotFoundException(ResourceNotFoundException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.NOT_FOUND.value(), ex.getMessage());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+}
+```
+
+## 26. @Valid
+The `@Valid` annotation is used in Spring Boot applications for bean validation. When a method parameter is annotated with `@Valid`, it tells Spring to validate the object before it is processed further in the method.
+
+Suppose you have a User class with `username` and `email` fields:
+```java
+public class User {
+    @NotBlank(message = "Username is required")
+    private String username;
+
+    @Email(message = "Invalid email format")
+    private String email;
+
+    // getters and setters
+}
+```
+
+In your controller class, you can use the `@Valid` annotation to validate the user input:
+```java
+@RestController
+public class UserController {
+    @PostMapping("/users")
+    public ResponseEntity<?> createUser(@Valid @RequestBody User user) {
+        // do something with the valid user object
+        return ResponseEntity.ok().build();
+    }
+
+    // exception handler for validation errors
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<?> handleValidationExceptions(MethodArgumentNotValidException ex) {
+        // handle validation errors and return an appropriate response
+        return ResponseEntity.badRequest().body("Validation error");
+    }
+}
+```
+In the above code, the `createUser` method accepts a `User` object as input and validates it using the `@Valid` annotation. If the validation fails, Spring Boot will throw a `MethodArgumentNotValidException`. You can handle this exception using the `@ExceptionHandler` annotation to return an appropriate response to the client.
+
+Define beans
+## 27. @Component
+## 28. @Service
+## 29. @Repository
+## 30. @Controller
+## 31. @ControllerAdvice
+## 32. @Bean
+
+Component Scan
+## 33. @Configuration
+`@Configuration` is a Spring Framework annotation that is used to indicate that a class is a configuration class.
+
+When a class is annotated with `@Configuration`, it is considered as a source of bean definitions and other application configuration. Spring will automatically detect and process the configuration class during application startup, allowing you to define and customize various components and settings.
+
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    public DataSource dataSource() {
+        // configure and return a data source bean
+    }
+
+    @Bean
+    public SomeService someService() {
+        // configure and return a service bean
+    }
+}
+```
+In this example, the AppConfig class is annotated with `@Configuration`, indicating that it is a configuration class. The class defines two bean methods, `dataSource()` and `someService()`, using the `@Bean` annotation. These methods configure and return instances of `DataSource` and `SomeService` beans, respectively.
+
+During the application startup, Spring will process the `AppConfig` class and create the beans defined in the configuration class. These beans can be injected into other components using the `@Autowired` annotation or accessed directly from the application context.
+
+Using `@Configuration` allows you to define and customize the configuration of your Spring application, such as creating beans, configuring third-party libraries, setting up database connections, and more.
+## 34. @ComponentScan
+## 35. @EnableAutoConfiguration
+
+Dependency Injection
+@Qualifier
+@Primary
+@Resource
+@Inject
+
+@RestController vs. @Controller
+
+## @EnableWebSecurity
+The `@EnableWebSecurity` annotation is used in a Spring Security configuration class to enable and customize web security for a Spring Boot application.
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    // Security configurations and methods
+}
+```

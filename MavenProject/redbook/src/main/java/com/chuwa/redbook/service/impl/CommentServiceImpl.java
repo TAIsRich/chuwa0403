@@ -11,6 +11,7 @@ import com.chuwa.redbook.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.modelmapper.ModelMapper;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,10 +22,15 @@ public class CommentServiceImpl implements CommentService {
     private CommentRepository commentRepository;
     @Autowired
     private PostRepository postRepository;
+    /**
+     * use this modelMapper to replace the mapToDto, mapToEntity methods.
+     */
+    @Autowired
+    private ModelMapper modelMapper;
 
     @Override
     public CommentDto createComment(long postId, CommentDto commentDto) {
-        Comment comment = mapToEntity(commentDto);
+        Comment comment = modelMapper.map(commentDto, Comment.class);
         // retrieve post entity by id
         Post post = postRepository.findById(postId)
                 .orElseThrow(() -> new ResourceNotFoundException("Post", "id", postId));
@@ -34,7 +40,7 @@ public class CommentServiceImpl implements CommentService {
         // comment entity to DB
         Comment saveComment = commentRepository.save(comment);
 
-        return mapToDto(saveComment);
+        return modelMapper.map(saveComment, CommentDto.class);
     }
 
     @Override
@@ -42,7 +48,7 @@ public class CommentServiceImpl implements CommentService {
         // retrieve comments by postId
         List<Comment> comments = commentRepository.findByPostId(postId);
         // convert list of comment entities to list of comment dto's
-        return comments.stream().map(this::mapToDto).collect(Collectors.toList());
+        return comments.stream().map(comment -> modelMapper.map(comment, CommentDto.class)).collect(Collectors.toList());
     }
 
     @Override
@@ -60,7 +66,7 @@ public class CommentServiceImpl implements CommentService {
             throw new BlogAPIException(HttpStatus.BAD_REQUEST, "Comment does not belong to post");
         }
 
-        return mapToDto(comment);
+        return modelMapper.map(comment, CommentDto.class);
     }
 
     @Override
@@ -84,7 +90,7 @@ public class CommentServiceImpl implements CommentService {
 
         Comment updatedComment = commentRepository.save(comment);
 
-        return mapToDto(updatedComment);
+        return modelMapper.map(updatedComment, CommentDto.class);
     }
 
     @Override
@@ -105,21 +111,21 @@ public class CommentServiceImpl implements CommentService {
     }
 
 
-    private CommentDto mapToDto(Comment comment) {
-        CommentDto commentDto = new CommentDto();
-        commentDto.setId(comment.getId());
-        commentDto.setName(comment.getName());
-        commentDto.setEmail(comment.getEmail());
-        commentDto.setBody(comment.getBody());
-        return commentDto;
-    }
-
-    private Comment mapToEntity(CommentDto commentDto) {
-        Comment comment = new Comment();
-        comment.setId(commentDto.getId());
-        comment.setName(commentDto.getName());
-        comment.setEmail(commentDto.getEmail());
-        comment.setBody(commentDto.getBody());
-        return comment;
-    }
+//    private CommentDto mapToDto(Comment comment) {
+//        CommentDto commentDto = new CommentDto();
+//        commentDto.setId(comment.getId());
+//        commentDto.setName(comment.getName());
+//        commentDto.setEmail(comment.getEmail());
+//        commentDto.setBody(comment.getBody());
+//        return commentDto;
+//    }
+//
+//    private Comment mapToEntity(CommentDto commentDto) {
+//        Comment comment = new Comment();
+//        comment.setId(commentDto.getId());
+//        comment.setName(commentDto.getName());
+//        comment.setEmail(commentDto.getEmail());
+//        comment.setBody(commentDto.getBody());
+//        return comment;
+//    }
 }
