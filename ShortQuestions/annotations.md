@@ -552,3 +552,38 @@ public class MyService {
     }
 }
 ```
+
+# AOP
+
+## @Aspect 
+@Aspect  is an annotation used to define an aspect in aspect-oriented programming (AOP). 
+
+## @Pointcut 
+
+@Pointcut is an annotation used to define a pointcut. A pointcut specifies a set of join points in the application's codebase where advice, defined in an aspect, should be applied.
+
+## @Around
+
+@Around annotation is used to define advice that surrounds a join point, allowing the aspect to control the execution flow before and after the target method invocation.
+
+**Advice: before/after/around/afterThrowing - When to execute aop methods when the application pointcut is found.**
+
+### @Before – Run before the method execution
+
+### @After – Run after the method returned a result
+
+### @AfterReturning – Run after the method returned a result, intercept the 
+returned result as well.
+
+### @AfterThrowing – Run after the method throws an exception
+
+### @Around – Run around the method execution, combine all three advices above.
+
+### @Aspect - indicate this is a aop class
+
+### @Component - This annotation mark the beans as Spring’s managed 
+components
+
+### @Before annotated methods run exactly before all methods matching with 
+pointcut expression
+
