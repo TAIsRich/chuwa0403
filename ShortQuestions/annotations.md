@@ -568,3 +568,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // Security configurations and methods
 }
 ```
+
+@Aspect
+@Before
+@After
+@AfterReturning
+@AfterThrowing
+@Around
