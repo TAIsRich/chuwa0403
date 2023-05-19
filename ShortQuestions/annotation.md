@@ -110,7 +110,16 @@ public class MyExceptionHandler {
 - `@ControllerAdvice` This annotation is used to define global exception handling for a Spring MVC application. It is typically used to handle exceptions that occur across multiple controllers.
 - `@Service` This annotation is used to mark a class as a service in a Spring application. It is typically used to define business logic and transaction management.
 - `@Component` his annotation is used to mark a class as a component in a Spring application. It is a generic stereotype annotation that can be used for any Spring-managed component. Components are auto-detected by Spring's @ComponentScan.
-
+- `@Before` – Run before the method execution
+- `@After` – Run after the method returned a result
+- `@AfterReturning` – Run after the method returned a result, intercept the returned result as well.
+- `@AfterThrowing` – Run after the method throws an exception
+- `@Around` – Run around the method execution, combine all three advices above.
+- `@Aspect` - indicate this is a aop class
+- `@Component` - This annotation mark the beans as Spring's managed components
+- `@Before` annotated methods run exactly before all methods matching with pointcut expression
+- `@PointCut` A pointcut expression specifies a set of join points in the application code where advice (aspects) should be applied. 
+- `@Aspect` An aspect is a modular unit of cross-cutting concerns that encapsulates advice and pointcut expressions. 
 
 
 
