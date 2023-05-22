@@ -575,3 +575,71 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 @AfterReturning
 @AfterThrowing
 @Around
+
+`@Mock` Annotation:  
+The `@Mock` annotation is used to create a mock object of a class or interface. It is typically used to simulate the behavior of dependencies or collaborators of the class being tested.
+
+When a field or parameter is annotated with `@Mock`, Mockito creates a mock object of the specified type. This allows you to define the behavior of the mock object using Mockito's API and use it in your test methods.
+
+Here's an example of using @Mock:
+```java
+import org.mockito.Mock;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.mockito.MockitoAnnotations;
+
+public class MyTestClass {
+
+    @Mock
+    private SomeDependency someDependency;
+
+    @BeforeEach
+    void setup() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    void testMethod() {
+        // Use the mocked dependency in the test
+    }
+}
+```
+In the above example, the `@Mock` annotation is used to create a mock object of the `SomeDependency` class. The `MockitoAnnotations.initMocks(this)` method is called in the `@BeforeEach` method to initialize the mock object.
+
+
+
+`@InjectMocks` Annotation:  
+The `@InjectMocks` annotation is used to automatically inject the mock objects created with `@Mock` into the class being tested.
+
+When a field or parameter is annotated with `@InjectMocks`, Mockito will try to inject the mock objects that are created with `@Mock` into the corresponding fields of the class under test.
+
+Here's an example of using @InjectMocks:
+```java
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.mockito.MockitoAnnotations;
+
+public class MyTestClass {
+
+    @Mock
+    private SomeDependency someDependency;
+
+    @InjectMocks
+    private MyClass myClass; // Class under test
+
+    @BeforeEach
+    void setup() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    void testMethod() {
+        // Use the injected mock dependency in the test
+    }
+}
+```
+In the above example, the `@InjectMocks` annotation is used to automatically inject the mock object of `SomeDependency` into the `someDependency` field of the `MyClass` instance.
+
+It's important to note that for `@InjectMocks` to work correctly, the class under test should have a default constructor or a constructor with dependencies that can be resolved by Mockito. Mockito will automatically inject the mock dependencies into the appropriate fields or constructor parameters based on the types.
