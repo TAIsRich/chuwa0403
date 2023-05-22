@@ -101,6 +101,7 @@ public class CommentServiceImpl implements CommentService {
         return modelMapper.map(updatedComment, CommentDto.class);
     }
 
+
     @Override
     public void deleteComment(Long postId, Long commentId) {
         // retrieve post entity by id
@@ -111,10 +112,12 @@ public class CommentServiceImpl implements CommentService {
         Comment comment = commentRepository.findById(commentId)
                 .orElseThrow(() -> new ResourceNotFoundException("Comment", "id", commentId));
 
+        // Check if the comment belongs to the post
         if (!comment.getPost().getId().equals(post.getId())) {
             throw new BlogAPIException(HttpStatus.BAD_REQUEST, "Comment does not belong to post");
         }
 
         commentRepository.delete(comment);
     }
+
 }
