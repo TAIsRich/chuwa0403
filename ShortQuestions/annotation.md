@@ -367,6 +367,51 @@ private String studentName;
    }
    ```
 
+6. @ManyToOne and @JoinColumn 
+
+7. `@ManyToOne` and `@JoinColumn` are annotations used in JPA (Java Persistence API) to establish a Many-to-One relationship between two entities.
+
+   - `@ManyToOne` is used to define a Many-to-One association from the owning entity to the target entity. It indicates that the current entity (the owning entity) has a Many-to-One relationship with another entity (the target entity).
+
+   - `@JoinColumn` is used to specify the mapping for the foreign key column in the database table. It is typically placed on the owning side of the association and specifies the name of the column that will hold the foreign key.
+
+   Here's an example code snippet to illustrate the usage of `@ManyToOne` and `@JoinColumn`:
+
+   ```java
+   @Entity
+   public class Employee {
+       @Id
+       private Long id;
+       private String name;
+       
+       // Other properties and getters/setters
+       
+       @ManyToOne
+       @JoinColumn(name = "department_id")
+       private Department department;
+       
+       // Constructor, getters/setters, etc.
+   }
+   
+   @Entity
+   public class Department {
+       @Id
+       private Long id;
+       private String name;
+       
+       // Other properties and getters/setters
+       
+       @OneToMany(mappedBy = "department")
+       private List<Employee> employees;
+       
+       // Constructor, getters/setters, etc.
+   }
+   ```
+
+   In this example, the `Employee` entity has a Many-to-One relationship with the `Department` entity. The `@ManyToOne` annotation is used on the `department` field in the `Employee` entity to establish this relationship. The `@JoinColumn` annotation is used to specify that the foreign key column in the database table for the `Employee` entity should be named `department_id`.
+
+   With this setup, each `Employee` can be associated with a single `Department`, and the `department_id` column in the `Employee` table will hold the foreign key referencing the primary key of the corresponding `Department`.
+
 ## Json
 
 1. @JsonProperty("")
