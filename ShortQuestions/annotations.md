@@ -90,5 +90,14 @@ This annotation indicates that the class deals with CRUD operations, usually itâ
 - @ControllerAdvice: Class Level. It is used to handle the exceptions globally.
 - @ExceptionHandler: Method Level. It is used to handle the specific exceptions and send the custom responses to the client.
 
-# 
+# Value
 @Value: get value from application.properties. @Value("${propertyName}") with a varibale. The value of the property will pass to the variable.
+
+# Spring AOP
+- @Before: run before the method execution
+- @After: run after the method returned a result
+- @AfterReturning: run after the method returned a result, intercept the returned result as wee
+- @AfterThrowing: run after the method throws an exception
+- @Around: run around the method execution, combine all three advices above
+- @Aspect: indicate this is a aop class
+
