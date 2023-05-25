@@ -110,6 +110,23 @@ public class MyExceptionHandler {
 - `@ControllerAdvice` This annotation is used to define global exception handling for a Spring MVC application. It is typically used to handle exceptions that occur across multiple controllers.
 - `@Service` This annotation is used to mark a class as a service in a Spring application. It is typically used to define business logic and transaction management.
 - `@Component` his annotation is used to mark a class as a component in a Spring application. It is a generic stereotype annotation that can be used for any Spring-managed component. Components are auto-detected by Spring's @ComponentScan.
+- `@Before` – Run before the method execution
+- `@After` – Run after the method returned a result
+- `@AfterReturning` – Run after the method returned a result, intercept the returned result as well.
+- `@AfterThrowing` – Run after the method throws an exception
+- `@Around` – Run around the method execution, combine all three advices above.
+- `@Aspect` - indicate this is a aop class
+- `@Component` - This annotation mark the beans as Spring's managed components
+- `@Before` annotated methods run exactly before all methods matching with pointcut expression
+- `@PointCut` A pointcut expression specifies a set of join points in the application code where advice (aspects) should be applied. 
+- `@Aspect` An aspect is a modular unit of cross-cutting concerns that encapsulates advice and pointcut expressions. 
+- `@Mock` It is used to create a mock object of a class or interface. It is commonly used in unit tests to replace real dependencies with mock objects.
+- `@InjectMock` It is used to automatically inject mock objects into the fields or parameters of the test class. It works in conjunction with @Mock annotations and allows for easier dependency injection in tests.
+- `@Spy` It is used to create a partial mock of an existing object. It allows you to spy on an instance and selectively override or verify specific methods while retaining the original behavior for unstubbed methods.
+- `@BeforeAll` It is a JUnit 5 annotation used to indicate a method that should be executed once before all test methods in a test class. It is typically used for setup operations that need to be performed only once.
+- `@BeforeEach` It is a JUnit 5 annotation used to indicate a method that should be executed before each test method in a test class. It is commonly used for setting up the initial state or resetting the state between test methods.
+- `@AfterEach` It is a JUnit 5 annotation used to indicate a method that should be executed after each test method in a test class. It is commonly used for cleaning up resources or restoring the state after each test.
+- `@AfterAll`  It is a JUnit 5 annotation used to indicate a method that should be executed once after all test methods in a test class have been run. It is typically used for cleanup operations that need to be performed only once.
 
 
 
