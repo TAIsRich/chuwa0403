@@ -1,0 +1,1 @@
+http://myblog2.us-west-1.elasticbeanstalk.com/api/v1/posts
