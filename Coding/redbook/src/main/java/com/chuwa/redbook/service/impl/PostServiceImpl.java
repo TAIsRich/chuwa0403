@@ -4,17 +4,26 @@ import com.chuwa.redbook.dao.PostRepository;
 import com.chuwa.redbook.entity.Post;
 import com.chuwa.redbook.exception.ResourceNotFoundException;
 import com.chuwa.redbook.payload.PostDto;
+import com.chuwa.redbook.payload.PostResponse;
 import com.chuwa.redbook.service.PostService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class PostServiceImpl implements PostService {
 
     @Autowired
     private PostRepository postRepository;
+    @Autowired
+    private ModelMapper modelMapper;
     @Override
     public PostDto createPost(PostDto postDto) {
         Post post = mapToEntity(postDto);
@@ -25,14 +34,23 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<PostDto> getAllPost() {
-        List<Post> list = postRepository.findAll();
-        List<PostDto> responseList = new ArrayList<>();
-        for(Post p: list){
-            PostDto postResponse = mapToDTO(p);
-            responseList.add(postResponse);
-        }
-        return responseList;
+    public PostResponse getAllPost(int pageNo, int pageSize,String sortBy, String sortDir) {
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending():
+                Sort.by(sortBy).descending();
+
+        PageRequest pageRequest = PageRequest.of(pageNo, pageSize, sort);
+        Page<Post> pagePosts= postRepository.findAll(pageRequest);
+
+        List<Post> list = pagePosts.getContent();
+        List<PostDto> responseList = list.stream().map(post -> modelMapper.map(post, PostDto.class)).collect(Collectors.toList());
+        PostResponse postResponse = new PostResponse();
+        postResponse.setContent(responseList);
+        postResponse.setPageNo(pagePosts.getNumber());
+        postResponse.setPageSize(pagePosts.getSize());
+        postResponse.setTotalElements(pagePosts.getTotalElements());
+        postResponse.setTotalPages(pagePosts.getTotalPages());
+        postResponse.setLast(pagePosts.isLast());
+        return postResponse;
     }
 
     @Override
