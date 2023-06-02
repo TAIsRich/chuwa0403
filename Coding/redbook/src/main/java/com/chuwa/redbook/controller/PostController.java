@@ -25,7 +25,7 @@ public class PostController{
         return new ResponseEntity<>(postService.createPost(postDto), HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping()
     public PostResponse getAllPosts(
             @RequestParam(value = "pageNo", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER, required = false) int pageNo,

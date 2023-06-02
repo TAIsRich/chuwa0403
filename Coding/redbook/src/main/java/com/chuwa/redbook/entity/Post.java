@@ -33,6 +33,18 @@ public class Post {
     @UpdateTimestamp
     private LocalDateTime updateDateTime;
 
+    public Post() {
+    }
+
+    public Post(Long id, String title, String description, String content, LocalDateTime createDateTime, LocalDateTime updateDateTime) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.content = content;
+        this.createDateTime = createDateTime;
+        this.updateDateTime = updateDateTime;
+    }
+
     public Long getId() {
         return id;
     }
