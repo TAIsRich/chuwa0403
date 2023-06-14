@@ -1,0 +1,57 @@
+.post{
+    height: fit-content;
+    width: 1200px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.image{
+    height: 500px;
+    width: 60%;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+}
+
+.post-title{
+    color: black;
+    font-size: 24px;
+    margin: 0;
+}
+
+.post-description{
+    font-size: 20px;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 0px;
+}
+
+.post-content{
+    font-size: 16px;
+    color: black;
+    margin-bottom: 0px;
+}
+
+.date{
+    font-size: 12px;
+    color: rgba(0,0,0,0.4);
+}
+
+.comments{
+    margin-top: 20px;
+    color: black;
+}
+
+.single-comment{
+    padding-left: 20px;
+    border-left: 5px solid rgba(0,0,0,0.2);
+    
+}
+
+.user-name{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.comment-content{
+    font-size: 12px;
+}
