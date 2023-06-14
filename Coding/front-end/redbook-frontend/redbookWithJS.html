@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>简易版小红书</title>
+    <link rel="stylesheet" type="text/css" href="./CSS/redbook.css">
+</head>
+<body>
+    <div id="posts"></div>
+
+    <script>
+        fetch('http://localhost:8088/api/v1/posts')
+            .then(response => response.json())
+            .then(posts => {
+                console.log(posts);
+                console.log(posts.content);
+                const contentArray = posts.content;
+                const postsContainer = document.getElementById('posts');
+                contentArray.forEach(post => {
+                    const postElement = document.createElement('div');
+                    postElement.className = 'post';
+
+                    const title = document.createElement('h2');
+                    title.className = 'post-title';
+                    title.textContent = post.title;
+                    postElement.appendChild(title);
+
+                    const description = document.createElement('p');
+                    description.className = 'post-description';
+                    description.textContent = post.description;
+                    postElement.appendChild(description);
+
+                    const content = document.createElement('p');
+                    content.className = 'post-content';
+                    content.textContent = post.content;
+                    postElement.appendChild(content);
+
+                    // const image = document.createElement('img');
+                    // image.className = 'image';
+                    // image.src = post.image;
+                    // image.alt = post.title;
+                    // postElement.appendChild(image);
+
+                    const date = document.createElement('p');
+                    date.className = 'date';
+                    date.textContent = '创建时间: ' + post.date;
+                    postElement.appendChild(date);
+
+                    // const commentsElement = document.createElement('div');
+                    // commentsElement.className = 'comments';
+                    // const commentsTitle = document.createElement('h3');
+                    // commentsTitle.textContent = '评论:';
+                    // commentsElement.appendChild(commentsTitle);
+                    // post.comments.forEach(comment => {
+                    //     const commentElement = document.createElement('div');
+                    //     commentElement.className = 'comment';
+
+                    //     const commenter = document.createElement('p');
+                    //     commenter.className = 'commenter';
+                    //     commenter.textContent = comment.commenter;
+                    //     commentElement.appendChild(commenter);
+
+                    //     const commentContent = document.createElement('p');
+                    //     commentContent.className = 'comment-content';
+                    //     commentContent.textContent = comment.comment;
+                    //     commentElement.appendChild(commentContent);
+
+                    //     commentsElement.appendChild(commentElement);
+                    // });
+                    // postElement.appendChild(commentsElement);
+
+                    postsContainer.appendChild(postElement);
+                });
+            });
+    </script>
+</body>
+</html>
